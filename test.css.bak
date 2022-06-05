@@ -1,0 +1,88 @@
+/* Colour palette */
+:root {
+  --main-green: 4, 71, 28;
+  --main-blue: 4, 71, 72;
+  --main-black: 0, 0, 0;
+  --main-white: 255, 255, 255;
+}
+
+/* Header sizes */
+h1 {
+	font-size: 5vw;
+}
+
+/* Style the navigation menu */
+.topnav {
+  overflow: hidden;
+  background-color: rgba(var(--main-white), 1);
+  position: relative;
+}
+
+/* Hide the links inside the navigation menu (except for logo/home) */
+.topnav #myLinks {
+  display: none;
+}
+
+/* Style navigation menu links */
+.topnav a {
+  color: rgba(var(--main-green), 1);
+  padding: 5%;
+  text-decoration: none;
+  font-size: 5vw;
+  display: block;
+}
+
+#myLinks a {
+  border-bottom: 2px solid rgba(var(--main-blue), 1);
+}
+
+#myLinks a:last-child {
+  border-bottom: none;
+}
+
+/* Style the hamburger menu */
+.topnav a.icon {
+  background: rgba(var(--main-white), 1);
+  color: rgba(var(--main-green), 1);
+  display: block;
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
+/* Add a grey background color on mouse-over */
+.topnav a:hover {
+  background-color: rgba(var(--main-blue), 1);
+  color: rgba(var(--main-white), 1);
+}
+
+/* Style the active link (or home/logo) */
+.active {
+  background-color: rgba(var(--main-white), 1);
+  color: rgba(var(--main-white), 1);
+}
+
+/* Map image settings */
+.hero {
+	width: 100%;
+}
+
+footer {
+	display: flex;
+	flex: 20%;
+	flex-wrap: wrap;
+	font-size: 1vw;
+	text-align: left;
+}
+
+p {
+ color: rgba(var(--main-black), 1);
+ margin: 0px 10px;
+ padding: 1% 0px;
+ font-size: 2vw;
+ /*border: 2px solid blue;*/
+}
+
+#wrapper {
+	padding: 1%;
+}
