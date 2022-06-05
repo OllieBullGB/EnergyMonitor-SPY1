@@ -20,7 +20,6 @@ class SolarArrayModel
         {
             return 1;
         }
-
     }
 
     getCloudCoverCoefficient()

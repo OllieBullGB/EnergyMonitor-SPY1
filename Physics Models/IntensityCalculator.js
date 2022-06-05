@@ -3,7 +3,7 @@ class IntensityCalculator
     constructor(dateTimeStr, latitude, longitude, altitude)
     {
         let dt = dateTimeStr.split(" ");
-        this.date = new Date(dt[0]);
+        this.date = new Date(dateTimeStr);
         this.J2000 = IntensityCalculator.getJ2000(dateTimeStr);
         this.daysSinceYearStart = IntensityCalculator.getDaysSinceYearStart(dt[0]);
         this.hoursSinceDayStart = IntensityCalculator.getHoursSinceDayStart(dt[1]);
