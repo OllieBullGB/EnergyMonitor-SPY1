@@ -44,9 +44,6 @@ class SolarArrayModel
         let rDirection = IntensityCalculator.degToRad(this.direction);
         let incidentIntensity = this.getIncidentIntensity();
 
-        console.log("DIRECTION", this.direction);
-        console.log("AZIMUTH", azimuth);
-
         let moduleRadiation = incidentIntensity * ( Math.cos(elevation) * Math.sin(rAngle) * Math.cos(rDirection - azimuth) + Math.sin(elevation) * Math.sin(rAngle));
         return moduleRadiation;
     }

@@ -11,21 +11,19 @@
 
 <script>
     let s1 = new IntensityCalculator("06/21/2022 12:00:00", -10.6891, 142.5316, 1012);
-    //console.log("DEC", s1.getDeclination());
-    //console.log("HRA", s1.getHourAngle());
     console.log("d days", s1.daysSinceYearStart);
-    console.log("HRA deg", s1.getHourAngle());
-    console.log("ELE deg", s1.getElevation());
-    console.log("ZE deg", s1.getZenith());
-    console.log("DI kW/m^2", s1.getDirectIntensity());
-    console.log("GI kW/m^2", s1.getGlobalIntensity());
-    console.log("AZ", s1.getAzimuth());
+    console.log("Hour Angle deg", s1.getHourAngle());
+    console.log("Elevation deg", s1.getElevation());
+    console.log("Zenith deg", s1.getZenith());
+    console.log("Direct Intensity kW/m^2", s1.getDirectIntensity());
+    console.log("Global Intensity kW/m^2", s1.getGlobalIntensity());
+    console.log("Azimuth deg", s1.getAzimuth());
 
     let a1 = new SolarArrayModel(s1, 1, 45, 0, 0, 273);
-    console.log(a1.getTemperatureCoefficient());
-    console.log(a1.getCloudCoverCoefficient());
-    console.log(a1.getIncidentIntensity());
-    console.log("POWER", a1.getPower());
+    console.log("TEMP COEFFICIENT", a1.getTemperatureCoefficient());
+    console.log("CLOUD COEFFICIENT", a1.getCloudCoverCoefficient());
+    console.log("INCIDENT INTENSITY kW/m^2", a1.getIncidentIntensity());
+    console.log("POWER kW/m^2", a1.getPower());
 
 
 
