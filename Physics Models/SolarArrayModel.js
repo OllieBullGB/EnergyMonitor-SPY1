@@ -47,4 +47,10 @@ class SolarArrayModel
         let moduleRadiation = incidentIntensity * ( Math.cos(elevation) * Math.sin(rAngle) * Math.cos(rDirection - azimuth) + Math.sin(elevation) * Math.sin(rAngle));
         return moduleRadiation;
     }
+
+    getRealisticPower()
+    {
+        //Asssuming the panel has a 20% efficiency
+        return this.getPower() * 0.2;
+    }
 }
