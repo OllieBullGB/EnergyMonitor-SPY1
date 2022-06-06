@@ -41,22 +41,7 @@
 
 <main>
 <div class="main">
-	<div id="container">
-    <div id="modules">
-        <div class="module">a</div>
-        <div class="module">b</div>
-        <div class="module">c</div>
-        <div class="module">d</div>
-        <div class="module">e</div>
-        <div class="module">f</div>
-        <div class="module">g</div>
-        <div class="module">h</div>
-        <div class="module">i</div>
-        <div class="module">j</div>
-        <div class="module">k</div>
-        <div class="module">l</div>
-    </div>
-</div>
+	<img class="hero" src="map.jpg" alt="map">
 </div>
 </main>
 
