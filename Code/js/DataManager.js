@@ -3,15 +3,16 @@ class DataManager
     //Given a latitude and longitude, cache the location
     static setLocation(latitude, longitude)
     {
-        localStorage['latitude'] = latitude + " ";
-        localStorage['longitude'] = longitude + " ";
+        localStorage.setItem('latitude', latitude + " ");
+        localStorage.setItem('longitude', longitude + " ");
+        return DataManager.getLocation();
     }
 
     //given a stored location, get the latitude and longitude
     static getLocation()
     {
-        let latitude =localStorage['latitude'] || 10.6891;
-        let longitude = localStorage['longitude'] || 142.5316;
+        let latitude = localStorage.getItem('latitude') || 10.6891;
+        let longitude = localStorage.getItem('longitude') || 142.5316;
 
         latitude = parseFloat(latitude);
         longitude = parseFloat(longitude);
@@ -24,20 +25,28 @@ class DataManager
         return output;
     }
 
+    static wipeLocation()
+    {
+        localStorage.removeItem('latitude');
+        localStorage.removeItem('longitude');
+        return 1;
+    }
+
     //Given solar panel information, cache the information
     static setPanelInfo(area, angle, direction)
     {
-        localStorage['area'] = area + " ";
-        localStorage['angle'] = angle + " ";
-        localStorage['direction'] = direction + " ";
+        localStorage.setItem("area", area + " ");
+        localStorage.setItem("angle", angle + " ");
+        localStorage.setItem("direction", direction + " ");
+        return DataManager.getPanelInfo();
     }
 
     //given a stored solar array, get the array information
     static getPanelInfo()
     {
-        let area = localStorage['area'] || -1;
-        let angle = localStorage['angle'] || 45;
-        let direction = localStorage['direction'] || 0;
+        let area = localStorage.getItem("area") || -1;
+        let angle = localStorage.getItem("angle") || 45;
+        let direction = localStorage.getItem("direction") || 0;
 
         area = parseFloat(area);
         angle = parseFloat(angle);
@@ -50,6 +59,13 @@ class DataManager
             "direction": direction
         }
         return output;
+    }
+
+    static wipePanelInfo()
+    {
+        localStorage.removeItem('area');
+        localStorage.removeItem('angle');
+        localStorage.removeItem('direction');
     }
 }
 
