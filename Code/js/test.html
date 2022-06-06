@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="LocalDataManager.js"></script>
+    <script src="SolarData.js"></script>
+    <script src="contact.js"></script>
+    <title>JS Testing Ground</title>
+</head>
+<script>
+    LocalDataManager.setLocation(10.6891, 142.5316);
+    console.table(LocalDataManager.getLocation());
+
+    LocalDataManager.setPanelInfo(10, 45, 180);
+    console.table(LocalDataManager.getPanelInfo());
+</script>
+</html>
