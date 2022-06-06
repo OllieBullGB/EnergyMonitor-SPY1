@@ -39,6 +39,14 @@ h1 {
   font-weight: 500;
 }
 
+a {
+  color: rgba(var(--main-green), 1);
+  padding: 5%;
+  text-decoration: none;
+  font-size: 5vw;
+  display: block;
+}
+
 #myLinks a {
   border-bottom: 2px solid rgba(var(--main-blue), 1);
 }
@@ -94,25 +102,30 @@ p {
 
 #container {
     width:100%;
-    height: 10%;
+    height:20%;
     overflow: hidden;
 }
 #modules {
-    height:11%; /* 40px - more place for scrollbar, is hidden under parent box */
-    padding:5px;
+    height:50%; /* 40px - more place for scrollbar, is hidden under parent box */
+    padding:1%;
     white-space:nowrap;
     overflow-x: scroll;
-    overflow-y: hide;
-	-webkit-overflow-scrolling:touch;
+    overflow-y: hidden;
+	/*-webkit-overflow-scrolling:touch;*/
 }
 .module {
     display:inline-block;
-    width:50px;
+    width:10%;
     height:10%;
-    line-height:100%;
+    line-height:200%;
+	font-size: 4vw;
     text-align:center;
     background:#ddd;
 }
+.module hover {
+  background-color: rgba(var(--main-blue), 1);
+  color: rgba(var(--main-white), 1);
+}
 .module + .module {
-    margin-left:5px
+    margin-left:1%;
 }
