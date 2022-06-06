@@ -16,6 +16,17 @@ h1 {
 	font-weight: 500;
 	margin: 0;
 }
+h2 {
+	color: rgba(var(--main-blue), 1);
+	font-size: 4vw;
+	font-weight: 500;
+	margin: 0;
+}
+h3 {
+	color: rgba(var(--main-blue), 1);
+	font-size: 3vw;
+	margin: 0;
+}
 
 /* Style the navigation menu */
 .topnav {
