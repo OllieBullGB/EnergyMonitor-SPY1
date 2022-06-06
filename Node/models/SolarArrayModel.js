@@ -5,11 +5,11 @@ class SolarArrayModel
     constructor(intensityCalculator, area, angle, direction, cloudCover, temperature)
     {
         this.intensityCalculator = intensityCalculator;
-        this.area = area; // m^2
-        this.angle = angle; // deg
-        this.direction = direction; // deg
-        this.cloudCover = cloudCover; // decimal
-        this.temperature = temperature; // kelvin
+        this.#area = area; // m^2
+        this.#angle = angle; // deg
+        this.#direction = direction; // deg
+        this.#cloudCover = cloudCover; // decimal
+        this.#temperature = temperature; // kelvin
     }
 
     getTemperatureCoefficient()
