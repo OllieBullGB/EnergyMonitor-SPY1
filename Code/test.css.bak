@@ -112,19 +112,32 @@ p {
 }
 
 
+<<<<<<< HEAD
 #days-container{
+=======
+#days-container, #hours-container {
+>>>>>>> da77b29ab4006d62c9cf5318ce2b3bf545b82e41
     width:100%;
     height:20%;
     overflow: hidden;
 }
+<<<<<<< HEAD
 #days-list{
+    /*height:15%; /* 40px - more place for scrollbar, is hidden under parent box */
+=======
+#days-list, #hours-list {
     height:15%; /* 40px - more place for scrollbar, is hidden under parent box */
+>>>>>>> da77b29ab4006d62c9cf5318ce2b3bf545b82e41
     padding:1%;
     white-space:nowrap;
     overflow-x: scroll;
     overflow-y: hidden;
 }
+<<<<<<< HEAD
 .day {
+=======
+.day, .hour {
+>>>>>>> da77b29ab4006d62c9cf5318ce2b3bf545b82e41
     display:inline-block;
     width:30%;
     height:10%;
@@ -133,11 +146,19 @@ p {
     text-align:center;
     background:#ddd;
 }
+<<<<<<< HEAD
 .day hover {
   background-color: rgba(var(--main-blue), 1);
   color: rgba(var(--main-white), 1);
 }
 .day + .day {
+=======
+.day:hover, .hour:hover {
+  background-color: rgba(var(--main-blue), 1);
+  color: rgba(var(--main-white), 1);
+}
+.day + .days-list, .hour + .hours-list {
+>>>>>>> da77b29ab4006d62c9cf5318ce2b3bf545b82e41
     margin-left:1%;
 }
 
