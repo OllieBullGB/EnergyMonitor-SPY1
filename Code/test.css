@@ -174,7 +174,7 @@ p {
 	padding: 5% 0;
 }
 
-#power {
+#power, #usage, #surplus {
 	display: flex;
 	flex-direction: column;
 	justify-content: space-evenly;
@@ -184,7 +184,7 @@ p {
 	color: rgba(var(--main-green), 1);
 }
 
-#power p{
+#power p, #usage p, #surplus p{
 	display: flex;
 	align-items: flex-start;
 	padding: 0;
