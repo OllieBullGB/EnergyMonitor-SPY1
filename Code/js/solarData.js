@@ -23,17 +23,98 @@ async function fetchSolarData(frequency, latitude, longitude, area, angle, direc
     return res.json();
 }
 
-function dailySolarData(renderFunction)
+function dailySolarData(renderFunction, container, selectedDate)
 {
     let position = LocalDataManager.getLocation();
     let panelInfo = LocalDataManager.getPanelInfo();
+    let usage = LocalDataManager.getUsage();
 
     let data = fetchSolarData("D", position.latitude, position.longitude, panelInfo.area, panelInfo.angle, panelInfo.direction);
 
+    let solarInput = 0;
+    let surplus = 0;
+
     data.forEach(datapoint =>
     {
+        let currentDate = new Date(datapoint.dateTime);
+        let dd = String(currentDate.getDate()).padStart(2, '0');
+        let mm = String(currentDate.getMonth() + 1).padStart(2, '0');
+        let dateFormat = dd + "/" + mm;
+        containerRenderer(dateFormat, datapoint.icon, container);
 
+        if(currentDate.getTime() == selectedDate.getTime())
+        {
+            solarInput = datapoint.power;
+        }
     })
+
+    surplus = solarInput - usage;
+    totalsRenderer(solarInput, usage, surplus)
+}
+
+function hourlySolarData(renderFunction, container, selectedHour)
+{
+    let position = LocalDataManager.getLocation();
+    let panelInfo = LocalDataManager.getPanelInfo();
+    let usage = LocalDataManager.getUsage();
+
+    let data = fetchSolarData("H", position.latitude, position.longitude, panelInfo.area, panelInfo.angle, panelInfo.direction);
+
+    let solarInput = 0;
+    let surplus = 0;
+
+    data.forEach(datapoint =>
+    {
+        let currentDate = new Date(datapoint.dateTime);
+        let hh = String(currentDate.getHours()).padStart(2, '0');
+        let mm = String(currentDate.getMinutes()).padStart(2, '0');
+        let dateFormat = hh + ":" + mm;
+        containerRenderer(dateFormat, datapoint.icon, container);
+
+        if(currentDate.getTime() == selectedHour.getTime())
+        {
+            solarInput = datapoint.power;
+        }
+    })
+
+    surplus = solarInput - usage;
+    totalsRenderer(solarInput, usage, surplus);
+}
+
+function totalsRenderer(power, usage, surplus)
+{
+    document.getElementById("power").innerHTML = 
+    `
+    <var>${power}</var>
+    <p>
+        kWh
+        <span class="material-symbols-outlined">
+            bolt
+        </span>
+    </p>
+    `;
+
+    document.getElementById("usage").innerHTML =
+    `
+    <var>${usage}</var>
+    <p>
+        kWh
+        <span class="material-symbols-outlined">
+            bolt
+        </span>
+    </p>
+    `;
+
+    document.getElementById("surplus").innerHTML =
+    `
+    <var>${surplus}</var>
+    <p>
+        kWh
+        <span class="material-symbols-outlined">
+            bolt
+        </span>
+    </p>
+    `;
 }
 
 function containerRenderer(timeStr, weatherIconName, container)
@@ -52,6 +133,7 @@ function containerRenderer(timeStr, weatherIconName, container)
 
 const slider = document.getElementById("days-list");
 const now = new Date();
+//Render for daily view;
 for(i=0; i<5; i++)
 {
     let then = new Date(now.getTime() + (i * 86400000));
@@ -60,3 +142,15 @@ for(i=0; i<5; i++)
     let thenDate = dd + "/" + mm;
     containerRenderer(thenDate, '', slider);
 }
+
+/* 
+//Render for hourly view
+for(i=0; i<24; i++)
+{
+    let then = new Date(1654470000000 + (i * 3600000));
+    let hh = String(then.getHours()).padStart(2, '0');
+    let mm = String(then.getMinutes()).padStart(2, '0');
+    let thenDate = hh + ":" + mm;
+    containerRenderer(thenDate, '', slider);
+}
+*/

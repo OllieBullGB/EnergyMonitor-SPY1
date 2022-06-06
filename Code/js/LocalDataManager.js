@@ -1,5 +1,28 @@
 class LocalDataManager
 {
+
+    //Given an average daily usage in kWh, cache the usage
+    static setUsage(usage)
+    {
+        localStorage.setItem("usage", usage + " ");
+        return LocalDataManager.getUsage();
+    }
+
+    //given a stored usage statistic, return the average usage
+    static getUsage()
+    {
+        let usage = localStorage.getItem("usage");
+
+        usage = ParseFloat(usage);
+        
+        let output = 
+        {
+            "usage": usage
+        }
+
+        return output;
+    }
+
     //Given a latitude and longitude, cache the location
     static setLocation(latitude, longitude)
     {
