@@ -1,11 +1,11 @@
-class DataManager
+class LocalDataManager
 {
     //Given a latitude and longitude, cache the location
     static setLocation(latitude, longitude)
     {
         localStorage.setItem('latitude', latitude + " ");
         localStorage.setItem('longitude', longitude + " ");
-        return DataManager.getLocation();
+        return LocalDataManager.getLocation();
     }
 
     //given a stored location, get the latitude and longitude
@@ -38,7 +38,7 @@ class DataManager
         localStorage.setItem("area", area + " ");
         localStorage.setItem("angle", angle + " ");
         localStorage.setItem("direction", direction + " ");
-        return DataManager.getPanelInfo();
+        return LocalDataManager.getPanelInfo();
     }
 
     //given a stored solar array, get the array information
@@ -66,6 +66,7 @@ class DataManager
         localStorage.removeItem('area');
         localStorage.removeItem('angle');
         localStorage.removeItem('direction');
+        return 1;
     }
 }
 
