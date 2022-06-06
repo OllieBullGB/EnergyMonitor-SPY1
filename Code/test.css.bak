@@ -85,14 +85,26 @@ a {
 footer {
 	display: flex;
 	justify-content: space-evenly;
-	padding: 1%;
+	align-items: center;
+	padding: 0;
+}
+
+footer a {
+	padding: 0;
+	display: inline;
+	font-size: 2vw;
+}
+
+small {
+	font-size: 2vw;
 }
 
 p {
  color: rgba(var(--main-green), 1);
- margin: 0px 10px;
- padding: 1% 0px;
- font-size: 2vw;
+ margin: 0px 0px;
+ padding: 0px;
+ margin-block-start: 0;
+ margin-block-end: 0;
 }
 
 .material-symbols-outlined {
@@ -100,32 +112,35 @@ p {
 }
 
 
-#container {
+#days-container{
     width:100%;
     height:20%;
     overflow: hidden;
 }
-#modules {
-    height:50%; /* 40px - more place for scrollbar, is hidden under parent box */
+#days-list{
+    height:15%; /* 40px - more place for scrollbar, is hidden under parent box */
     padding:1%;
     white-space:nowrap;
     overflow-x: scroll;
     overflow-y: hidden;
-	/*-webkit-overflow-scrolling:touch;*/
 }
-.module {
+.day {
     display:inline-block;
-    width:10%;
+    width:30%;
     height:10%;
-    line-height:200%;
+    line-height:600%;
 	font-size: 4vw;
     text-align:center;
     background:#ddd;
 }
-.module hover {
+.day hover {
   background-color: rgba(var(--main-blue), 1);
   color: rgba(var(--main-white), 1);
 }
-.module + .module {
+.day + .day {
     margin-left:1%;
+}
+
+#days-list::-webkit-scrollbar {
+	display: none;
 }
