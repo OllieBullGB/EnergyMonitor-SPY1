@@ -3,13 +3,13 @@ class IntensityCalculator
     constructor(dateTimeStr, latitude, longitude, altitude)
     {
         let dt = dateTimeStr.split(" ");
-        this.#date = new Date(dateTimeStr);
-        this.#J2000 = IntensityCalculator.getJ2000(dateTimeStr);
-        this.#daysSinceYearStart = IntensityCalculator.getDaysSinceYearStart(dt[0]);
-        this.#hoursSinceDayStart = IntensityCalculator.getHoursSinceDayStart(dt[1]);
-        this.#latitude = latitude; //deg
-        this.#longitude = longitude; //deg
-        this.#altitude = altitude; //meters above sea level
+        this.date = new Date(dateTimeStr);
+        this.J2000 = IntensityCalculator.getJ2000(dateTimeStr);
+        this.daysSinceYearStart = IntensityCalculator.getDaysSinceYearStart(dt[0]);
+        this.hoursSinceDayStart = IntensityCalculator.getHoursSinceDayStart(dt[1]);
+        this.latitude = latitude; //deg
+        this.longitude = longitude; //deg
+        this.altitude = altitude; //meters above sea level
     }
 
     static degToRad(deg)
