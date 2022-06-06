@@ -1,17 +1,3 @@
-/**
- *  Filename: app.js
- *  
- *  Author: Ollie Bull
- * 
- *  Date: 20th October 2021
- * 
- *  Description: The backend server in charge of processing webpage access requests
- *               aswell as email sign-up requests for Assignment 2 of CMP-4011A
- *               web-based development module at UEA
- * 
- *  Version: 20/10/21 v1.0, 08/11/21 v1.1
- */
-
 const express = require('express');
 const helmet = require('helmet');
 const bodyParser = require('body-parser');
