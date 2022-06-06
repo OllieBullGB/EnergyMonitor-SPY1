@@ -89,7 +89,7 @@
 			arrow_drop_up
 		</span>
 		<!--img id = "solar-energy-arrow" src = "arrow.jpg" alt = "energy indicator arrow"-->
-		<span class="material-symbols-outlined myClass">
+		<span class="material-symbols-outlined largeIcon">
 			solar_power
 		</span>
 		<!--img id = "solar-panel-icon" src = "solar-panel-icon.jpg" alt = "solar panel icon"-->
@@ -97,7 +97,7 @@
 	<div id="daily-usage">
 		<h3>Daily Usage</h3>
 		<!-- Insert variable for daily usage here -->
-		<div id="power">
+		<div id="usage">
 			<var>21.5</var>
 			<p>
 			kWh
@@ -111,14 +111,14 @@
 			arrow_drop_up
 		</span>
 		<!--img id = "battery-icon" src = "battery-icon.jpg" alt = "battery icon"-->
-		<span class="material-symbols-outlined">
+		<span class="material-symbols-outlined largeIcon">
 			battery_horiz_050
 		</span>
 	</div>
 	<div id="surplus-deficit">
 		<h3>Surplus Deficit</h3>
 		<!-- Insert variable for surplus energy here -->
-		<div id="power">
+		<div id="surplus">
 			<var>0.8</var>
 			<p>
 			kWh
@@ -132,7 +132,7 @@
 			arrow_drop_up
 		</span>
 		<!--img id = "energy-icon" src = "energy-icon.jpg" alt = "energy icon"-->
-		<span class="material-symbols-outlined">
+		<span class="material-symbols-outlined largeIcon">
 			bolt
 		</span>
 	</div>

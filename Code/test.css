@@ -20,6 +20,7 @@ h2 {
 	color: rgba(var(--main-blue), 1);
 	font-size: 7vw;
 	font-weight: 500;
+	padding: 0 5% 5% 5%;
 	margin: 0;
 }
 h3 {
@@ -46,7 +47,7 @@ h3 {
 /* Style navigation menu links */
 .topnav a {
   color: rgba(var(--main-green), 1);
-  padding: 5%;
+  padding: 5% 5% 0 5%;
   text-decoration: none;
   font-size: 5vw;
   display: block;
@@ -193,6 +194,11 @@ p {
 
 .largeIcon {
 	font-size: 20vw;
+	color: rgba(var(--main-green), 1);
+}
+
+.mediumIcon {
+	font-size: 10vw;
 	color: rgba(var(--main-green), 1);
 }
 
