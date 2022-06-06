@@ -54,6 +54,30 @@ class IntensityCalculator
         return (parseInt(hms[0])) + parseInt(hms[1] / 60) + (parseInt(hms[2]) / (3600));
     }
 
+    setDatetime(dateTimeStr)
+    {
+        let dt = dateTimeStr.split(" ");
+        this.date = new Date(dateTimeStr);
+        this.J2000 = IntensityCalculator.getJ2000(dateTimeStr);
+        this.daysSinceYearStart = IntensityCalculator.getDaysSinceYearStart(dt[0]);
+        this.hoursSinceDayStart = IntensityCalculator.getHoursSinceDayStart(dt[1]);
+    }
+
+    setLatitude(latitude)
+    {
+        this.latitude = latitude;
+    }
+
+    setLongitude(longitude)
+    {
+        this.longitude = longitude;
+    }
+
+    setAltitude(altitude)
+    {
+        this.altitude = altitude;
+    }
+
     getDeclination()
     {
         let meanLongitude = this.J2000 * 0.01720279239 + 4.894967873;
