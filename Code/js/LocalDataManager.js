@@ -13,7 +13,7 @@ class LocalDataManager
     {
         let usage = localStorage.getItem("usage");
 
-        usage = ParseFloat(usage);
+        usage = parseFloat(usage);
         
         let output = 
         {
