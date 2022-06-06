@@ -42,7 +42,7 @@ function containerRenderer(timeStr, weatherIconName, container)
     hourContainer.classList.add("day");
     hourContainer.innerHTML = 
     `
-    <a href="hourly.html" onclick="myFunction()">
+    <a href="hourly.html/date='dd-mm'" onclick="myFunction()">
         <var>${timeStr}</var>
     </a>
     `;
