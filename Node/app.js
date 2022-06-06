@@ -1,4 +1,6 @@
 const express = require('express');
+const IntensityCalculator = require('./models/IntensityCalculator');
+const SolarArrayModel = require('./models/SolarArrayModel');
 const helmet = require('helmet');
 
 //create an express web server
