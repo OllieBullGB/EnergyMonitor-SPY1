@@ -10,7 +10,7 @@ function myFunction() {
 
 
 function addNumber(element) {
-  document.getElementById("update-input").value = document.getElementById("update-input").value+element.value;
+  document.getElementById("update-input").value = document.getElementById("update-input").value)+element.value;
 }
 
 function reset() {

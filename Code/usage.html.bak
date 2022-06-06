@@ -99,7 +99,7 @@
 			<input type="button" class="numpad-digit" value="0" id="numpad-0" onClick=addNumber(this)>
 			<input type="button" class="numpad-digit material-symbols-outlined" value=backspace id="numpad-clear" onClick=reset()>
 			<!--/div-->
-			<!--input type="button" class="numpad-digit" value="update" id="numpad-update" onClick=updateUsage()-->
+			<input type="button" class="numpad-digit" value="update" id="numpad-update" onClick=updateUsage()>
 		</form>
 		</div>
 	</div>
