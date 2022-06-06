@@ -127,7 +127,7 @@ function containerRenderer(timeStr, weatherIconName, container)
         <var>${timeStr}</var>
     </a>
 	<a href=#icon onclick]"myFunction()">
-		<span class="material-symbols-outlined weatherIcon">
+		<span class="material-symbols-outlined largeIcon">
 			sunny
 		</span>
 	</a>

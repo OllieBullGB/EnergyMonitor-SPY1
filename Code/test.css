@@ -145,14 +145,20 @@ p {
     display:inline-block;
     width:30%;
     height:10%;
-    line-height:600%;
-	  font-size: 4vw;
+    line-height:100%;
+	font-size: 4vw;
     text-align:center;
-    background:#ddd;
-    margin-right: 5px;
+	background-color: rgba(var(--main-blue), 0.05);
+	border: 2vw solid rgba(var(--main-blue), 0.10);
+    margin-right: 2%;
 }
 
-.day:hover, .hour:hover {
+.day a, .hour a {
+	padding: 5%;
+	color: rgba(var(--main-blue), 1);
+}
+
+.day a:hover, .hour:hover {
   background-color: rgba(var(--main-blue), 1);
   color: rgba(var(--main-white), 1);
 }
@@ -165,7 +171,7 @@ p {
 }
 
 #energy-container div:last-child {
-  border-top: 2px solid rgba(var(--main-blue), 1);
+  border-top: 1vw solid rgba(var(--main-blue), 1);
 }
 
 #solar-energy, #daily-usage, #surplus-deficit {
@@ -199,7 +205,10 @@ p {
 
 .mediumIcon {
 	font-size: 10vw;
-	color: rgba(var(--main-green), 1);
+}
+
+.weatherIcon {
+	font-size: 15vw;
 }
 
 var {
