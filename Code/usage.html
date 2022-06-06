@@ -22,7 +22,7 @@
 <body>
 <!-- Top Navigation Menu -->
 <div class="topnav">
-  <a class="active"><h1>Select your location</h1></a>
+  <a class="active"><h1>Input your daily usage</h1></a>
   <!-- Navigation links (hidden by default) -->
   <div id="myLinks">
     <a href="home.html">Home</a>
@@ -40,7 +40,41 @@
 
 <main>
 <div class="main">
-	<img class="hero" src="map.jpg" alt="map">
+	<div id="current-usage"></div>
+		<h3>Current</h3>
+		<var>daily energy usage here</var><p>kWh</p>
+		<img id = "battery-icon" src = "battery-icon.jpg" alt = "battery icon">
+	</div>
+	<!-- Keypad to enter daily energy usage -->
+	<div id="new-usage">
+		<h3>Update</h3>
+		<div id="numpad-container">
+		<form action="" method="" name="numpad">
+			<input id="usage" type="text" value="">
+			<div id="numpad-row1">
+			<input type="button" class="numpad-digit" value="1" id="numpad-1" onClick=addNumber(this)>
+			<input type="button" class="numpad-digit" value="2" id="numpad-2" onClick=addNumber(this)>
+			<input type="button" class="numpad-digit" value="3" id="numpad-3" onClick=addNumber(this)>
+			</div>
+			<div id="numpad-row2">
+			<input type="button" class="numpad-digit" value="4" id="numpad-4" onClick=addNumber(this)>
+			<input type="button" class="numpad-digit" value="5" id="numpad-5" onClick=addNumber(this)>    
+			<input type="button" class="numpad-digit" value="6" id="numpad-6" onClick=addNumber(this)>
+			</div>
+			<div id="numpad-row3">
+			<input type="button" class="numpad-digit" value="7" id="numpad-7" onClick=addNumber(this)>
+			<input type="button" class="numpad-digit" value="8" id="numpad-8" onClick=addNumber(this)>
+			<input type="button" class="numpad-digit" value="9" id="numpad-9" onClick=addNumber(this)>
+			</div>
+			<div id="numpad-row4">
+			<input type="button" class="numpad-digit" value="0" id="numpad-0" onClick=addNumber(this)>
+			<input type="button" class="numpad-digit" value="." id="numpad-." onClick=addNumber(this)>
+			<input type="button" class="numpad-digit" value="clear" id="numpad-clear" onClick=reset()>
+			</div>
+			<input type="button" class="numpad-digit" value="update" id="numpad-update" onClick=updateUsage()>
+		</form>
+		</div>
+	</div>
 </div>
 </main>
 
