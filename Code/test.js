@@ -7,3 +7,12 @@ function myFunction() {
     x.style.display = "block";
   }
 }
+
+
+function addNumber(element) {
+  document.getElementById("usage").value = document.getElementById("usage").value+element.value;
+}
+
+function reset() {
+  document.getElementById("usage").value.clear;
+}
