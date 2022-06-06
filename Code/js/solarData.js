@@ -23,17 +23,68 @@ async function fetchSolarData(frequency, latitude, longitude, area, angle, direc
     return res.json();
 }
 
-function dailySolarData(renderFunction)
+function dailySolarData(renderFunction, container, selectedDate)
 {
     let position = LocalDataManager.getLocation();
     let panelInfo = LocalDataManager.getPanelInfo();
+    let usage = LocalDataManager.getUsage();
 
     let data = fetchSolarData("D", position.latitude, position.longitude, panelInfo.area, panelInfo.angle, panelInfo.direction);
 
+    let solarInput = 0;
+    let surplus = 0;
+
     data.forEach(datapoint =>
     {
+        let currentDate = new Date(datapoint.dateTime);
+        let dd = String(then.getDate()).padStart(2, '0');
+        let mm = String(then.getMonth() + 1).padStart(2, '0');
+        let dateFormat = dd + "/" + mm;
+        containerRenderer(dateFormat, datapoint.icon, container);
 
+        if(currentDate.getTime() == selectedDate.getTime())
+        {
+            solarInput = datapoint.power;
+        }
     })
+
+    surplus = solarInput - usage;
+}
+
+function totalsRenderer(power, usage, surplus)
+{
+    document.getElementById("power").innerHTML = 
+    `
+    <var>${power}</var>
+    <p>
+        kWh
+        <span class="material-symbols-outlined">
+            bolt
+        </span>
+    </p>
+    `;
+
+    document.getElementById("usage").innerHTML =
+    `
+    <var>${usage}</var>
+    <p>
+        kWh
+        <span class="material-symbols-outlined">
+            bolt
+        </span>
+    </p>
+    `;
+
+    document.getElementById("surplus").innerHTML =
+    `
+    <var>${surplus}</var>
+    <p>
+        kWh
+        <span class="material-symbols-outlined">
+            bolt
+        </span>
+    </p>
+    `;
 }
 
 function containerRenderer(timeStr, weatherIconName, container)
@@ -60,3 +111,4 @@ for(i=0; i<5; i++)
     let thenDate = dd + "/" + mm;
     containerRenderer(thenDate, '', slider);
 }
+
