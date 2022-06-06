@@ -13,6 +13,12 @@ html {
 /* Header sizes */
 h1 {
 	font-size: 5vw;
+	color: rgba(var(--main-green), 1);
+	padding: 5%;
+	text-decoration: none;
+	display: block;
+	font-weight: 500;
+	margin: 0;
 }
 
 /* Style the navigation menu */
@@ -34,7 +40,7 @@ h1 {
   text-decoration: none;
   font-size: 5vw;
   display: block;
-  font-weight:500;
+  font-weight: 500;
 }
 
 #myLinks a {

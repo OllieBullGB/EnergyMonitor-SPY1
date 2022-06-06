@@ -13,6 +13,11 @@ html {
 /* Header sizes */
 h1 {
 	font-size: 5vw;
+	color: rgba(var(--main-green), 1);
+	text-decoration: none;
+	display: block;
+	font-weight: 500;
+	margin: 0;
 }
 
 /* Style the navigation menu */
