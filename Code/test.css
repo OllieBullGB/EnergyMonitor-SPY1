@@ -142,9 +142,10 @@ p {
     width:30%;
     height:10%;
     line-height:600%;
-	font-size: 4vw;
+	  font-size: 4vw;
     text-align:center;
     background:#ddd;
+    margin-right: 5px;
 }
 
 .day:hover, .hour:hover {
