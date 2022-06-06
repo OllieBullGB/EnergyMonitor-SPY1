@@ -16,3 +16,9 @@ function addNumber(element) {
 function reset() {
   document.getElementById("usage").value.clear;
 }
+
+function updateUsage()
+{
+  let usage = parseFloat(document.getElementById("update-input").value);
+  LocalDataManager.setUsage(usage);
+}
