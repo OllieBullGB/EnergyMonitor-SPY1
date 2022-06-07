@@ -66,7 +66,7 @@ a {
   padding: 0;
 }
 
-#myLinks a, .help-links a, .faq-item, .contact-item {
+#myLinks a, .help-links a, .faq-item, .contact-item{
   border-bottom: 0.5vw solid rgba(var(--main-blue), 1);
   padding: 5%;
   font-weight: normal;
@@ -269,7 +269,7 @@ var {
 	padding: 2%;
 }
 
-.numpad-update {
+.numpad-update, .send {
 	background-color: transparent;
 	border: none;
 }
@@ -281,4 +281,39 @@ var {
 
 .contact-link a {
 	font-size: 6vw;
+}
+
+
+
+.form-section {
+	display: flex;
+	justify-content: space-evenly;
+	align-items: baseline;
+	flex-wrap: wrap;
+	font-size: 5vw;
+	color: rgba(var(--main-green), 1);
+	margin: 5% 2%;
+}
+
+.form-label {
+	width: 25%;
+	text-align: right;
+}
+
+.form-input {
+	color: rgba(var(--main-green), 1);
+	font-size: 5vw;
+	display: inline-block;
+	border: none;
+	/*width: 79%;*/
+	padding: 3%;
+	border-radius: 4px;
+	flex-grow: 1;
+	background-color: rgba(var(--main-blue), 0.1);
+	margin-left: 2%;
+	font-family:inherit
+}
+
+#message {
+	resize: none;
 }
