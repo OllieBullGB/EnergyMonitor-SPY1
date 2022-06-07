@@ -56,5 +56,5 @@ function updateDirection()
 {
   let direction = parseFloat(document.getElementById("update-direction").value);
   LocalDataManager.setDirection(direction);
-  //redirect to next page
+  window.location.href="daily.html";
 }
