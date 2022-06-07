@@ -22,7 +22,7 @@
 <body>
 <!-- Top Navigation Menu -->
 <div class="topnav">
-  <a class="active"><h1>Support</h1></a>
+  <a class="active"><h1>Contact Support</h1></a>
   <!-- Navigation links (hidden by default) -->
   <div id="myLinks">
     <a href="home.html">Home</a>
@@ -40,17 +40,19 @@
 
 <main>
 <div class="main">
-	<form action="/action_page.php">
-		<label for="fname">Name:</label><br>
-		<input type="text" id="fname" name="name"><br>
-		<label for="lname">Email:</label><br>
-		<input type="text" id="lname" name="email"><br>
-		<label for="lname">Subject:</label><br>
-		<input type="text" id="fname" name="subject"><br>
-		<label for="lname">Message:</label><br>
-		<input type="text" id="fname" name="Message"><br><br>
-		<input type="submit" value="Submit">
-	  </form> 
+	<!-- Support message area -->
+	<form>
+		<p>First Name:</p>
+		<input type="text" id="fname" name="name">
+		<p>Last Name:</p>
+		<input type="text" id="lname" name="email">
+		<p>Topic:</p>
+		<input type="text" id="subject" name="subject">
+		<p>Message:</p>
+		<input type="text" id="fname" name="Message">
+		<!-- Support message submit button -->
+		<input type="button" class="send material-symbols-outlined largeIcon" value="Send" id="support-send" onClick=sendMessage()>
+	</form> 
 </div>
 </main>
 
