@@ -28,7 +28,7 @@ function switchSelection(elementName)
 
 
 function reset() {
-  document.getElementById("usage").value.clear;
+  document.getElementsByClassName("selected").value.clear;
 }
 
 function updateUsage()
