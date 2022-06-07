@@ -25,7 +25,8 @@ function switchSelection(elementName)
   newElement.classList.add("selected");
 }
 
-function reset() 
+console.log("loaded");
+function resetInput() 
 {
   let elements = document.getElementsByClassName("selected");
   console.table(elements);
