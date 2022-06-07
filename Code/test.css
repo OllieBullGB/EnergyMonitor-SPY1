@@ -87,6 +87,10 @@ a {
   color: rgba(var(--main-white), 1);
 }
 
+#numpad-container .numpad-digit:active {
+background-color: rgba(var(--main-blue), 0.2);
+}
+
 /* Style the active link (or home/logo) */
 .active {
   background-color: rgba(var(--main-white), 1);
