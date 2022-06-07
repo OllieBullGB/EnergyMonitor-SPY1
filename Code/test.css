@@ -61,13 +61,18 @@ a {
   display: block;
 }
 
-#myLinks a, .help-links a, .faq-item {
+
+.contact-item a {
+  padding: 0;
+}
+
+#myLinks a, .help-links a, .faq-item, .contact-item {
   border-bottom: 0.5vw solid rgba(var(--main-blue), 1);
   padding: 5%;
   font-weight: normal;
 }
 
-#myLinks a:last-child, .help-links a:last-child {
+#myLinks a:last-child, .help-links a:last-child, .faq-item:last-child, .contact-item:last-child{
   border-bottom: none;
 }
 
@@ -82,7 +87,7 @@ a {
 }
 
 /* Add a grey background color on mouse-over */
-.topnav a:hover, #numpad-container .numpad-digit:hover, .help-links a:hover {
+.topnav a:hover, #numpad-container .numpad-digit:hover, .help-links a:hover, .contact-link a:hover {
   background-color: rgba(var(--main-blue), 1);
   color: rgba(var(--main-white), 1);
 }
@@ -269,9 +274,11 @@ var {
 	border: none;
 }
 
-
-
-.faq-list p{
+.faq-list p, .contact-list p {
 	color: rgba(var(--main-blue), 1);
 	padding: 2% 0 0 0;
+}
+
+.contact-link a {
+	font-size: 6vw;
 }
