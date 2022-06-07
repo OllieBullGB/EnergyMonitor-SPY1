@@ -2,7 +2,7 @@ async function fetchSolarData(frequency, latitude, longitude, area, angle, direc
 {
     const res = fetch("/api/solar",
     {
-        method: "get",
+        method: "post",
         mode: "no-cors",
         cache: "force-cache",
         headers: 
@@ -123,7 +123,7 @@ function containerRenderer(timeStr, weatherIconName, container)
     hourContainer.classList.add("day");
     hourContainer.innerHTML = 
     `
-    <a href="hourly.html/date='${timeStr}'" onclick="myFunction()">
+    <a href='hourly.html?date="${timeStr}"' onclick="myFunction()">
         <var>${timeStr}</var>
     </a>
 	<a href=#icon onclick]"myFunction()">
@@ -139,6 +139,8 @@ function containerRenderer(timeStr, weatherIconName, container)
 const slider = document.getElementById("days-list");
 const now = new Date();
 //Render for daily view;
+
+
 for(i=0; i<5; i++)
 {
     let then = new Date(now.getTime() + (i * 86400000));
@@ -147,6 +149,7 @@ for(i=0; i<5; i++)
     let thenDate = dd + "/" + mm;
     containerRenderer(thenDate, '', slider);
 }
+
 
 /* 
 //Render for hourly view
