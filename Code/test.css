@@ -47,12 +47,7 @@ h3 {
 
 /* Style navigation menu links */
 .topnav a {
-  color: rgba(var(--main-green), 1);
   padding: 5% 5% 0 5%;
-  text-decoration: none;
-  font-size: 5vw;
-  display: block;
-  font-weight: 500;
 }
 
 a {
@@ -64,7 +59,9 @@ a {
 }
 
 #myLinks a {
-  border-bottom: 2px solid rgba(var(--main-blue), 1);
+  border-bottom: 0.5vw solid rgba(var(--main-blue), 1);
+  padding: 5%;
+  font-weight: normal;
 }
 
 #myLinks a:last-child {
@@ -93,7 +90,7 @@ background-color: rgba(var(--main-blue), 0.2);
 
 /* Style the active link (or home/logo) */
 .active {
-  background-color: rgba(var(--main-white), 1);
+  background-color: rgba(var(--main-blue), 1);
   color: rgba(var(--main-white), 1);
 }
 
@@ -259,3 +256,4 @@ var {
 	background-color: transparent;
 	border: none;
 }
+
