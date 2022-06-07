@@ -25,13 +25,11 @@ function switchSelection(elementName)
   newElement.classList.add("selected");
 }
 
-console.log("loaded");
 function resetInput() 
 {
   let elements = document.getElementsByClassName("selected");
-  console.table(elements);
   let selectedElement = elements[0];
-  selectedElement.value = "";
+  selectedElement.value = selectedElement.value.slice(0, -1);
 }
 
 function updateUsage()
