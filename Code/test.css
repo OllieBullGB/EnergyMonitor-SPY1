@@ -82,7 +82,7 @@ a {
 }
 
 /* Add a grey background color on mouse-over */
-.topnav a:hover {
+.topnav a:hover, #numpad-container .numpad-digit:hover {
   background-color: rgba(var(--main-blue), 1);
   color: rgba(var(--main-white), 1);
 }
@@ -163,6 +163,7 @@ p {
   background-color: rgba(var(--main-blue), 1);
   color: rgba(var(--main-white), 1);
 }
+
 .day + .days-list, .hour + .hours-list {
     margin-left:1%;
 }
