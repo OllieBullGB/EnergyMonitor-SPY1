@@ -176,7 +176,7 @@ p {
 	display: none;
 }
 
-#energy-container div:last-child, #usage-container div:last-child {
+#energy-container div:last-child, #usage-container div:last-child, #direction, #angle{
   border-top: 1vw solid rgba(var(--main-blue), 1);
 }
 
