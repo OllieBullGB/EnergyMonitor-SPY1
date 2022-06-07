@@ -32,10 +32,62 @@ function resetInput()
   selectedElement.value = selectedElement.value.slice(0, -1);
 }
 
+function loadSavedInputs()
+{
+  let usage = LocalDataManager.getUsage().usage;
+  let panelInfo = LocalDataManager.getPanelInfo();
+
+  if(document.getElementById("update-usage").classList.length > 0 && !isNaN(usage))
+  {
+    document.getElementById("current").innerHTML = 
+    `
+    <var> ${usage} </var>
+    <p>
+      kWh
+      <span class="material-symbols-outlined">
+        bolt
+      </span>
+    </p>
+    `
+  }
+  else if(document.getElementById("update-usage").classList.length > 0)
+  {
+    document.getElementById("current").innerHTML = 
+    `
+    <var> 0 </var>
+    <p>
+      kWh
+      <span class="material-symbols-outlined">
+        bolt
+      </span>
+    </p>
+    `
+  }
+
+  if(document.getElementById("update-area").classList.length > 0)
+  {
+    if(!isNaN(panelInfo.area))
+    {
+      document.getElementById("update-area").value = panelInfo.area;
+    }
+    if(!isNaN(panelInfo.angle))
+    {
+      document.getElementById("update-angle").value = panelInfo.angle;
+    }
+    if(!isNaN(panelInfo.direction))
+    {
+      document.getElementById("update-direction").value = panelInfo.direction;
+    }
+  }
+}
+
+loadSavedInputs();
+
 function updateUsage()
 {
-  let usage = parseFloat(document.getElementById("update-input").value);
+  let usage = parseFloat(document.getElementById("usage-update").value);
   LocalDataManager.setUsage(usage);
+  loadSavedInputs();
 }
 
 function updateArea()
@@ -43,6 +95,7 @@ function updateArea()
   let area = parseFloat(document.getElementById("update-area").value);
   LocalDataManager.setArea(area);
   switchSelection("update-angle");
+  loadSavedInputs();
 }
 
 function updateAngle()
@@ -50,6 +103,7 @@ function updateAngle()
   let angle = parseFloat(document.getElementById("update-angle").value);
   LocalDataManager.setAngle(angle);
   switchSelection("update-direction");
+  loadSavedInputs();
 }
 
 function updateDirection()
