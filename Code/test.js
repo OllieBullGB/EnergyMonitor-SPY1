@@ -25,10 +25,12 @@ function switchSelection(elementName)
   newElement.classList.add("selected");
 }
 
-
-
-function reset() {
-  document.getElementsByClassName("selected").value.clear;
+function reset() 
+{
+  let elements = document.getElementsByClassName("selected");
+  console.table(elements);
+  let selectedElement = elements[0];
+  selectedElement.value = "";
 }
 
 function updateUsage()
