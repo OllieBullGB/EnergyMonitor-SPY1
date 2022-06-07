@@ -85,8 +85,8 @@ class LocalDataManager
     //given a stored solar array, get the array information
     static getPanelInfo()
     {
-        let area = localStorage.getItem("area") || -1;
-        let angle = localStorage.getItem("angle") || 45;
+        let area = localStorage.getItem("area") || 0;
+        let angle = localStorage.getItem("angle") || 0;
         let direction = localStorage.getItem("direction") || 0;
 
         area = parseFloat(area);

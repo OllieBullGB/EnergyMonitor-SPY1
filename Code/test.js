@@ -66,15 +66,15 @@ function loadSavedInputs()
 
   if(document.getElementById("update-area").classList.length > 0)
   {
-    if(!isNaN(panelInfo.area))
+    if(!isNaN(panelInfo.area) && panelInfo.area > 0)
     {
       document.getElementById("update-area").value = panelInfo.area;
     }
-    if(!isNaN(panelInfo.angle))
+    if(!isNaN(panelInfo.angle) && panelInfo.angle > 0)
     {
       document.getElementById("update-angle").value = panelInfo.angle;
     }
-    if(!isNaN(panelInfo.direction))
+    if(!isNaN(panelInfo.direction) && panelInfo.direction > 0)
     {
       document.getElementById("update-direction").value = panelInfo.direction;
     }
