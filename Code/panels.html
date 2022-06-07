@@ -42,50 +42,56 @@
 
 <main>
 	<div class="main">
-		<div id="update-usage">
-			<h3>Area</h3>
-			<div id="update">
-				<form>
-					<input class="update-input selected" id="update-area" type="text" placeholder="00.0">
-				<p>
-					m^2
-				</p>
+		<div id="area">
+			<div id="update-usage">
+				<h3>Area</h3>
+				<div id="update">
+					<form>
+						<input class="update-input selected" id="update-area" type="text" placeholder="00.0">
+					<p>
+						m^2
+					</p>
+				</div>
+				<!-- img id = "battery-icon" src = "battery-icon.jpg" alt = "battery icon" -->
+				<input type="button" class="numpad-update material-symbols-outlined largeIcon" value=check_circle id="numpad-update" onClick=updateArea()>
+				<!--span class="material-symbols-outlined largeIcon">
+					check_circle
+				</span-->
 			</div>
-			<!-- img id = "battery-icon" src = "battery-icon.jpg" alt = "battery icon" -->
-			<input type="button" class="numpad-update material-symbols-outlined largeIcon" value=check_circle id="numpad-update" onClick=updateArea()>
-			<!--span class="material-symbols-outlined largeIcon">
-				check_circle
-			</span-->
 		</div>
-		<div id="update-usage">
-			<h3>Angle</h3>
-			<div id="update">
-				<form>
-					<input class="update-input" id="update-angle" type="text" placeholder="00.0">
-				<p>
-					degrees
-				</p>
+		<div id="angle">
+			<div id="update-usage">
+				<h3>Angle</h3>
+				<div id="update">
+					<form>
+						<input class="update-input" id="update-angle" type="text" placeholder="00.0">
+					<p>
+						degrees
+					</p>
+				</div>
+				<!-- img id = "battery-icon" src = "battery-icon.jpg" alt = "battery icon" -->
+				<input type="button" class="numpad-update material-symbols-outlined largeIcon" value=check_circle id="numpad-update" onClick=updateAngle()>
+				<!--span class="material-symbols-outlined largeIcon">
+					check_circle
+				</span-->
 			</div>
-			<!-- img id = "battery-icon" src = "battery-icon.jpg" alt = "battery icon" -->
-			<input type="button" class="numpad-update material-symbols-outlined largeIcon" value=check_circle id="numpad-update" onClick=updateAngle()>
-			<!--span class="material-symbols-outlined largeIcon">
-				check_circle
-			</span-->
 		</div>
-		<div id="update-usage">
+		<div id="direction">
+			<div id="update-usage">
 			<h3>Direction</h3>
-			<div id="update">
-				<form>
-					<input class="update-input" id="update-direction" type="text" placeholder="00.0">
-				<p>
-					degrees
-				</p>
+				<div id="update">
+					<form>
+						<input class="update-input" id="update-direction" type="text" placeholder="00.0">
+					<p>
+						degrees
+					</p>
+				</div>
+				<!-- img id = "battery-icon" src = "battery-icon.jpg" alt = "battery icon" -->
+				<input type="button" class="numpad-update material-symbols-outlined largeIcon" value=check_circle id="numpad-update" onClick=updateDirection()>
+				<!--span class="material-symbols-outlined largeIcon">
+					check_circle
+				</span-->
 			</div>
-			<!-- img id = "battery-icon" src = "battery-icon.jpg" alt = "battery icon" -->
-			<input type="button" class="numpad-update material-symbols-outlined largeIcon" value=check_circle id="numpad-update" onClick=updateDirection()>
-			<!--span class="material-symbols-outlined largeIcon">
-				check_circle
-			</span-->
 		</div>
 		<!-- Keypad to enter daily energy usage -->
 		<div id="numpad-container">
