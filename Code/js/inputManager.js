@@ -26,7 +26,7 @@ function loadSavedInputs()
   let usage = LocalDataManager.getUsage().usage;
   let panelInfo = LocalDataManager.getPanelInfo();
 
-  if(typeof(document.getElementById("update-usage")) != 'undefined' && !isNaN(usage))
+  if(typeof(document.getElementById("current")) != 'undefined' && document.getElementById("current") != null && !isNaN(usage))
   {
     document.getElementById("current").innerHTML = 
     `
@@ -39,7 +39,7 @@ function loadSavedInputs()
     </p>
     `
   }
-  else if(typeof(document.getElementById("update-usage")) != 'undefined')
+  else if(typeof(document.getElementById("update-usage")) != 'undefined' && document.getElementById("current") != null)
   {
     document.getElementById("current").innerHTML = 
     `
@@ -53,7 +53,7 @@ function loadSavedInputs()
     `
   }
 
-  if(typeof(document.getElementById("update-area")) != 'undefined')
+  if(typeof(document.getElementById("update-area")) != 'undefined' && document.getElementById("update-area") != null)
   {
     if(!isNaN(panelInfo.area) && panelInfo.area > 0)
     {
