@@ -9,9 +9,23 @@ function myFunction() {
 }
 
 
-function addNumber(element) {
-  document.getElementById("update-input").value = document.getElementById("update-input").value+element.value;
+function addNumber(element) 
+{
+  let selectedElement = document.getElementsByClassName("selected");
+  selectedElement = selectedElement[0];
+  selectedElement.value = selectedElement.value+element.value;
 }
+
+function switchSelection(elementName)
+{
+  let currentSelectedElement = document.getElementsByClassName("selected");
+  currentSelectedElement[0].classList.remove("selected");
+  
+  let newElement = document.getElementById(elementName);
+  newElement.classList.add("selected");
+}
+
+
 
 function reset() {
   document.getElementById("usage").value.clear;
@@ -21,4 +35,25 @@ function updateUsage()
 {
   let usage = parseFloat(document.getElementById("update-input").value);
   LocalDataManager.setUsage(usage);
+}
+
+function updateArea()
+{
+  let area = parseFloat(document.getElementById("update-area").value);
+  LocalDataManager.setArea(area);
+  switchSelection("update-angle");
+}
+
+function updateAngle()
+{
+  let angle = parseFloat(document.getElementById("update-angle").value);
+  LocalDataManager.setAngle(angle);
+  switchSelection("update-direction");
+}
+
+function updateDirection()
+{
+  let direction = parseFloat(document.getElementById("update-direction").value);
+  LocalDataManager.setDirection(direction);
+  //redirect to next page
 }

@@ -64,6 +64,24 @@ class LocalDataManager
         return LocalDataManager.getPanelInfo();
     }
 
+    static setArea(area)
+    {
+        localStorage.setItem("area", area + " ");
+        return LocalDataManager.getPanelInfo();
+    }
+
+    static setAngle(angle)
+    {
+        localStorage.setItem("angle", angle + " ");
+        return LocalDataManager.getPanelInfo();
+    }
+
+    static setDirection(direction)
+    {
+        localStorage.setItem("direction", direction + " ");
+        return LocalDataManager.getPanelInfo();
+    }
+
     //given a stored solar array, get the array information
     static getPanelInfo()
     {

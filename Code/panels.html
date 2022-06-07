@@ -14,6 +14,7 @@
 	<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,700,0,0" />
 	<!-- Opens/Closes Burger Menu -->
 	<script src="test.js" defer></script>
+	<script src="./js/LocalDataManager.js" defer></script>
 	<!-- Styling -->
 	<link rel="stylesheet" href="test.css">
 	<meta name = "viewport" content = "width=device-width, initial-scale=1.0">
@@ -41,55 +42,46 @@
 <main>
 	<div class="main">
 		<div id="update-usage">
-			<h3>Update</h3>
+			<h3>Area</h3>
 			<div id="update">
 				<form>
-					<input id="update-input" type="text" placeholder="00.0">
+					<input class="update-input selected" id="update-area" type="text" placeholder="00.0">
 				<p>
-					kWh
-				<span class="material-symbols-outlined">
-					bolt
-				</span>
+					m^2
 				</p>
 			</div>
 			<!-- img id = "battery-icon" src = "battery-icon.jpg" alt = "battery icon" -->
-			<input type="button" class="numpad-update material-symbols-outlined largeIcon" value=check_circle id="numpad-update" onClick=updateUsage()>
+			<input type="button" class="numpad-update material-symbols-outlined largeIcon" value=check_circle id="numpad-update" onClick=updateArea()>
 			<!--span class="material-symbols-outlined largeIcon">
 				check_circle
 			</span-->
 		</div>
 		<div id="update-usage">
-			<h3>Update</h3>
+			<h3>Angle</h3>
 			<div id="update">
 				<form>
-					<input id="update-input" type="text" placeholder="00.0">
+					<input class="update-input" id="update-angle" type="text" placeholder="00.0">
 				<p>
-					kWh
-				<span class="material-symbols-outlined">
-					bolt
-				</span>
+					degrees
 				</p>
 			</div>
 			<!-- img id = "battery-icon" src = "battery-icon.jpg" alt = "battery icon" -->
-			<input type="button" class="numpad-update material-symbols-outlined largeIcon" value=check_circle id="numpad-update" onClick=updateUsage()>
+			<input type="button" class="numpad-update material-symbols-outlined largeIcon" value=check_circle id="numpad-update" onClick=updateAngle()>
 			<!--span class="material-symbols-outlined largeIcon">
 				check_circle
 			</span-->
 		</div>
 		<div id="update-usage">
-			<h3>Update</h3>
+			<h3>Direction</h3>
 			<div id="update">
 				<form>
-					<input id="update-input" type="text" placeholder="00.0">
+					<input class="update-input" id="update-direction" type="text" placeholder="00.0">
 				<p>
-					kWh
-				<span class="material-symbols-outlined">
-					bolt
-				</span>
+					degrees
 				</p>
 			</div>
 			<!-- img id = "battery-icon" src = "battery-icon.jpg" alt = "battery icon" -->
-			<input type="button" class="numpad-update material-symbols-outlined largeIcon" value=check_circle id="numpad-update" onClick=updateUsage()>
+			<input type="button" class="numpad-update material-symbols-outlined largeIcon" value=check_circle id="numpad-update" onClick=updateDirection()>
 			<!--span class="material-symbols-outlined largeIcon">
 				check_circle
 			</span-->
