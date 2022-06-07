@@ -39,50 +39,92 @@
 </div>
 
 <main>
-<div class="main">
-	<h1><var>Name of Selected Area</var></h1>
-	<!-- Scrollable menu of days -->
-	<div id="hours-container">
-    <div id="hours-list">
-        <div class="hour"><a href="daily.html" onclick="myFunction()">9:00</a></div>
-        <div class="hour"><a href="daily.html" onclick="myFunction()">10:00</a></div>
-        <div class="hour"><a href="daily.html" onclick="myFunction()">11:00</a></div>
-        <div class="hour"><a href="daily.html" onclick="myFunction()">12:00</a></div>
-        <div class="hour"><a href="daily.html" onclick="myFunction()">13:00</a></div>
-        <div class="hour"><a href="daily.html" onclick="myFunction()">14:00</a></div>
-        <div class="hour"><a href="daily.html" onclick="myFunction()">15:00</a></div>
-        <div class="hour"><a href="daily.html" onclick="myFunction()">16:00</a></div>
-        <div class="hour"><a href="daily.html" onclick="myFunction()">17:00</a></div>
-        <div class="hour"><a href="daily.html" onclick="myFunction()">18:00</a></div>
-        <div class="hour"><a href="daily.html" onclick="myFunction()">19:00</a></div>
-        <div class="hour"><a href="daily.html" onclick="myFunction()">20:00</a></div>
-    </div>
-</div>
-</div>
-<div id="energy-container">
-	<div id="solar-energy">
-		<h2>Solar Energy</h2>
-		<!-- Insert variable (or output) for solar energy here -->
-		<var>solar energy generated here</var><p>kWh</p>
-		<img id = "solar-energy-arrow" src = "arrow.jpg" alt = "energy indicator arrow">
-		<img id = "solar-panel-icon" src = "solar-panel-icon.jpg" alt = "solar panel icon">
+	<div class="main">
+		<h2><var>Name of Selected Area</var></h2>
+		<!-- Scrollable menu of hours -->
+		<div id="days-container">
+		<div id="days-list">
+			<div class="day"><a href="hourly.html" onclick="myFunction()"><var>9:00</var></a></div>
+			<div class="day"><a href="hourly.html" onclick="myFunction()"><var>10:00</var></a></div>
+			<div class="day"><a href="hourly.html" onclick="myFunction()"><var>11:00</var></a></div>
+			<div class="day"><a href="hourly.html" onclick="myFunction()"><var>12:00</var></a></div>
+			<div class="day"><a href="hourly.html" onclick="myFunction()"><var>13:00</var></a></div>
+			<div class="day"><a href="hourly.html" onclick="myFunction()"><var>14:00</var></a></div>
+			<div class="day"><a href="hourly.html" onclick="myFunction()"><var>15:00</var></a></div>
+			<div class="day"><a href="hourly.html" onclick="myFunction()"><var>16:00</var></a></div>
+			<div class="day"><a href="hourly.html" onclick="myFunction()"><var>17:00</var></a></div>
+			<div class="day"><a href="hourly.html" onclick="myFunction()"><var>18:00</var></a></div>
+			<div class="day"><a href="hourly.html" onclick="myFunction()"><var>19:00</var></a></div>
+			<div class="day"><a href="hourly.html" onclick="myFunction()"><var>20:00</var></a></div>
+		</div>
 	</div>
-	<div id="daily-usage">
-		<h2>Daily Usage</h2>
-		<!-- Insert variable for daily usage here -->
-		<var>daily energy usage here</var><p>kWh</p>
-		<img id = "usage-energy-arrow" src = "arrow.jpg" alt = "energy indicator arrow">
-		<img id = "battery-icon" src = "battery-icon.jpg" alt = "battery icon">
 	</div>
-	<div id="surplus-deficit">
-		<h2>Surplus Deficit</h2>
-		<!-- Insert variable for surplus energy here -->
-		<var>surplus energy here</var><p>kWh</p>
-		<img id = "surplus-energy-arrow" src = "arrow.jpg" alt = "energy indicator arrow">
-		<img id = "energy-icon" src = "energy-icon.jpg" alt = "energy icon">
+	<div id="energy-container">
+		<div id="solar-energy">
+			<h3>Solar Energy</h3>
+			<!-- Insert variable (or output) for solar energy here -->
+			<div id="power">
+				<var>20.7</var>
+				<p>
+				kWh
+				<span class="material-symbols-outlined">
+					bolt
+				</span>
+				</p>
+			</div>
+			<span class="material-symbols-outlined">
+				arrow_drop_up
+			</span>
+			<!--img id = "solar-energy-arrow" src = "arrow.jpg" alt = "energy indicator arrow"-->
+			<span class="material-symbols-outlined largeIcon">
+				solar_power
+			</span>
+			<!--img id = "solar-panel-icon" src = "solar-panel-icon.jpg" alt = "solar panel icon"-->
+		</div>
+		<div id="daily-usage">
+			<h3>Daily Usage</h3>
+			<!-- Insert variable for daily usage here -->
+			<div id="usage">
+				<var>21.5</var>
+				<p>
+				kWh
+				<span class="material-symbols-outlined">
+					bolt
+				</span>
+				</p>
+			</div>
+			<!--img id = "usage-energy-arrow" src = "arrow.jpg" alt = "energy indicator arrow"-->
+			<span class="material-symbols-outlined">
+				arrow_drop_up
+			</span>
+			<!--img id = "battery-icon" src = "battery-icon.jpg" alt = "battery icon"-->
+			<span class="material-symbols-outlined largeIcon">
+				battery_horiz_050
+			</span>
+		</div>
+		<div id="surplus-deficit">
+			<h3>Surplus Deficit</h3>
+			<!-- Insert variable for surplus energy here -->
+			<div id="surplus">
+				<var>0.8</var>
+				<p>
+				kWh
+				<span class="material-symbols-outlined">
+					bolt
+				</span>
+				</p>
+			</div>
+			<!--img id = "surplus-energy-arrow" src = "arrow.jpg" alt = "energy indicator arrow"-->
+			<span class="material-symbols-outlined">
+				arrow_drop_up
+			</span>
+			<!--img id = "energy-icon" src = "energy-icon.jpg" alt = "energy icon"-->
+			<span class="material-symbols-outlined largeIcon">
+				bolt
+			</span>
+		</div>
 	</div>
-</div>
-</main>
+	</main>
 
 <footer>
 	<div>
