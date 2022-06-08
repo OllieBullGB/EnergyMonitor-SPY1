@@ -1,30 +1,38 @@
 /* Colour palette */
 :root {
   --main-green: 4, 71, 28;
+  --main-green-blue: 4, 71, 28;
   --main-blue: 4, 71, 72;
+  --main-blue-white: 4, 71, 72;
   --main-white: 255, 255, 255;
   
   --bg-white: 255, 255, 255;
+  --bg-white-blue: 255, 255, 255;
   --bg-blue: 4, 71, 72;
   --bg-med-blue: 204, 218, 219;
   --bg-light-blue: 229, 236, 237;
   --bg-lightest-blue: 242, 245, 246;
  
+  --border-white: 255, 255, 255;
   --border-blue: 4,71,72;
   --border-light-blue: 229, 236, 237;
 }
 
 [data-theme="dark"] {
   --main-green: 255, 255, 255;
+  --main-green-blue: 4, 71, 72;
   --main-blue: 4, 71, 72;
+  --main-blue-white: 255, 255, 255;
   --main-white: 255, 255, 255;
   
   --bg-white: 25,25,25;
+  --bg-white-blue: 4, 71, 72;
   --bg-blue: 4, 71, 72;
   --bg-med-blue: 204, 218, 219;
   --bg-light-blue: 229, 236, 237;
   --bg-lightest-blue: 242, 245, 246;
  
+  --border-white: 255, 255, 255;
   --border-blue: 4,71,72;
   --border-light-blue: 229, 236, 237;
 }
@@ -337,12 +345,18 @@ var {
 }
 
 .faq-list p, .contact-list p {
-	color: rgba(var(--main-blue), 1);
+	color: rgba(var(--main-blue-white), 1);
 	padding: 2% 0 0 0;
+}
+
+.faq-list h3, .contact-list h3 {
+	color: rgba(var(--main-green-blue), 1);
 }
 
 .contact-link a {
 	font-size: 6vw;
+	color: rgba(var(--main-green-blue), 1);
+
 }
 
 .selected {
@@ -390,7 +404,7 @@ ul#locations {
 }
 
 ul#locations li {
- border: 0.5vw solid rgba(var(--bg-white), 1);
+ border: 0.5vw solid rgba(var(--border-white), 1);
  background-color: rgba(var(--bg-blue), 1);
  border-radius: 50%;
  height: 4%;
@@ -414,14 +428,14 @@ ul#locations a{
 }
 
 #Weipa label, #Wenlock label, #Coen label, #Lakefield label, #Cairns label, #Kowanyama label {
-	color: rgba(var(--main-blue), 1);
+	color: rgba(var(--main-blue-white), 1);
 	position: absolute;
 	white-space: nowrap;
 	top: -180%;
 	left: -30%;
 	border: none;
 	border-radius: 1vw;
-	background-color: rgba(var(--bg-white), 1);
+	background-color: rgba(var(--bg-white-blue), 1);
 	font-size: 5vw;
 	margin: 1vw;
 	padding: 20%;
@@ -466,6 +480,7 @@ ul#locations a{
 	font-size: 5vw;
 		
 }
+
 
 .theme-switch input {
   position: absolute;
