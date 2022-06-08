@@ -5,15 +5,6 @@ function addNumber(element)
   selectedElement.value = selectedElement.value+element.value;
 }
 
-function switchSelection(elementName)
-{
-  let currentSelectedElement = document.getElementsByClassName("selected");
-  currentSelectedElement[0].classList.remove("selected");
-  
-  let newElement = document.getElementById(elementName);
-  newElement.classList.add("selected");
-}
-
 function resetInput() 
 {
   let elements = document.getElementsByClassName("selected");
@@ -79,26 +70,46 @@ function updateUsage()
   window.location.href="panels.html";
 }
 
+function switchSelection()
+{
+  let currentSelectedElement = document.getElementsByClassName("selected");
+  if (currentSelectedElement[0] == document.getElementById("update-area"))
+  {
+    currentSelectedElement[0].classList.remove("selected");
+    let newElement = document.getElementById("update-angle");
+    newElement.classList.add("selected");
+    updateArea();
+  }
+  else if (currentSelectedElement[0] == document.getElementById("update-angle"))
+  {
+    currentSelectedElement[0].classList.remove("selected");
+    let newElement = document.getElementById("update-direction");
+    newElement.classList.add("selected");
+    updateAngle();
+  }
+  else
+  {
+    updateDirection();
+  }
+}
+
 function updateArea()
 {
   let area = parseFloat(document.getElementById("update-area").value);
   LocalDataManager.setArea(area);
-  switchSelection("update-angle");
-  loadSavedInputs();
 }
 
 function updateAngle()
 {
   let angle = parseFloat(document.getElementById("update-angle").value);
   LocalDataManager.setAngle(angle);
-  switchSelection("update-direction");
-  loadSavedInputs();
 }
 
 function updateDirection()
 {
   let direction = parseFloat(document.getElementById("update-direction").value);
   LocalDataManager.setDirection(direction);
+  loadSavedInputs();
   window.location.href="daily.html";
 }
 
