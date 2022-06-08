@@ -145,13 +145,17 @@ function totalsRenderer(power, usage, surplus)
 function containerRenderer(timeStr, link, weatherIconName, container)
 {
     let hourContainer = document.createElement("div");
+    hourContainer.onclick = () => 
+    {
+        window.location.href=link;
+    }
     hourContainer.classList.add("day");
     hourContainer.innerHTML = 
     `
-    <a href='${link}' onclick="myFunction()">
+    <a href='${link}'>
         <var>${timeStr}</var>
     </a>
-	<a href=#icon>
+	<a>
 		<span class="material-symbols-outlined weatherIcon">
 			${weatherIconName}
 		</span>
@@ -161,29 +165,3 @@ function containerRenderer(timeStr, link, weatherIconName, container)
     container.appendChild(hourContainer);
 }
 
-const slider = document.getElementById("days-list");
-const now = new Date();
-//Render for daily view;
-
-
-for(i=0; i<5; i++)
-{
-    let then = new Date(now.getTime() + (i * 86400000));
-    let dd = String(then.getDate()).padStart(2, '0');
-    let mm = String(then.getMonth() + 1).padStart(2, '0');
-    let thenDate = dd + "/" + mm;
-    containerRenderer(thenDate, '', slider);
-}
-
-
-/* 
-//Render for hourly view
-for(i=0; i<24; i++)
-{
-    let then = new Date(1654470000000 + (i * 3600000));
-    let hh = String(then.getHours()).padStart(2, '0');
-    let mm = String(then.getMinutes()).padStart(2, '0');
-    let thenDate = hh + ":" + mm;
-    containerRenderer(thenDate, '', slider);
-}
-*/
