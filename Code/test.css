@@ -58,12 +58,12 @@ h3 {
 }
 
 a {
-  color: rgba(var(--main-green), 1);
+  /*color: rgba(var(--main-green), 1);*/
   padding: 5%;
   text-decoration: none;
   font-size: 5vw;
   display: block;
-  z-index: 1;
+  color: inherit;
 }
 
 
@@ -83,7 +83,6 @@ a {
 
 /* Style the hamburger menu */
 .topnav a.icon {
-  background: rgba(var(--main-white), 1);
   color: rgba(var(--main-green), 1);
   display: block;
   position: absolute;
@@ -93,13 +92,13 @@ a {
 }
 
 /* Add a grey background color on mouse-over */
-#numpad-container .numpad-digit:hover, .help-links a:hover, .contact-link a:hover {
+#numpad-container .numpad-digit:hover, .help-links a:hover, .contact-link a:hover, #myLinks a:hover {
   background-color: rgba(var(--main-blue), 1);
   color: rgba(var(--main-white), 1);
 }
 
 /* Add a grey background color on mouse-over */
-.topnav a:hover {
+.topnav span:hover {
   background-color: rgba(var(--main-blue), 1);
   color: rgba(var(--main-white), 1);
   padding: 5%;
@@ -146,7 +145,7 @@ small {
 }
 
 p {
- color: rgba(var(--main-green), 1);
+ /*color: rgba(var(--main-green), 1);*/
  margin: 0px 0px;
  padding: 0px;
  margin-block-start: 0;
@@ -422,7 +421,7 @@ ul#locations a{
 }
 
 .dark-mode {
-	background-color: rgba(var(--main-green), 1);
+	background-color: rgba(var(--main-black), 1);
 	color: rgba(var(--main-white), 1);
 
 }
