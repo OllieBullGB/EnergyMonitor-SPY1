@@ -21,13 +21,13 @@
 	<meta name = "viewport" content = "width=device-width, initial-scale=1.0">
 </head>
 
-<body>
+<body class="myClass">
 <!-- Top Navigation Menu -->
 <div class="topnav-container">
-	<div class="topnav">
+	<div class="topnav myClass">
 	<a><h1>Input your <br> daily usage</h1></a>
 	<!-- Navigation links (hidden by default) -->
-	<div id="myLinks">
+	<div id="myLinks" class="myClass"
 		<a href="home.html">Home</a>
 		<a class="active" href="usage.html">Usage</a>
 		<a href="panels.html">Panels</a>
@@ -37,13 +37,13 @@
 	</div>
 	<!-- "Hamburger menu" / "Bar icon" to toggle the navigation links -->
 	<a href="javascript:void(0);" class="icon" onclick="myFunction()">
-		<span class="material-symbols-outlined mediumIcon">menu</span>
+		<span class="material-symbols-outlined mediumIcon myClass"> menu</span>
 	</a>
 	</div>
 </div>
 
 <main>
-<div class="main">
+<div class="main myClass">
 	<div id="usage-container">
 		<div id="current-usage">
 			<h3>Current</h3>
@@ -74,7 +74,7 @@
 				</p>
 			</div>
 			<!-- img id = "battery-icon" src = "battery-icon.jpg" alt = "battery icon" -->
-			<input type="button" class="numpad-update material-symbols-outlined largeIcon" value=check_circle id="numpad-update" onClick=updateUsage()>
+			<input type="button" class="numpad-update material-symbols-outlined largeIcon myClass" value=check_circle id="numpad-update" onClick=updateUsage()>
 			<!--span class="material-symbols-outlined largeIcon">
 				check_circle
 			</span-->
@@ -107,10 +107,11 @@
 		</form>
 		</div>
 	</div>
+	<button onclick="toggleDarkMode()">Dark Mode</button>
 </div>
 </main>
 
-<footer>
+<footer class="myClass">
 	<div>
 	<p><small>Copyright ©2022 Group 7</small></p>
 	</div>
