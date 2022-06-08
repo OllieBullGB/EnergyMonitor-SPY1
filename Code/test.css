@@ -366,12 +366,12 @@ ul#locations a{
 	position: relative;
 }
 
-#locA {
+#Weipa {
  top: 33%;
  left: 17%;
 }
 
-#locA label, #locB label, #locC label, #locD label, #locE label, #locF label {
+#Weipa label, #Wenlock label, #Coen label, #Lakefield label, #Cairns label, #Kowanyama label {
 	color: rgba(var(--main-blue), 1);
 	position: absolute;
 	white-space: nowrap;
@@ -385,31 +385,31 @@ ul#locations a{
 	padding: 20%;
 }
  
-#locB {
+#Wenlock {
  top: 40%;
  left: 35%;
 }
  
-#locC {
+#Coen {
  top: 52%;
  left: 41%;
 }
  
-#locD {
+#Lakefield {
  top: 63%;
  left: 66%;
 }
  
-#locE {
+#Cairns {
  top: 88%;
  left: 87%;
 }
 
-#locE label {
-	left: -350%;
+#Cairns label {
+	left: -180%;
 }
 
-#locF {
+#Kowanyama {
  top: 72%;
  left: 17%;
 }
