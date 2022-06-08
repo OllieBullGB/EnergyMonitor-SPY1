@@ -1,4 +1,27 @@
-async function fetchSolarData(frequency, latitude, longitude, area, angle, direction)
+/* clear sky, few clouds, scattered clouds/broken clouds, shower rain/rain, thunderstorm, snow, mist*/
+const weatherIcons = 
+{
+    "01d": "sunny",
+    "01n": "sunny",
+    "02d": "partly_cloudy_day",
+    "02n": "partly_cloudy_day",
+    "03d": "cloudy",
+    "03n": "cloudy",
+    "04d": "cloudy",
+    "04n": "cloudy",
+    "09d": "rainy",
+    "09n": "rainy",
+    "10d": "rainy",
+    "10n": "rainy",
+    "11d": "thunderstorm",
+    "11n": "thunderstorm",
+    "13d": "snowing",
+    "13n": "snowing",
+    "50d": "foggy",
+    "50n": "foggy"
+};
+
+async function fetchSolarData(day, latitude, longitude, area, angle, direction)
 {
     const res = fetch("/api/solar",
     {
@@ -11,7 +34,7 @@ async function fetchSolarData(frequency, latitude, longitude, area, angle, direc
         },
         body: JSON.stringify
         ({
-            frequency: `${frequency}`, //H for hourly, D for daily
+            day: `${day}`, //leave blank for 5DayForecast, put mm/dd/yy for hourly forecast
             lat: `${latitude}`, //degrees
             long: `${longitude}`, //degrees
             area: `${area}`, //m^2
@@ -28,7 +51,7 @@ function dailySolarData(renderFunction, container, selectedDate)
     let panelInfo = LocalDataManager.getPanelInfo();
     let usage = LocalDataManager.getUsage();
 
-    let data = fetchSolarData("D", position.latitude, position.longitude, panelInfo.area, panelInfo.angle, panelInfo.direction);
+    let data = fetchSolarData(position.latitude, position.longitude, panelInfo.area, panelInfo.angle, panelInfo.direction);
 
     let solarInput = 0;
     let surplus = 0;
@@ -38,8 +61,10 @@ function dailySolarData(renderFunction, container, selectedDate)
         let currentDate = new Date(datapoint.dateTime);
         let dd = String(currentDate.getDate()).padStart(2, '0');
         let mm = String(currentDate.getMonth() + 1).padStart(2, '0');
+        let yy = String(currentDate.getFullYear()).padStart(2, '0');
         let dateFormat = dd + "/" + mm;
-        containerRenderer(dateFormat, datapoint.icon, container);
+        let link = 'hourly.html?date="dd/mm/yy"';
+        containerRenderer(dateFormat, link, datapoint.weatherIcon, container);
 
         if(currentDate.getTime() == selectedDate.getTime())
         {
@@ -51,13 +76,13 @@ function dailySolarData(renderFunction, container, selectedDate)
     totalsRenderer(solarInput, usage, surplus)
 }
 
-function hourlySolarData(renderFunction, container, selectedHour)
+function hourlySolarData(day, renderFunction, container, selectedHour)
 {
     let position = LocalDataManager.getLocation();
     let panelInfo = LocalDataManager.getPanelInfo();
     let usage = LocalDataManager.getUsage();
 
-    let data = fetchSolarData("H", position.latitude, position.longitude, panelInfo.area, panelInfo.angle, panelInfo.direction);
+    let data = fetchSolarData(day, position.latitude, position.longitude, panelInfo.area, panelInfo.angle, panelInfo.direction);
 
     let solarInput = 0;
     let surplus = 0;
@@ -68,7 +93,8 @@ function hourlySolarData(renderFunction, container, selectedHour)
         let hh = String(currentDate.getHours()).padStart(2, '0');
         let mm = String(currentDate.getMinutes()).padStart(2, '0');
         let dateFormat = hh + ":" + mm;
-        containerRenderer(dateFormat, datapoint.icon, container);
+        let link = 'daily.html';
+        containerRenderer(dateFormat, link, datapoint.icon, container);
 
         if(currentDate.getTime() == selectedHour.getTime())
         {
@@ -116,18 +142,18 @@ function totalsRenderer(power, usage, surplus)
     `;
 }
 
-function containerRenderer(timeStr, weatherIconName, container)
+function containerRenderer(timeStr, link, weatherIconName, container)
 {
     let hourContainer = document.createElement("div");
     hourContainer.classList.add("day");
     hourContainer.innerHTML = 
     `
-    <a href='hourly.html?date="${timeStr}"' onclick="myFunction()">
+    <a href='${link}' onclick="myFunction()">
         <var>${timeStr}</var>
     </a>
-	<a href=#icon onclick]"myFunction()">
+	<a href=#icon>
 		<span class="material-symbols-outlined weatherIcon">
-			sunny
+			${weatherIconName}
 		</span>
 	</a>
     `;
