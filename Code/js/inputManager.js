@@ -76,7 +76,7 @@ function updateUsage()
 {
   let usage = parseFloat(document.getElementById("usage-update").value);
   LocalDataManager.setUsage(usage);
-  loadSavedInputs();
+  window.location.href="panels.html";
 }
 
 function updateArea()
