@@ -1,13 +1,16 @@
+const WeatherAtTime = require('./WeatherAtTime');
+const fetch = require('node-fetch');
+
 class OpenWeather 
 {
     weatherPoints;
 
-    constructor(latitude, longitude, apiKey)
+    constructor(latitude, longitude, apiKey, store)
     {
         this.latitude = latitude;
         this.longitude = longitude;
         this.apiKey = apiKey;
-        this.APIResponse = this.init();
+        this.APIResponse = this.init(store);
         this.weatherPoints = [];
         this.APIResponse.list.forEach(item => 
         {
@@ -21,18 +24,18 @@ class OpenWeather
         this.weatherPoints = weatherPoints;
     }
 
-    init()
+    init(store)
     {
-        let data;
         let url = `https://api.openweathermap.org/data/2.5/forecast?lat=${this.latitude}&lon=${this.longitude}&appid=${this.apiKey}`;
         const response = fetch(url)
         .then(res => res.json())
         .then(data => 
         {
-            localStorage.setItem("d", JSON.stringify(data));
+            store.setState(data);
         })
         .catch(err => console.log(err));
-        return JSON.parse(localStorage.getItem("d"));
+        let data = store.state;
+        return data;
     }
 
     getHourlyWeather(day) 
@@ -54,5 +57,6 @@ class OpenWeather
     }
 }
 
+module.exports = OpenWeather;
 
 
