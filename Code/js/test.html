@@ -1,19 +1,41 @@
-<!DOCTYPE html>
+<!DOCTYPE html Access-Control-Allow-Origin: *>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="LocalDataManager.js"></script>
-    <script src="SolarData.js"></script>
-    <script src="contact.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Maven+Pro:wght@400;500&display=swap" rel="stylesheet">
+	
+	<!-- Google Icons -->
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,700,0,0" />
+
+	<!-- Styling -->
+	<link rel="stylesheet" href="../test.css">
+	<meta name = "viewport" content = "width=device-width, initial-scale=1.0">
+
+
+    <script src="LocalDataManager.js" defer></script>
+    <script src="contact.js" defer></script>
+    <script src="WeatherAtTime.js" ></script>
+    <script src="OpenWeather.js" ></script>
     <title>JS Testing Ground</title>
 </head>
+<body>
+    <div class="main">
+        <h2><var>Name of Selected Area</var></h2>
+        <!-- Scrollable menu of days -->
+        <div id="days-container">
+            <div id="days-list">
+            </div>
+        </div>
+    </div>
+</body>
 <script>
-    LocalDataManager.setLocation(10.6891, 142.5316);
-    console.table(LocalDataManager.getLocation());
+    let o = new OpenWeather(10.6891, 142.5316, "c35428e96cf1836d8d2d58f7eaf046eb");
+    
 
-    LocalDataManager.setPanelInfo(10, 45, 180);
-    console.table(LocalDataManager.getPanelInfo());
+    
 </script>
 </html>
