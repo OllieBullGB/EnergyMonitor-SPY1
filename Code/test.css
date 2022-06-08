@@ -305,7 +305,9 @@ var {
 	font-size: 6vw;
 }
 
-
+.selected {
+	border: 0.8vw solid rgba(var(--main-blue), 1);
+}
 
 .form-section {
 	display: flex;
