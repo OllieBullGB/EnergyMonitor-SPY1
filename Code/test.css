@@ -41,7 +41,11 @@ h3 {
 .topnav-container {
 	position: relative;
 	width: 100%;
-	padding-bottom: 25%;
+}
+
+.container{
+	position: relative;
+	padding-top: 30%;
 }
 
 /* Style the navigation menu */
@@ -111,6 +115,11 @@ a {
   color: rgba(var(--main-white), 1);
   padding: 5%;
 }
+
+.topnav h1:hover {
+	background-color: rgba(var(--main-blue), 1);
+	color: rgba(var(--main-white), 1);
+  }
 
 #numpad-container .numpad-digit:active {
 background-color: rgba(var(--main-blue), 0.2);
