@@ -12,6 +12,11 @@
 	
 	<!-- Burger Menu Icon -->
 	<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,700,0,0" />
+	
+	<script src="./js/LocalDataManager.js" defer></script>
+	<script src="./js/solarData.js" defer></script>
+	<script src="./js/hourlyViewLoader.js" defer></script>
+
 	<!-- Opens/Closes Burger Menu -->
 	<script src="test.js" defer></script>
 	<!-- Styling -->
@@ -24,7 +29,7 @@
 		<!-- Top Navigation Menu -->
 		<div class="topnav view-nav">
 		<a><h1>Hourly View</h1></a>
-		<h2><var>Name of Selected Area</var></h2>
+		<h2 id="city-name"><var>Name of Selected Area</var></h2>
 		<!-- Navigation links (hidden by default) -->
 		<div id="myLinks">
 			<a href="home.html">Home</a>
@@ -59,18 +64,7 @@
 		<!-- Scrollable menu of hours -->
 		<div id="days-container">
 			<div id="days-list">
-				<div class="day"><a href="hourly.html" onclick="myFunction()"><var>9:00</var></a></div>
-				<div class="day"><a href="hourly.html" onclick="myFunction()"><var>10:00</var></a></div>
-				<div class="day"><a href="hourly.html" onclick="myFunction()"><var>11:00</var></a></div>
-				<div class="day"><a href="hourly.html" onclick="myFunction()"><var>12:00</var></a></div>
-				<div class="day"><a href="hourly.html" onclick="myFunction()"><var>13:00</var></a></div>
-				<div class="day"><a href="hourly.html" onclick="myFunction()"><var>14:00</var></a></div>
-				<div class="day"><a href="hourly.html" onclick="myFunction()"><var>15:00</var></a></div>
-				<div class="day"><a href="hourly.html" onclick="myFunction()"><var>16:00</var></a></div>
-				<div class="day"><a href="hourly.html" onclick="myFunction()"><var>17:00</var></a></div>
-				<div class="day"><a href="hourly.html" onclick="myFunction()"><var>18:00</var></a></div>
-				<div class="day"><a href="hourly.html" onclick="myFunction()"><var>19:00</var></a></div>
-				<div class="day"><a href="hourly.html" onclick="myFunction()"><var>20:00</var></a></div>
+				
 			</div>
 		</div>
 		<div id="energy-container">
