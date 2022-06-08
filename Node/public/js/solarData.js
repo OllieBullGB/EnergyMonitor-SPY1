@@ -21,12 +21,11 @@ const weatherIcons =
     "50n": "foggy"
 };
 
-async function fetchSolarData(day, latitude, longitude, area, angle, direction)
+function fetchSolarData(day, latitude, longitude, area, angle, direction)
 {
-    const res = fetch("/api/solar",
+    const res = fetch("http://localhost:25565/api/solar",
     {
         method: "post",
-        cache: "force-cache",
         headers: 
         {
             "Content-Type": "application/json",
@@ -41,69 +40,14 @@ async function fetchSolarData(day, latitude, longitude, area, angle, direction)
             angle: `${angle}`, //deg from ground parallel
             direction: `${direction}` //deg from north
         })
-    });
-    return res.json();
-}
-
-function dailySolarData(renderFunction, container, selectedDate)
-{
-    let position = LocalDataManager.getLocation();
-    let panelInfo = LocalDataManager.getPanelInfo();
-    let usage = LocalDataManager.getUsage();
-
-    let data = fetchSolarData(position.latitude, position.longitude, panelInfo.area, panelInfo.angle, panelInfo.direction);
-
-    let solarInput = 0;
-    let surplus = 0;
-
-    data.forEach(datapoint =>
-    {
-        let currentDate = new Date(datapoint.dateTime);
-        let dd = String(currentDate.getDate()).padStart(2, '0');
-        let mm = String(currentDate.getMonth() + 1).padStart(2, '0');
-        let yy = String(currentDate.getFullYear()).padStart(2, '0');
-        let dateFormat = dd + "/" + mm;
-        let link = 'hourly.html?date="dd/mm/yy"';
-        containerRenderer(dateFormat, link, datapoint.weatherIcon, container);
-
-        if(currentDate.getTime() == selectedDate.getTime())
-        {
-            solarInput = datapoint.power;
-        }
     })
-
-    surplus = solarInput - usage;
-    totalsRenderer(solarInput, usage, surplus)
-}
-
-function hourlySolarData(day, renderFunction, container, selectedHour)
-{
-    let position = LocalDataManager.getLocation();
-    let panelInfo = LocalDataManager.getPanelInfo();
-    let usage = LocalDataManager.getUsage();
-
-    let data = fetchSolarData(day, position.latitude, position.longitude, panelInfo.area, panelInfo.angle, panelInfo.direction);
-
-    let solarInput = 0;
-    let surplus = 0;
-
-    data.forEach(datapoint =>
+    .then(res => res.json())
+    .then(data => 
     {
-        let currentDate = new Date(datapoint.dateTime);
-        let hh = String(currentDate.getHours()).padStart(2, '0');
-        let mm = String(currentDate.getMinutes()).padStart(2, '0');
-        let dateFormat = hh + ":" + mm;
-        let link = 'daily.html';
-        containerRenderer(dateFormat, link, datapoint.icon, container);
-
-        if(currentDate.getTime() == selectedHour.getTime())
-        {
-            solarInput = datapoint.power;
-        }
+        localStorage.setItem("d", JSON.stringify(data));
     })
-
-    surplus = solarInput - usage;
-    totalsRenderer(solarInput, usage, surplus);
+    .catch(err => console.log(err));
+    return JSON.parse(localStorage.getItem("d"));
 }
 
 function totalsRenderer(power, usage, surplus)

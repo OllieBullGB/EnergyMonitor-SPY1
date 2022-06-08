@@ -16,16 +16,36 @@ console.log(time);
 const position = LocalDataManager.getLocation();
 const panelInfo = LocalDataManager.getPanelInfo();
 
-//Render for hourly view
-for(i=0; i<24; i++)
+function hourlySolarData(day, renderFunction, container, selectedHour)
 {
-    let then = new Date(1654470000000 + (i * 3600000));
-    let dd = String(then.getDate()).padStart(2, '0');
-    let mm = String(then.getMonth() + 1).padStart(2, '0');
-    let yy = String(then.getFullYear().toString().substring(2,4));
-    let hour = String(then.getHours()).padStart(2, '0');
-    let min = String(then.getMinutes()).padStart(2, '0');
-    let thenTime = hour + ":" + min ;
-    let link = `hourly.html?day="${mm}/${dd}/${yy}"&time="${hour}:${min}`;
-    containerRenderer(thenTime, link, 'partly_cloudy_day', slider);
+    let position = LocalDataManager.getLocation();
+    let panelInfo = LocalDataManager.getPanelInfo();
+    let usage = LocalDataManager.getUsage();
+
+    let data = fetchSolarData(day, position.latitude, position.longitude, panelInfo.area, panelInfo.angle, panelInfo.direction);
+
+    let solarInput = 0;
+    let surplus = 0;
+
+    data.forEach(datapoint =>
+    {
+        let date = new Date(dataPoint.dateTime * 1000);
+        let targetDate = new Date(selectedDate);
+        targetDate = new Date(targetDate.getTime() + 86400000);
+        let icon = weatherIcons[dataPoint.weatherIcon];
+        let dd = String(date.getDate()).padStart(2, '0');
+        let mm = String(date.getMonth() + 1).padStart(2, '0');
+        let yy = String(date.getFullYear().toString().substring(2,4));
+        let dateStr = dd + "/" + mm ;
+        let link = `daily.html?day="${mm}/${dd}/${yy}"`;
+
+        if(date.toISOString().slice(0, 10) == targetDate.toISOString().slice(0, 10))
+        {
+            solarInput = Math.round((dataPoint.power + Number.EPSILON) * 100 * 24) / 100;
+            link = `hourly.html?day="${mm}/${dd}/${yy}"`;
+        }
+    })
+
+    surplus = solarInput - usage;
+    totalsRenderer(solarInput, usage, surplus);
 }
