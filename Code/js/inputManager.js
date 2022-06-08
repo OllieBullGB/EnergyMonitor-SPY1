@@ -101,3 +101,10 @@ function updateDirection()
   LocalDataManager.setDirection(direction);
   window.location.href="daily.html";
 }
+
+function inputLocation(latitude, longitude, cityName)
+{
+  LocalDataManager.setLocation(latitude, longitude);
+  LocalDataManager.setCity(cityName);
+  location.replace("usage.html");
+}
