@@ -20,7 +20,7 @@ class DailyAverager
             this.solarArrayModel.setTemperature(weatherPoint.getTemp());
 
             let power = this.solarArrayModel.getRealisticPower();
-            if(power < 0) power = 0;
+            if(power < 0) power = -power;
 
             let currentDay = new Date(weatherPoint.dateTime * 1000).toISOString().slice(0, 10);
             if(output[0] === undefined)

@@ -21,11 +21,15 @@ class HourlyAverager
 
             let weatherPointOutput = 
             {
-                "dateTime": `${weatherPoint.dateTime}`,
+                "dateTime": weatherPoint.dateTime,
                 "weatherType": `${weatherPoint.weatherName}`,
                 "weatherIcon": `${weatherPoint.weatherIcon}`,
-                "power": `${power}`
+                "power": power
             };
+            output.push(weatherPointOutput);
+            weatherPointOutput.dateTime = parseInt(weatherPointOutput.dateTime) + 3600;
+            output.push(weatherPointOutput);
+            weatherPointOutput.dateTime = parseInt(weatherPointOutput.dateTime) + 3600;
             output.push(weatherPointOutput);
         })
         return output;
