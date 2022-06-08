@@ -335,3 +335,77 @@ var {
 #message {
 	resize: none;
 }
+
+ul#locations {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	
+}
+
+ul#locations li {
+ border: 1vw solid rgba(var(--main-white), 1);
+ background-color: rgba(var(--main-blue), 1);
+ border-radius: 50%;
+ height: 4%;
+ width: 6%;
+ position: absolute;
+ color: rgba(var(--main-white), 1);
+}
+
+ul#locations a{
+	height: 100%;
+	width: 100%;
+}
+
+.map {
+	position: relative;
+}
+
+#locA {
+ top: 33%;
+ left: 17%;
+}
+
+#locA label, #locB label, #locC label, #locD label, #locE label, #locF label {
+	color: rgba(var(--main-blue), 1);
+	position: absolute;
+	white-space: nowrap;
+	top: -180%;
+	left: -30%;
+	border: none;
+	border-radius: 1vw;
+	background-color: rgba(var(--main-white), 1);
+	font-size: 5vw;
+	margin: 1vw;
+	padding: 20%;
+}
+ 
+#locB {
+ top: 40%;
+ left: 35%;
+}
+ 
+#locC {
+ top: 52%;
+ left: 41%;
+}
+ 
+#locD {
+ top: 63%;
+ left: 66%;
+}
+ 
+#locE {
+ top: 88%;
+ left: 87%;
+}
+
+#locE label {
+	left: -350%;
+}
+
+#locF {
+ top: 71%;
+ left: 17%;
+}
