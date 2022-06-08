@@ -27,6 +27,7 @@
 <div class="topnav-container">
 	<div class="topnav view-nav">
 		<a><h1>Daily View</h1></a>
+		<h2><var>Name of Selected Area</var></h2>
 		<!-- Navigation links (hidden by default) -->
 		<div id="myLinks">
 			<a href="home.html">Home</a>
@@ -45,92 +46,92 @@
 
 <main>
 <div class="main">
-	<h2><var>Name of Selected Area</var></h2>
-	<!-- Scrollable menu of days -->
-	<div id="days-container">
-    <div id="days-list">
-		<!--
-        <div class="day"><a href="hourly.html" onclick="myFunction()"><var>day1</var></a></div>
-		<div class="day"><a href="hourly.html" onclick="myFunction()"><var>day2</var></a></div>
-        <div class="day"><a href="hourly.html" onclick="myFunction()"><var>day3</var></a></div>
-        <div class="day"><a href="hourly.html" onclick="myFunction()"><var>day4</var></a></div>
-        <div class="day"><a href="hourly.html" onclick="myFunction()"><var>day5</var></a></div>
-        <div class="day"><a href="hourly.html" onclick="myFunction()"><var>day6</var></a></div>
-        <div class="day"><a href="hourly.html" onclick="myFunction()"><var>day7</var></a></div>
-        <div class="day"><a href="hourly.html" onclick="myFunction()"><var>day8</var></a></div>
-        <div class="day"><a href="hourly.html" onclick="myFunction()"><var>day9</var></a></div>
-        <div class="day"><a href="hourly.html" onclick="myFunction()"><var>day10</var></a></div>
-        <div class="day"><a href="hourly.html" onclick="myFunction()"><var>day11</var></a></div>
-        <div class="day"><a href="hourly.html" onclick="myFunction()"><var>day12</var></a></div>
-		-->
-    </div>
-</div>
-</div>
-<div id="energy-container">
-	<div id="solar-energy">
-		<h3>Solar Energy</h3>
-		<!-- Insert variable (or output) for solar energy here -->
-		<div id="power">
-			<var>20.7</var>
-			<p>
-			kWh
-			<span class="material-symbols-outlined">
-				bolt
-			</span>
-			</p>
+	<div class="container">
+		<!-- Scrollable menu of days -->
+		<div id="days-container">
+			<div id="days-list">
+				<!--
+				<div class="day"><a href="hourly.html" onclick="myFunction()"><var>day1</var></a></div>
+				<div class="day"><a href="hourly.html" onclick="myFunction()"><var>day2</var></a></div>
+				<div class="day"><a href="hourly.html" onclick="myFunction()"><var>day3</var></a></div>
+				<div class="day"><a href="hourly.html" onclick="myFunction()"><var>day4</var></a></div>
+				<div class="day"><a href="hourly.html" onclick="myFunction()"><var>day5</var></a></div>
+				<div class="day"><a href="hourly.html" onclick="myFunction()"><var>day6</var></a></div>
+				<div class="day"><a href="hourly.html" onclick="myFunction()"><var>day7</var></a></div>
+				<div class="day"><a href="hourly.html" onclick="myFunction()"><var>day8</var></a></div>
+				<div class="day"><a href="hourly.html" onclick="myFunction()"><var>day9</var></a></div>
+				<div class="day"><a href="hourly.html" onclick="myFunction()"><var>day10</var></a></div>
+				<div class="day"><a href="hourly.html" onclick="myFunction()"><var>day11</var></a></div>
+				<div class="day"><a href="hourly.html" onclick="myFunction()"><var>day12</var></a></div>
+				-->
+			</div>
 		</div>
-		<span class="material-symbols-outlined">
-			arrow_drop_up
-		</span>
-		<!--img id = "solar-energy-arrow" src = "arrow.jpg" alt = "energy indicator arrow"-->
-		<span class="material-symbols-outlined largeIcon">
-			solar_power
-		</span>
-		<!--img id = "solar-panel-icon" src = "solar-panel-icon.jpg" alt = "solar panel icon"-->
-	</div>
-	<div id="daily-usage">
-		<h3>Daily Usage</h3>
-		<!-- Insert variable for daily usage here -->
-		<div id="usage">
-			<var>21.5</var>
-			<p>
-			kWh
-			<span class="material-symbols-outlined">
-				bolt
-			</span>
-			</p>
+		<div id="energy-container">
+			<div id="solar-energy">
+				<h3>Solar Energy</h3>
+				<!-- Insert variable (or output) for solar energy here -->
+				<div id="power">
+					<var>20.7</var>
+					<p>
+					kWh
+					<span class="material-symbols-outlined">
+						bolt
+					</span>
+					</p>
+				</div>
+				<span class="material-symbols-outlined">
+					arrow_drop_up
+				</span>
+				<!--img id = "solar-energy-arrow" src = "arrow.jpg" alt = "energy indicator arrow"-->
+				<span class="material-symbols-outlined largeIcon">
+					solar_power
+				</span>
+				<!--img id = "solar-panel-icon" src = "solar-panel-icon.jpg" alt = "solar panel icon"-->
+			</div>
+			<div id="daily-usage">
+				<h3>Daily Usage</h3>
+				<!-- Insert variable for daily usage here -->
+				<div id="usage">
+					<var>21.5</var>
+					<p>
+					kWh
+					<span class="material-symbols-outlined">
+						bolt
+					</span>
+					</p>
+				</div>
+				<!--img id = "usage-energy-arrow" src = "arrow.jpg" alt = "energy indicator arrow"-->
+				<span class="material-symbols-outlined">
+					arrow_drop_up
+				</span>
+				<!--img id = "battery-icon" src = "battery-icon.jpg" alt = "battery icon"-->
+				<span class="material-symbols-outlined largeIcon">
+					battery_horiz_050
+				</span>
+			</div>
+			<div id="surplus-deficit">
+				<h3>Surplus Deficit</h3>
+				<!-- Insert variable for surplus energy here -->
+				<div id="surplus">
+					<var>0.8</var>
+					<p>
+					kWh
+					<span class="material-symbols-outlined">
+						bolt
+					</span>
+					</p>
+				</div>
+				<!--img id = "surplus-energy-arrow" src = "arrow.jpg" alt = "energy indicator arrow"-->
+				<span class="material-symbols-outlined">
+					arrow_drop_up
+				</span>
+				<!--img id = "energy-icon" src = "energy-icon.jpg" alt = "energy icon"-->
+				<span class="material-symbols-outlined largeIcon">
+					bolt
+				</span>
+			</div>
 		</div>
-		<!--img id = "usage-energy-arrow" src = "arrow.jpg" alt = "energy indicator arrow"-->
-		<span class="material-symbols-outlined">
-			arrow_drop_up
-		</span>
-		<!--img id = "battery-icon" src = "battery-icon.jpg" alt = "battery icon"-->
-		<span class="material-symbols-outlined largeIcon">
-			battery_horiz_050
-		</span>
 	</div>
-	<div id="surplus-deficit">
-		<h3>Surplus Deficit</h3>
-		<!-- Insert variable for surplus energy here -->
-		<div id="surplus">
-			<var>0.8</var>
-			<p>
-			kWh
-			<span class="material-symbols-outlined">
-				bolt
-			</span>
-			</p>
-		</div>
-		<!--img id = "surplus-energy-arrow" src = "arrow.jpg" alt = "energy indicator arrow"-->
-		<span class="material-symbols-outlined">
-			arrow_drop_up
-		</span>
-		<!--img id = "energy-icon" src = "energy-icon.jpg" alt = "energy icon"-->
-		<span class="material-symbols-outlined largeIcon">
-			bolt
-		</span>
-	</div>
-</div>
 </main>
 
 <footer>
