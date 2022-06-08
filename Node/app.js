@@ -20,6 +20,9 @@ app.disable('x-powered-by');
 //Requests without extensions will be treated as ".html"
 app.use(express.static('public',{extensions:['html']}))
 
+// Use json to parse request bodies
+app.use(express.json());
+
 //Add API routes
 const routes = require('./routes');
 routes(app);
