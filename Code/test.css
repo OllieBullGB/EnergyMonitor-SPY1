@@ -12,6 +12,8 @@ html {
 
 body {
 	margin: 2% 2% 10% 2%;
+	background-color: rgba(var(--main-white), 1);
+	color: rgba(var(--main-green), 1);
 }
 
 /* Header sizes */
@@ -414,4 +416,10 @@ ul#locations a{
 #Kowanyama {
  top: 72%;
  left: 17%;
+}
+
+.dark-mode {
+	background-color: rgba(var(--main-green), 1);
+	color: rgba(var(--main-white), 1);
+
 }
