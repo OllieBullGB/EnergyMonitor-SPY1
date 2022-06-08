@@ -125,13 +125,14 @@ class IntensityCalculator
     getHourAngle()
     {
         let timezone = 10;
-        let LSTM = 15 * timezone;
+        let LSTM = IntensityCalculator.degToRad(15 * timezone);
 
         let B = (360/365) * (this.daysSinceYearStart - 81);
         let equation = [9.87 * Math.sin(2*B), -7.53 * Math.cos(B), -1.5 * Math.sin(B)];
         let EoT = equation[0] + equation[1] + equation[2];
 
-        let TC = 4 * (this.longitude - LSTM) + EoT;
+        let TC = IntensityCalculator.radToDeg(4 * (IntensityCalculator.degToRad(this.longitude) - LSTM) + EoT);
+
         let LST = this.hoursSinceDayStart + (TC / 60);
 
         let HRA = 15 * (LST - 12);
@@ -142,12 +143,12 @@ class IntensityCalculator
     {
         let declination = IntensityCalculator.degToRad(this.getDeclination());
         let rLatitude = IntensityCalculator.degToRad(this.latitude);
-        let hourAngle = IntensityCalculator.degToRad(this.getHourAngleEstimate());
+        let hourAngle = IntensityCalculator.degToRad(this.getHourAngle());
 
         let sinElevation = Math.sin(declination) * Math.sin(rLatitude) + Math.cos(declination) * Math.cos(rLatitude) * Math.cos(hourAngle);
         let elevation = Math.asin(sinElevation);
 
-        return IntensityCalculator.radToDeg(elevation);
+        return Math.abs(IntensityCalculator.radToDeg(elevation));
     }
 
     getZenith()
@@ -159,14 +160,14 @@ class IntensityCalculator
     {
         let declination = IntensityCalculator.degToRad(this.getDeclination());
         let zenith = IntensityCalculator.degToRad(this.getZenith());
-        let hourAngle = IntensityCalculator.degToRad(this.getHourAngleEstimate());
+        let hourAngle = IntensityCalculator.degToRad(this.getHourAngle());
 
         let numerator = -Math.sin(hourAngle) * Math.cos(declination);
         let denominator = Math.sin(zenith);
 
         let azimuth = IntensityCalculator.radToDeg(numerator / denominator);
         
-        if(this.getHourAngleEstimate() > 0)
+        if(this.getHourAngle() > 0)
         {
             return 360 - Math.abs(azimuth);
         }
