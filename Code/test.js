@@ -11,11 +11,34 @@ function myFunction() {
 /* clear sky, few clouds, scattered clouds/broken clouds, shower rain/rain, thunderstorm, snow, mist*/
 const weatherIcons = ["sunny", "partly_cloudy_day", "cloudy", "rainy", "thunderstorm", "snowing", "foggy" ];
 
-let els = document.getElementsByClassName("myClass");
 
-function toggleDarkMode() {	
-   Array.from(els).forEach(element => element.classList.toggle("dark-mode"));
+
+
+const toggleSwitch = document.querySelector('.theme-switch input[type="checkbox"]');
+
+function switchTheme(e) {
+    if (e.target.checked) {
+        document.documentElement.setAttribute('data-theme', 'dark');
+		localStorage.setItem('theme', 'dark'); //add this
+    }
+    else {
+        document.documentElement.setAttribute('data-theme', 'light');
+		localStorage.setItem('theme', 'light'); //add this
+    }    
 }
 
+if(toggleSwitch) {
+toggleSwitch.addEventListener('change', switchTheme, false);
+}
 
+const currentTheme = localStorage.getItem('theme') ? localStorage.getItem('theme') : null;
 
+if (currentTheme) {
+    document.documentElement.setAttribute('data-theme', currentTheme);
+
+    if (currentTheme === 'dark') {
+		if(toggleSwitch) {
+			toggleSwitch.checked = true;
+		}
+    }
+}

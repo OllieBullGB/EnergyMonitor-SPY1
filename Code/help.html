@@ -19,40 +19,52 @@
 	<meta name = "viewport" content = "width=device-width, initial-scale=1.0">
 </head>
 
-<body class="myClass">
+<body>
 	<div class="topnav-container">
 		<!-- Top Navigation Menu -->
-		<div class="topnav myClass">
+		<div class="topnav">
 		<a><h1>Help</h1></a>
 		<!-- Navigation links (hidden by default) -->
-		<div id="myLinks" class="myClass">
+		<div id="myLinks">
 			<a href="home.html">Home</a>
 			<a href="usage.html">Usage</a>
 			<a href="panels.html">Panels</a>
 			<a href="daily.html">Today</a>
 			<a href="hourly.html">Hourly</a>
 			<a class="active" href="help.html">Help</a>
+			
+			<div>
+				<label class="theme-switch" for="checkbox">
+					<div id="dark_mode">
+						Dark Mode
+						<span class="material-symbols-outlined mediumIcon">
+							dark_mode
+						</span>
+					</div>	
+				<input type="checkbox" id="checkbox">
+				</label>
+			</div>
+			
 		</div>
 		<!-- "Hamburger menu" / "Bar icon" to toggle the navigation links -->
-		<a href="javascript:void(0);" class="icon myClass" onclick="myFunction()">
-			<span class="material-symbols-outlined mediumIcon myClass">menu</span>
+		<a href="javascript:void(0);" class="icon" onclick="myFunction()">
+			<span class="material-symbols-outlined mediumIcon">menu</span>
 		</a>
 		</div>
 	</div>
 
 <main>
 	<div class="container">
-		<div class="main help-links myClass">
+		<div class="main help-links">
 			<!-- removed <p></p>-->
 			<a href = "faq.html">FAQ</a>
 			<a href = "support.html">Support</a>
 			<a href = "contact.html">Contact</a>
-			<button onclick="toggleDarkMode()">Dark Mode</button>
 		</div>
 	</div>
 </main>
 
-<footer class = "myClass">
+<footer>
 	<div>
 	<p><small>Copyright ©2022 Group 7</small></p>
 	</div>
