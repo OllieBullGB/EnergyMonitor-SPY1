@@ -7,7 +7,12 @@ class OpenWeather
         this.latitude = latitude;
         this.longitude = longitude;
         this.apiKey = apiKey;
-        this.weatherPoints = this.init();
+        this.weatherPoints = init(this);
+    }
+
+    setWeatherPoints(weatherPoints)
+    {
+        this.weatherPoints = weatherPoints;
     }
 
     async init()
@@ -42,3 +47,21 @@ class OpenWeather
         return this.weatherPoints;
     }
 }
+
+async function init(openWeatherObj)
+{
+    let data;
+    let url = `https://api.openweathermap.org/data/2.5/forecast?lat=${openWeatherObj.latitude}&lon=${openWeatherObj.longitude}&appid=${openWeatherObj.apiKey}`;
+    const response = fetch(url)
+    .then(res => res.json())
+    .then(data => 
+    {
+        localStorage.setItem("d", JSON.stringify(data));
+        console.table(data);
+        return data;
+    })
+    .catch(err => console.log(err));
+    return JSON.parse(localStorage.getItem("d"));
+}
+
+
