@@ -104,16 +104,6 @@ a {
 background-color: rgba(var(--main-blue), 0.2);
 }
 
-
-#submit-container {
-	height: auto;
-	width: auto;
-	position: relative;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-  }
-
 .numpad-update:active {
 	opacity: 0.2;
 }
