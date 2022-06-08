@@ -8,4 +8,5 @@ function myFunction() {
   }
 }
 
-
+/* clear sky, few clouds, scattered clouds/broken clouds, shower rain/rain, thunderstorm, snow, mist*/
+const weatherIcons = ["sunny", "partly_cloudy_day", "cloudy", "rainy", "thunderstorm", "snowing", "foggy" ];
