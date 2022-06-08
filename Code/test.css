@@ -12,6 +12,8 @@ html {
 
 body {
 	margin: 2% 2% 10% 2%;
+	background-color: rgba(var(--main-white), 1);
+	color: rgba(var(--main-green), 1);
 }
 
 /* Header sizes */
@@ -29,18 +31,30 @@ h2 {
 	margin: 0;
 }
 h3 {
-	color: rgba(var(--main-green), 1);
+	/*color: rgba(var(--main-green), 1);*/
 	font-size: 6vw;
 	text-align: left;
 	font-weight: normal;
 	margin: 0;
 }
 
+.topnav-container {
+	position: relative;
+	width: 100%;
+}
+
+.container{
+	position: relative;
+	padding-top: 30%;
+}
+
 /* Style the navigation menu */
 .topnav {
   overflow: hidden;
   background-color: rgba(var(--main-white), 1);
-  position: relative;
+  position: absolute;
+  z-index: 2;
+  width: 100%;
 }
 
 /* Hide the links inside the navigation menu (except for logo/home) */
@@ -54,11 +68,13 @@ h3 {
 }
 
 a {
-  color: rgba(var(--main-green), 1);
+  /*color: rgba(var(--main-green), 1);*/
   padding: 5%;
   text-decoration: none;
   font-size: 5vw;
   display: block;
+  color: inherit;
+  z-index: 1;
 }
 
 
@@ -78,7 +94,7 @@ a {
 
 /* Style the hamburger menu */
 .topnav a.icon {
-  background: rgba(var(--main-white), 1);
+  /*background: rgba(var(--main-white), 1);*/
   color: rgba(var(--main-green), 1);
   display: block;
   position: absolute;
@@ -88,14 +104,29 @@ a {
 }
 
 /* Add a grey background color on mouse-over */
-.topnav a:hover, #numpad-container .numpad-digit:hover, .help-links a:hover, .contact-link a:hover {
+#numpad-container .numpad-digit:hover, .help-links a:hover, .contact-link a:hover, #myLinks a:hover {
+  background-color: rgba(var(--main-blue), 1);
+  color: rgba(var(--main-white), 1);
+}
+
+/* Add a grey background color on mouse-over */
+.topnav span:hover {
   background-color: rgba(var(--main-blue), 1);
   color: rgba(var(--main-white), 1);
   padding: 5%;
 }
 
+.topnav h1:hover {
+	background-color: rgba(var(--main-blue), 1);
+	color: rgba(var(--main-white), 1);
+  }
+
 #numpad-container .numpad-digit:active {
 background-color: rgba(var(--main-blue), 0.2);
+}
+
+.numpad-update:active {
+	opacity: 0.2;
 }
 
 /* Style the active link (or home/logo) */
@@ -131,7 +162,7 @@ small {
 }
 
 p {
- color: rgba(var(--main-green), 1);
+ /*color: rgba(var(--main-green), 1);*/
  margin: 0px 0px;
  padding: 0px;
  margin-block-start: 0;
@@ -210,7 +241,7 @@ p {
 	align-items: center;
 	padding: 0;
 	font-size: 10vw;
-	color: rgba(var(--main-green), 1);
+	/*color: rgba(var(--main-green), 1);*/
 	width: 25%;
 }
 
@@ -220,7 +251,7 @@ p {
 	align-items: flex-start;
 	padding: 0;
 	font-size: 10vw;
-	color: rgba(var(--main-green), 1);
+	/*color: rgba(var(--main-green), 1);*/
 	width: 25%;
 }
 
@@ -234,7 +265,9 @@ p {
 
 .largeIcon {
 	font-size: 20vw;
-	color: rgba(var(--main-green), 1);
+	/*color: rgba(var(--main-green), 1);*/
+	color: inherit;
+
 }
 
 .mediumIcon {
@@ -295,7 +328,9 @@ var {
 	font-size: 6vw;
 }
 
-
+.selected {
+	border: 0.8vw solid rgba(var(--main-blue), 1);
+}
 
 .form-section {
 	display: flex;
@@ -338,7 +373,7 @@ ul#locations {
 }
 
 ul#locations li {
- border: 1vw solid rgba(var(--main-white), 1);
+ border: 0.5vw solid rgba(var(--main-white), 1);
  background-color: rgba(var(--main-blue), 1);
  border-radius: 50%;
  height: 4%;
@@ -356,12 +391,12 @@ ul#locations a{
 	position: relative;
 }
 
-#locA {
+#Weipa {
  top: 33%;
  left: 17%;
 }
 
-#locA label, #locB label, #locC label, #locD label, #locE label, #locF label {
+#Weipa label, #Wenlock label, #Coen label, #Lakefield label, #Cairns label, #Kowanyama label {
 	color: rgba(var(--main-blue), 1);
 	position: absolute;
 	white-space: nowrap;
@@ -375,31 +410,36 @@ ul#locations a{
 	padding: 20%;
 }
  
-#locB {
- top: 40%;
- left: 35%;
+#Wenlock {
+ top: 41%;
+ left: 36%;
 }
  
-#locC {
+#Coen {
  top: 52%;
- left: 41%;
+ left: 43%;
 }
  
-#locD {
- top: 63%;
- left: 66%;
+#Lakefield {
+ top: 64%;
+ left: 67%;
 }
  
-#locE {
+#Cairns {
  top: 88%;
- left: 87%;
+ left: 88%;
 }
 
-#locE label {
-	left: -350%;
+#Cairns label {
+	left: -180%;
 }
 
-#locF {
+#Kowanyama {
  top: 72%;
  left: 17%;
+}
+
+.dark-mode {
+	background-color: rgba(25,25,25, 1);
+	color: rgba(var(--main-white), 1);
 }

@@ -3,7 +3,6 @@ async function fetchSolarData(frequency, latitude, longitude, area, angle, direc
     const res = fetch("/api/solar",
     {
         method: "post",
-        mode: "no-cors",
         cache: "force-cache",
         headers: 
         {

@@ -23,104 +23,102 @@
 
 <body>
 <!-- Top Navigation Menu -->
-<div class="topnav">
-	<a><h1>Input your<br>panel details</h1></a>
-  <!-- Navigation links (hidden by default) -->
-  <div id="myLinks">
-    <a href="home.html">Home</a>
-	<a href="usage.html">Usage</a>
-	<a class="active" href="panels.html">Panels</a>
-	<a href="daily.html">Today</a>
-	<a href="hourly.html">Hourly</a>
-    <a href="help.html">Help</a>
-  </div>
-  <!-- "Hamburger menu" / "Bar icon" to toggle the navigation links -->
-  <a href="javascript:void(0);" class="icon" onclick="myFunction()">
-	<span class="material-symbols-outlined mediumIcon">menu</span>
-  </a>
-</div>
+	<div class="topnav-container">
+		<div class="topnav">
+			<a><h1>Input your<br>panel details</h1></a>
+		<!-- Navigation links (hidden by default) -->
+		<div id="myLinks">
+			<a href="home.html">Home</a>
+			<a href="usage.html">Usage</a>
+			<a class="active" href="panels.html">Panels</a>
+			<a href="daily.html">Today</a>
+			<a href="hourly.html">Hourly</a>
+			<a href="help.html">Help</a>
+		</div>
+		<!-- "Hamburger menu" / "Bar icon" to toggle the navigation links -->
+		<a href="javascript:void(0);" class="icon" onclick="myFunction()">
+			<span class="material-symbols-outlined mediumIcon">menu</span>
+		</a>
+		</div>
+	</div>
+
 
 <main>
 	<div class="main">
-		<div id="area">
-			<div id="update-usage">
-				<h3>Area</h3>
-				<div id="update">
-					<form>
-						<input class="update-input selected" id="update-area" type="text" placeholder="00.0">
-					<p>
-						&#13217;
-					</p>
+		<div class="container">
+			<div id="area">
+				<div id="update-usage">
+					<h3>Area</h3>
+					<div id="update">
+						<form>
+							<input class="update-input selected" id="update-area" type="text" placeholder="00.0">
+						<p>
+							&#13217;
+						</p>
+					</div>
+					<span class="material-symbols-outlined largeIcon">
+						image_aspect_ratio
+					</span>
+
 				</div>
-				<!-- img id = "battery-icon" src = "battery-icon.jpg" alt = "battery icon" -->
-				<input type="button" class="numpad-update material-symbols-outlined largeIcon" value=check_circle id="numpad-update" onClick=updateArea()>
-				<!--span class="material-symbols-outlined largeIcon">
-					check_circle
-				</span-->
 			</div>
-		</div>
-		<div id="angle">
-			<div id="update-usage">
-				<h3>Angle</h3>
-				<div id="update">
-					<form>
-						<input class="update-input" id="update-angle" type="text" placeholder="00.0">
-					<p>
-						&#176;
-					</p>
+			<div id="angle">
+				<div id="update-usage">
+					<h3>Angle</h3>
+					<div id="update">
+						<form>
+							<input class="update-input" id="update-angle" type="text" placeholder="00.0">
+						<p>
+							&#176;
+						</p>
+					</div>
+						<span class="material-symbols-outlined largeIcon">
+							square_foot
+						</span>			
+						
+					</div>
+			</div>
+			<div id="direction">
+				<div id="update-usage">
+				<h3>Direction</h3>
+					<div id="update">
+						<form>
+							<input class="update-input" id="update-direction" type="text" placeholder="00.0">
+						<p>
+							&#176;
+						</p>
+					</div>
+					<input type="button" class="numpad-update material-symbols-outlined largeIcon" value=check_circle id="numpad-update" onClick=switchSelection()>
 				</div>
-				<!-- img id = "battery-icon" src = "battery-icon.jpg" alt = "battery icon" -->
-				<input type="button" class="numpad-update material-symbols-outlined largeIcon" value=check_circle id="numpad-update" onClick=updateAngle()>
-				<!--span class="material-symbols-outlined largeIcon">
-					check_circle
-				</span-->
 			</div>
-		</div>
-		<div id="direction">
-			<div id="update-usage">
-			<h3>Direction</h3>
-				<div id="update">
-					<form>
-						<input class="update-input" id="update-direction" type="text" placeholder="00.0">
-					<p>
-						&#176;
-					</p>
+			<!-- Keypad to enter daily energy usage -->
+			<div id="numpad-container">
+					<!--input id="usage" type="text" value=""-->
+					<!--div id="numpad-row1"-->
+					<input type="button" class="numpad-digit" value="1" id="numpad-1" onClick=addNumber(this)>
+					<input type="button" class="numpad-digit" value="2" id="numpad-2" onClick=addNumber(this)>
+					<input type="button" class="numpad-digit" value="3" id="numpad-3" onClick=addNumber(this)>
+					<!--/div-->
+					<!--div id="numpad-row2"-->
+					<input type="button" class="numpad-digit" value="4" id="numpad-4" onClick=addNumber(this)>
+					<input type="button" class="numpad-digit" value="5" id="numpad-5" onClick=addNumber(this)>    
+					<input type="button" class="numpad-digit" value="6" id="numpad-6" onClick=addNumber(this)>
+					<!--/div-->
+					<!--div id="numpad-row3-->
+					<input type="button" class="numpad-digit" value="7" id="numpad-7" onClick=addNumber(this)>
+					<input type="button" class="numpad-digit" value="8" id="numpad-8" onClick=addNumber(this)>
+					<input type="button" class="numpad-digit" value="9" id="numpad-9" onClick=addNumber(this)>
+					<!--/div-->
+					<!--div id="numpad-row4"-->
+					<input type="button" class="numpad-digit" value="." id="numpad-." onClick=addNumber(this)>
+					<input type="button" class="numpad-digit" value="0" id="numpad-0" onClick=addNumber(this)>
+					<input type="button" class="numpad-digit material-symbols-outlined" value=backspace id="numpad-clear" onClick=resetInput()>
+					<!--/div-->
+					<!--input type="button" class="numpad-digit" value="update" id="numpad-update" onClick=updateUsage()-->
+				</form>
 				</div>
-				<!-- img id = "battery-icon" src = "battery-icon.jpg" alt = "battery icon" -->
-				<input type="button" class="numpad-update material-symbols-outlined largeIcon" value=check_circle id="numpad-update" onClick=updateDirection()>
-				<!--span class="material-symbols-outlined largeIcon">
-					check_circle
-				</span-->
 			</div>
 		</div>
-		<!-- Keypad to enter daily energy usage -->
-		<div id="numpad-container">
-				<!--input id="usage" type="text" value=""-->
-				<!--div id="numpad-row1"-->
-				<input type="button" class="numpad-digit" value="1" id="numpad-1" onClick=addNumber(this)>
-				<input type="button" class="numpad-digit" value="2" id="numpad-2" onClick=addNumber(this)>
-				<input type="button" class="numpad-digit" value="3" id="numpad-3" onClick=addNumber(this)>
-				<!--/div-->
-				<!--div id="numpad-row2"-->
-				<input type="button" class="numpad-digit" value="4" id="numpad-4" onClick=addNumber(this)>
-				<input type="button" class="numpad-digit" value="5" id="numpad-5" onClick=addNumber(this)>    
-				<input type="button" class="numpad-digit" value="6" id="numpad-6" onClick=addNumber(this)>
-				<!--/div-->
-				<!--div id="numpad-row3-->
-				<input type="button" class="numpad-digit" value="7" id="numpad-7" onClick=addNumber(this)>
-				<input type="button" class="numpad-digit" value="8" id="numpad-8" onClick=addNumber(this)>
-				<input type="button" class="numpad-digit" value="9" id="numpad-9" onClick=addNumber(this)>
-				<!--/div-->
-				<!--div id="numpad-row4"-->
-				<input type="button" class="numpad-digit" value="." id="numpad-." onClick=addNumber(this)>
-				<input type="button" class="numpad-digit" value="0" id="numpad-0" onClick=addNumber(this)>
-				<input type="button" class="numpad-digit material-symbols-outlined" value=backspace id="numpad-clear" onClick=resetInput()>
-				<!--/div-->
-				<!--input type="button" class="numpad-digit" value="update" id="numpad-update" onClick=updateUsage()-->
-			</form>
-			</div>
-		</div>
-	</div>
 	</main>
 
 <footer>

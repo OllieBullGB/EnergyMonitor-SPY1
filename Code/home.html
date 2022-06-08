@@ -14,64 +14,64 @@
 	<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,700,0,0" />
 	<!-- Opens/Closes Burger Menu -->
 	<script src="test.js" defer></script>
+	
+	<script src="./js/LocalDataManager.js"></script>
+	<script src="./js/inputManager.js"></script>
 	<!-- Styling -->
 	<link rel="stylesheet" href="test.css">
 	<meta name = "viewport" content = "width=device-width, initial-scale=1.0">
 </head>
 
 <body>
-<!-- Top Navigation Menu -->
-<div class="topnav">
-  <a><h1>Select your location</h1></a>
-  <!-- Navigation links (hidden by default) -->
-  <div id="myLinks">
-    <a class="active" href="home.html">Home</a>
-	<a href="usage.html">Usage</a>
-	<a href="panels.html">Panels</a>
-	<a href="daily.html">Today</a>
-	<a href="hourly.html">Hourly</a>
-    <a href="help.html">Help</a>
-  </div>
-  <!-- "Hamburger menu" / "Bar icon" to toggle the navigation links -->
-  <a href="javascript:void(0);" class="icon" onclick="myFunction()">
-	<span class="material-symbols-outlined mediumIcon">menu</span>
-  </a>
-</div>
+	<div class="topnav-container">
+		<!-- Top Navigation Menu -->
+		<div class="topnav">
+		<a><h1>Select your location</h1></a>
+		<!-- Navigation links (hidden by default) -->
+		<div id="myLinks">
+			<a class="active" href="home.html">Home</a>
+			<a href="usage.html">Usage</a>
+			<a href="panels.html">Panels</a>
+			<a href="daily.html">Today</a>
+			<a href="hourly.html">Hourly</a>
+			<a href="help.html">Help</a>
+		</div>
+		<!-- "Hamburger menu" / "Bar icon" to toggle the navigation links -->
+		<a href="javascript:void(0);" class="icon" onclick="myFunction()">
+			<span class="material-symbols-outlined mediumIcon">menu</span>
+		</a>
+		</div>
+	</div>
 
-<div><p>
-	Please select your location to view your details
-</p></div>
-
-<br>
 
 <main>
 <div class="main map">
 
-	<img class="hero" src="map.jpg" alt="map">
+	<img class="hero" src="mapClear.jpg" alt="map">
 	
 	<ul id="locations">
-		<li id="locA">		
-			<label>Location A</label>
+		<li id="Weipa">		
+			<label>Weipa</label>
+			<a onclick="inputLocation(-12.239544192990605, 141.76575727708516, 'Pennefather')"></a>
+		</li>
+		<li id="Wenlock">		
+			<label>Wenlock</label>
+			<a onclick="inputLocation(-13.094726954692797, 142.98822515904797, 'Chuula')"></a>
+		</li>
+		<li id="Coen">		
+			<label>Coen</label>
 			<a href="usage.html"></a>
 		</li>
-		<li id="locB">		
-			<label>Location B</label>
+		<li id="Lakefield">		
+			<label>Lakefield</label>
 			<a href="usage.html"></a>
 		</li>
-		<li id="locC">		
-			<label>Location C</label>
+		<li id="Cairns">		
+			<label>Cairns</label>
 			<a href="usage.html"></a>
 		</li>
-		<li id="locD">		
-			<label>Location D</label>
-			<a href="usage.html"></a>
-		</li>
-		<li id="locE">		
-			<label>Location E</label>
-			<a href="usage.html"></a>
-		</li>
-		<li id="locF">		
-			<label>Location F</label>
+		<li id="Kowanyama">		
+			<label>Kowanyama</label>
 			<a href="usage.html"></a>
 		</li>
 
@@ -87,7 +87,7 @@
 	<p><small>
 		<br>
 		Bushlight has been in contact with communites around Cape York and provided them with access to solar energy.<br>
-
+		We have developed a web application to allow you to view your usage and how much extra energy you have available to use.
 	</small></p>
 </div>
 

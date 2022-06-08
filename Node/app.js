@@ -1,8 +1,14 @@
 //Dependencies
 const IntensityCalculator = require('./models/IntensityCalculator');
 const SolarArrayModel = require('./models/SolarArrayModel');
+const WeatherAtTime = require('./models/WeatherAtTime');
+const OpenWeather = require('./models/OpenWeather');
+
 
 //create an express web server
+const fetch = require('node-fetch');
+const HandyStorage = require('handy-storage');
+const store = new HandyStorage('./store.json');
 const express = require('express');
 const app = express();
 app.set('view engine', 'html')

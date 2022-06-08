@@ -53,3 +53,5 @@ class WeatherAtTime
         return this.cloudCover;
     }
 }
+
+module.exports = WeatherAtTime;
