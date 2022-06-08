@@ -348,7 +348,7 @@ ul#locations {
 }
 
 ul#locations li {
- border: 1vw solid rgba(var(--main-white), 1);
+ border: 0.5vw solid rgba(var(--main-white), 1);
  background-color: rgba(var(--main-blue), 1);
  border-radius: 50%;
  height: 4%;
@@ -386,23 +386,23 @@ ul#locations a{
 }
  
 #Wenlock {
- top: 40%;
- left: 35%;
+ top: 41%;
+ left: 36%;
 }
  
 #Coen {
  top: 52%;
- left: 41%;
+ left: 43%;
 }
  
 #Lakefield {
- top: 63%;
- left: 66%;
+ top: 64%;
+ left: 67%;
 }
  
 #Cairns {
  top: 88%;
- left: 87%;
+ left: 88%;
 }
 
 #Cairns label {
