@@ -1,11 +1,13 @@
 const WeatherAtTime = require('./WeatherAtTime');
 const fetch = require('node-fetch');
+const HandyStorage = require('handy-storage');
+const store = new HandyStorage('./store.json');
 
 class OpenWeather 
 {
     weatherPoints;
 
-    constructor(latitude, longitude, apiKey, store)
+    constructor(latitude, longitude, apiKey)
     {
         this.latitude = latitude;
         this.longitude = longitude;
@@ -44,11 +46,12 @@ class OpenWeather
         let dayWeather = [];
         this.weatherPoints.forEach(element => 
         {
-            if(element.getDay() === day.getDay())
+            if(element.getDate().getUTCDate() === day.getUTCDate() + 1)
             {
                 dayWeather.push(element);
             }
         })
+        return dayWeather;
     }
 
     getFiveDayWeather()
