@@ -116,11 +116,6 @@ a {
   padding: 5%;
 }
 
-.topnav h1:hover {
-	background-color: rgba(var(--main-blue), 1);
-	color: rgba(var(--main-white), 1);
-}
-
 #numpad-container .numpad-digit:active {
 background-color: rgba(var(--main-blue), 0.2);
 }
