@@ -70,6 +70,7 @@ function updateUsage()
   window.location.href="panels.html";
 }
 
+// Whenever the submit button on the panels page is pressed check which input is selected and trigger the appropriate update.
 function switchSelection()
 {
   let currentSelectedElement = document.getElementsByClassName("selected");
