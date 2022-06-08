@@ -23,6 +23,29 @@ class LocalDataManager
         return output;
     }
 
+    static setCity(cityName)
+    {
+        localStorage.setItem('city', cityName);
+        return LocalDataManager.getCity();
+    }
+
+    static getCity(cityName)
+    {
+        let city = localStorage.getItem('citu');
+
+        let output =
+        {
+            "city": city
+        };
+
+        return output;
+    }
+
+    static wipeCity()
+    {
+        localStorage.removeItem('city');
+    }
+
     //Given a latitude and longitude, cache the location
     static setLocation(latitude, longitude)
     {
