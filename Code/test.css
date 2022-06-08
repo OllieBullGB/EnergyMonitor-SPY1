@@ -42,7 +42,9 @@ h3 {
 .topnav {
   overflow: hidden;
   background-color: rgba(var(--main-white), 1);
-  position: relative;
+  position: absolute;
+  width: 100%;
+  z-index: 1;
 }
 
 /* Hide the links inside the navigation menu (except for logo/home) */
@@ -61,6 +63,7 @@ a {
   text-decoration: none;
   font-size: 5vw;
   display: block;
+  z-index: 1;
 }
 
 
