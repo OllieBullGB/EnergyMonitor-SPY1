@@ -104,6 +104,10 @@ a {
 background-color: rgba(var(--main-blue), 0.2);
 }
 
+.numpad-update:active {
+	opacity: 0.2;
+}
+
 /* Style the active link (or home/logo) */
 .active {
   background-color: rgba(var(--main-blue), 1);
