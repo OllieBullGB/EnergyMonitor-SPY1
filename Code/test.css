@@ -88,7 +88,13 @@ a {
 }
 
 /* Add a grey background color on mouse-over */
-.topnav a:hover, #numpad-container .numpad-digit:hover, .help-links a:hover, .contact-link a:hover {
+#numpad-container .numpad-digit:hover, .help-links a:hover, .contact-link a:hover {
+  background-color: rgba(var(--main-blue), 1);
+  color: rgba(var(--main-white), 1);
+}
+
+/* Add a grey background color on mouse-over */
+.topnav a:hover {
   background-color: rgba(var(--main-blue), 1);
   color: rgba(var(--main-white), 1);
   padding: 5%;
