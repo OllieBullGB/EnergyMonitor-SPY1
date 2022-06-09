@@ -34,7 +34,7 @@ function hourlySolarData(day, container, selectedHour)
 {
     let position = LocalDataManager.getLocation();
     let panelInfo = LocalDataManager.getPanelInfo();
-    let usage = LocalDataManager.getUsage().usage;
+    let usage = Math.round(((LocalDataManager.getUsage().usage / 24) + Number.EPSILON) * 100) / 100;;
 
     console.log(day, position.latitude, position.longitude, panelInfo.area, panelInfo.angle, panelInfo.direction);
     let data = fetchSolarData(day, position.latitude, position.longitude, panelInfo.area, panelInfo.angle, panelInfo.direction);
@@ -63,7 +63,7 @@ function hourlySolarData(day, container, selectedHour)
 
         if(date.toISOString().slice(11, 13) === targetDate.toISOString().slice(11, 13))
         {
-            solarInput = Math.round((dataPoint.power + Number.EPSILON) * 100 * 24) / 100;
+            solarInput = Math.round((dataPoint.power + Number.EPSILON) * 100) / 100;
             link = `daily.html`;
             selected = true;
         }

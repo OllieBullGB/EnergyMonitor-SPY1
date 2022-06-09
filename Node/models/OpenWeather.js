@@ -13,12 +13,13 @@ class OpenWeather
         this.longitude = longitude;
         this.apiKey = apiKey;
         this.APIResponse = this.init(store);
+        let list = this.APIResponse.list;
         this.weatherPoints = [];
-        for (var item in this.APIResponse)
+        this.APIResponse.list.forEach(item => 
         {
             let weatherAtTime = new WeatherAtTime(item);
             this.weatherPoints.push(weatherAtTime);
-        };
+        });
     }
 
     setWeatherPoints(weatherPoints)
