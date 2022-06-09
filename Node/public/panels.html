@@ -1,152 +1,154 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
-	<title>Energy Monitor</title>
-	
-	<!-- Google Font Maven Pro -->
-	<link rel="preconnect" href="https://fonts.googleapis.com">
-	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-	<link href="https://fonts.googleapis.com/css2?family=Maven+Pro:wght@400;500&display=swap" rel="stylesheet">
-	
-	
-	<!-- Burger Menu Icon -->
-	<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,700,0,0" />
-	<!-- Opens/Closes Burger Menu -->
-	<script src="./js/LocalDataManager.js" defer></script>
-	<script src="./js/inputManager.js" defer></script>
-	<script src="test.js" defer></script>
-	<!-- Styling -->
-	<link rel="stylesheet" href="/css/test.css">
-	<meta name = "viewport" content = "width=device-width, initial-scale=1.0">
-</head>
+	<head>
+		<title>Energy Monitor</title>
+		
+		<!-- Google Font Maven Pro -->
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Maven+Pro:wght@400;500&display=swap" rel="stylesheet">
+		
 
-<body>
-<!-- Top Navigation Menu -->
-	<div class="topnav-container">
-		<div class="topnav">
-			<a><h1>Input your<br>panel details</h1></a>
-		<!-- Navigation links (hidden by default) -->
-		<div id="myLinks">
-			<a href="home.html">Home</a>
-			<a href="usage.html">Usage</a>
-			<a class="active" href="panels.html">Panels</a>
-			<a href="daily.html">Today</a>
-			<a href="hourly.html">Hourly</a>
-			<a href="help.html">Help</a>
-			
+		<!-- Burger Menu Icon -->
+		<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,700,0,0" />
+		<!-- Opens/Closes Burger Menu -->
+		<script src="./js/LocalDataManager.js" defer></script>
+		<script src="./js/inputManager.js" defer></script>
+		<script src="test.js" defer></script>
+		<!-- Styling -->
+		<link rel="stylesheet" href="/css/test.css">
+		<meta name = "viewport" content = "width=device-width, initial-scale=1.0">
+	</head>
+
+	<body>
+		<div class="topnav-container">
+			<!-- Top Navigation Menu -->
+			<div class="topnav view-nav">
+				<a><h1>Hourly View</h1></a>
+				<h2 id="city-name"><var>Name of Selected Area</var></h2>
+				<!-- Navigation links (hidden by default) -->
+				<div id="myLinks">
+					<a href="home.html">Home</a>
+					<a href="usage.html">Usage</a>
+					<a class="active" href="panels.html">Panels</a>
+					<a href="daily.html">Today</a>
+					<a href="hourly.html">Hourly</a>
+					<a href="help.html">Help</a>
+					
+					<!-- Dark mode swictch -->
+					<div>
+						<label class="theme-switch" for="checkbox">
+							<div id="dark_mode">
+								Dark Mode
+								<span class="material-symbols-outlined mediumIcon">
+									dark_mode
+								</span>
+							</div>	
+							<input type="checkbox" id="checkbox">
+						</label>
+					</div>
+				</div>
+				<!-- "Hamburger menu" / "Bar icon" to toggle the navigation links -->
+				<a href="javascript:void(0);" class="icon" onclick="myFunction()">
+					<span class="material-symbols-outlined mediumIcon">menu</span>
+				</a>
+			</div>
+		</div>
+
+		<main>
+			<div class="main">
+				<div class="container">
+					<!-- Input and update panel area-->
+					<div id="area">
+						<div id="update-usage">
+							<h3>Area</h3>
+							<div id="update">
+								<form>
+									<input class="update-input selected" id="update-area" type="text" placeholder="00.0">
+								<p>
+									&#13217;
+								</p>
+							</div>
+							<span class="material-symbols-outlined largeIcon">
+								image_aspect_ratio
+							</span>
+						</div>
+					</div>
+					<!-- Input and update panel angle-->
+					<div id="angle">
+						<div id="update-usage">
+							<h3>Angle</h3>
+							<div id="update">
+								<form>
+									<input class="update-input" id="update-angle" type="text" placeholder="00.0">
+								<p>
+									&#176;
+								</p>
+							</div>
+							<span class="material-symbols-outlined largeIcon">
+								square_foot
+							</span>		
+						</div>
+					</div>
+					<!-- Input and update panel area-->
+					<div id="direction">
+						<div id="update-usage">
+							<h3>Direction</h3>
+							<div id="update">
+								<form>
+									<input class="update-input" id="update-direction" type="text" placeholder="00.0">
+									<p>
+										&#176;
+									</p>
+								</form>
+							</div>
+							<input type="button" class="numpad-update material-symbols-outlined largeIcon" value=check_circle id="numpad-update" onClick=switchSelection()>
+						</div>
+					</div>
+					<!-- Keypad to enter panel details -->
+					<div id="numpad-container">
+						<!--input id="usage" type="text" value=""-->
+						<!--div id="numpad-row1"-->
+						<input type="button" class="numpad-digit" value="1" id="numpad-1" onClick=addNumber(this)>
+						<input type="button" class="numpad-digit" value="2" id="numpad-2" onClick=addNumber(this)>
+						<input type="button" class="numpad-digit" value="3" id="numpad-3" onClick=addNumber(this)>
+						<!--/div-->
+						<!--div id="numpad-row2"-->
+						<input type="button" class="numpad-digit" value="4" id="numpad-4" onClick=addNumber(this)>
+						<input type="button" class="numpad-digit" value="5" id="numpad-5" onClick=addNumber(this)>    
+						<input type="button" class="numpad-digit" value="6" id="numpad-6" onClick=addNumber(this)>
+						<!--/div-->
+						<!--div id="numpad-row3-->
+						<input type="button" class="numpad-digit" value="7" id="numpad-7" onClick=addNumber(this)>
+						<input type="button" class="numpad-digit" value="8" id="numpad-8" onClick=addNumber(this)>
+						<input type="button" class="numpad-digit" value="9" id="numpad-9" onClick=addNumber(this)>
+						<!--/div-->
+						<!--div id="numpad-row4"-->
+						<input type="button" class="numpad-digit" value="." id="numpad-." onClick=addNumber(this)>
+						<input type="button" class="numpad-digit" value="0" id="numpad-0" onClick=addNumber(this)>
+						<input type="button" class="numpad-digit material-symbols-outlined" value=backspace id="numpad-clear" onClick=resetInput()>
+						<!--/div-->
+						<!--input type="button" class="numpad-digit" value="update" id="numpad-update" onClick=updateUsage()-->
+					</div>
+				</div>
+			</div>
+		</main>
+
+		<footer>
+			<!-- Footer information -->
 			<div>
-				<label class="theme-switch" for="checkbox">
-					<div id="dark_mode">
-						Dark Mode
-						<span class="material-symbols-outlined mediumIcon">
-							dark_mode
-						</span>
-					</div>	
-				<input type="checkbox" id="checkbox">
-				</label>
+				<p><small>Copyright ©2022 Group 7</small></p>
 			</div>
-			
-		</div>
-		<!-- "Hamburger menu" / "Bar icon" to toggle the navigation links -->
-		<a href="javascript:void(0);" class="icon" onclick="myFunction()">
-			<span class="material-symbols-outlined mediumIcon">menu</span>
-		</a>
-		</div>
-	</div>
-
-
-<main>
-	<div class="main">
-		<div class="container">
-			<div id="area">
-				<div id="update-usage">
-					<h3>Area</h3>
-					<div id="update">
-						<form>
-							<input class="update-input selected" id="update-area" type="text" placeholder="00.0">
-						<p>
-							&#13217;
-						</p>
-					</div>
-					<span class="material-symbols-outlined largeIcon">
-						image_aspect_ratio
-					</span>
-
-				</div>
+			<div>
+				<p><small>Contact <a href="mailto:scott.gurney@uea.ac.uk">Group 7</a></small></p>
 			</div>
-			<div id="angle">
-				<div id="update-usage">
-					<h3>Angle</h3>
-					<div id="update">
-						<form>
-							<input class="update-input" id="update-angle" type="text" placeholder="00.0">
-						<p>
-							&#176;
-						</p>
-					</div>
-						<span class="material-symbols-outlined largeIcon">
-							square_foot
-						</span>			
-						
-					</div>
+			<div>
+				<p><small>Terms of use</small></p>
 			</div>
-			<div id="direction">
-				<div id="update-usage">
-				<h3>Direction</h3>
-					<div id="update">
-						<form>
-							<input class="update-input" id="update-direction" type="text" placeholder="00.0">
-						<p>
-							&#176;
-						</p>
-					</div>
-					<input type="button" class="numpad-update material-symbols-outlined largeIcon" value=check_circle id="numpad-update" onClick=switchSelection()>
-				</div>
+			<div>
+				<p><small>Privacy Policy</small></p>
 			</div>
-			<!-- Keypad to enter daily energy usage -->
-			<div id="numpad-container">
-					<!--input id="usage" type="text" value=""-->
-					<!--div id="numpad-row1"-->
-					<input type="button" class="numpad-digit" value="1" id="numpad-1" onClick=addNumber(this)>
-					<input type="button" class="numpad-digit" value="2" id="numpad-2" onClick=addNumber(this)>
-					<input type="button" class="numpad-digit" value="3" id="numpad-3" onClick=addNumber(this)>
-					<!--/div-->
-					<!--div id="numpad-row2"-->
-					<input type="button" class="numpad-digit" value="4" id="numpad-4" onClick=addNumber(this)>
-					<input type="button" class="numpad-digit" value="5" id="numpad-5" onClick=addNumber(this)>    
-					<input type="button" class="numpad-digit" value="6" id="numpad-6" onClick=addNumber(this)>
-					<!--/div-->
-					<!--div id="numpad-row3-->
-					<input type="button" class="numpad-digit" value="7" id="numpad-7" onClick=addNumber(this)>
-					<input type="button" class="numpad-digit" value="8" id="numpad-8" onClick=addNumber(this)>
-					<input type="button" class="numpad-digit" value="9" id="numpad-9" onClick=addNumber(this)>
-					<!--/div-->
-					<!--div id="numpad-row4"-->
-					<input type="button" class="numpad-digit" value="." id="numpad-." onClick=addNumber(this)>
-					<input type="button" class="numpad-digit" value="0" id="numpad-0" onClick=addNumber(this)>
-					<input type="button" class="numpad-digit material-symbols-outlined" value=backspace id="numpad-clear" onClick=resetInput()>
-					<!--/div-->
-					<!--input type="button" class="numpad-digit" value="update" id="numpad-update" onClick=updateUsage()-->
-				</form>
-				</div>
-			</div>
-		</div>
-	</main>
-
-<footer>
-	<div>
-	<p><small>Copyright ©2022 Group 7</small></p>
-	</div>
-	<div>
-	<p><small>Contact <a href="mailto:scott.gurney@uea.ac.uk">Group 7</a></small></p>
-	</div>
-	<div>
-	<p><small>Terms of use</small></p>
-	</div>
-	<div>
-	<p><small>Privacy Policy</small></p>
-	</div>
-</footer>
-</body>
+		</footer>
+	</body>
 </html>
