@@ -17,7 +17,8 @@ class LocalDataManager
         
         let output = 
         {
-            "usage": usage
+            "usage": usage,
+            "hourlyUsage": Math.round((usage + Number.EPSILON) * 100) / 100 //Round to 2 decimal places 
         }
 
         return output;
@@ -29,9 +30,9 @@ class LocalDataManager
         return LocalDataManager.getCity();
     }
 
-    static getCity(cityName)
+    static getCity()
     {
-        let city = localStorage.getItem('citu');
+        let city = localStorage.getItem('city');
 
         let output =
         {

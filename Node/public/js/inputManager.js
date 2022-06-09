@@ -29,6 +29,7 @@ function loadSavedInputs()
       </span>
     </p>
     `
+    document.getElementById("usage-update").value = usage;
   }
   else if(typeof(document.getElementById("update-usage")) != 'undefined' && document.getElementById("current") != null)
   {

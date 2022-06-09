@@ -1,9 +1,41 @@
-/* Colour palette */
+/* || Default colour palette */
 :root {
   --main-green: 4, 71, 28;
+  --main-green-blue: 4, 71, 28;
   --main-blue: 4, 71, 72;
-  --main-black: 0, 0, 0;
+  --main-blue-white: 4, 71, 72;
   --main-white: 255, 255, 255;
+  
+  --bg-white: 255, 255, 255;
+  --bg-white-blue: 255, 255, 255;
+  --bg-blue: 4, 71, 72;
+  --bg-med-blue: 204, 218, 219;
+  --bg-light-blue: 229, 236, 237;
+  --bg-lightest-blue: 242, 245, 246;
+ 
+  --border-white: 255, 255, 255;
+  --border-blue: 4,71,72;
+  --border-light-blue: 229, 236, 237;
+}
+
+/* || Dark theme colour palette */
+[data-theme="dark"] {
+  --main-green: 255, 255, 255;
+  --main-green-blue: 4, 71, 72;
+  --main-blue: 4, 71, 72;
+  --main-blue-white: 255, 255, 255;
+  --main-white: 255, 255, 255;
+  
+  --bg-white: 25,25,25;
+  --bg-white-blue: 4, 71, 72;
+  --bg-blue: 4, 71, 72;
+  --bg-med-blue: 204, 218, 219;
+  --bg-light-blue: 229, 236, 237;
+  --bg-lightest-blue: 242, 245, 246;
+ 
+  --border-white: 255, 255, 255;
+  --border-blue: 4,71,72;
+  --border-light-blue: 229, 236, 237;
 }
 
 html {
@@ -12,7 +44,7 @@ html {
 
 body {
 	margin: 2% 2% 10% 2%;
-	background-color: rgba(var(--main-white), 1);
+	background-color: rgba(var(--bg-white), 1);
 	color: rgba(var(--main-green), 1);
 }
 
@@ -31,7 +63,7 @@ h2 {
 	margin: 0;
 }
 h3 {
-	/*color: rgba(var(--main-green), 1);*/
+	color: rgba(var(--main-green), 1);
 	font-size: 6vw;
 	text-align: left;
 	font-weight: normal;
@@ -51,7 +83,7 @@ h3 {
 /* Style the navigation menu */
 .topnav {
   overflow: hidden;
-  background-color: rgba(var(--main-white), 1);
+  background-color: rgba(var(--bg-white), 1);
   position: absolute;
   z-index: 2;
   width: 100%;
@@ -83,7 +115,7 @@ a {
 }
 
 #myLinks a, .help-links a, .faq-item, .contact-item{
-  border-bottom: 0.5vw solid rgba(var(--main-blue), 1);
+  border-bottom: 0.5vw solid rgba(var(--border-blue), 1);
   padding: 5%;
   font-weight: normal;
 }
@@ -105,24 +137,20 @@ a {
 
 /* Add a grey background color on mouse-over */
 #numpad-container .numpad-digit:hover, .help-links a:hover, .contact-link a:hover, #myLinks a:hover {
-  background-color: rgba(var(--main-blue), 1);
+  background-color: rgba(var(--bg-blue), 1);
   color: rgba(var(--main-white), 1);
 }
 
 /* Add a grey background color on mouse-over */
 .topnav span:hover {
-  background-color: rgba(var(--main-blue), 1);
+  background-color: rgba(var(--bg-blue), 1);
   color: rgba(var(--main-white), 1);
   padding: 5%;
 }
 
-.topnav h1:hover {
-	background-color: rgba(var(--main-blue), 1);
-	color: rgba(var(--main-white), 1);
-  }
-
 #numpad-container .numpad-digit:active {
-background-color: rgba(var(--main-blue), 0.2);
+background-color: rgba(var(--bg-med-blue), 1);
+/*background-color: rgba(var(--bg-blue), 0.2);*/
 }
 
 .numpad-update:active {
@@ -131,7 +159,7 @@ background-color: rgba(var(--main-blue), 0.2);
 
 /* Style the active link (or home/logo) */
 .active {
-  background-color: rgba(var(--main-blue), 1);
+  background-color: rgba(var(--bg-blue), 1);
   color: rgba(var(--main-white), 1);
 }
 
@@ -148,7 +176,7 @@ footer {
 	position: fixed;
 	bottom: 0;
 	width: 96%;
-	background-color: rgba(var(--main-white), 1);
+	background-color: rgba(var(--bg-white), 1);
 }
 
 footer a {
@@ -195,8 +223,8 @@ p {
     line-height:100%;
 	font-size: 4vw;
     text-align:center;
-	background-color: rgba(var(--main-blue), 0.05);
-	border: 2vw solid rgba(var(--main-blue), 0.10);
+	background-color: rgba(var(--bg-lightest-blue), 1);
+	border: 2vw solid rgba(var(--border-light-blue), 1);
     margin-right: 2%;
 }
 
@@ -211,7 +239,7 @@ p {
 }
 
 .day a:hover, .hour:hover {
-  background-color: rgba(var(--main-blue), 1);
+  background-color: rgba(var(--bg-blue), 1);
   color: rgba(var(--main-white), 1);
 }
 
@@ -224,7 +252,7 @@ p {
 }
 
 #energy-container div:last-child, #usage-container div:last-child, #direction, #angle{
-  border-top: 1vw solid rgba(var(--main-blue), 1);
+  border-top: 1vw solid rgba(var(--border-blue), 1);
 }
 
 #solar-energy, #daily-usage, #surplus-deficit, #current-usage, #update-usage {
@@ -241,7 +269,7 @@ p {
 	align-items: center;
 	padding: 0;
 	font-size: 10vw;
-	/*color: rgba(var(--main-green), 1);*/
+	color: rgba(var(--main-green), 1);
 	width: 25%;
 }
 
@@ -251,7 +279,7 @@ p {
 	align-items: flex-start;
 	padding: 0;
 	font-size: 10vw;
-	/*color: rgba(var(--main-green), 1);*/
+	color: rgba(var(--main-green), 1);
 	width: 25%;
 }
 
@@ -265,9 +293,7 @@ p {
 
 .largeIcon {
 	font-size: 20vw;
-	/*color: rgba(var(--main-green), 1);*/
-	color: inherit;
-
+	color: rgba(var(--main-green), 1);
 }
 
 .mediumIcon {
@@ -287,7 +313,7 @@ var {
 	height: 75%;
 	padding: 5%;
 	font-size: 10vw;
-	background-color: rgba(var(--main-blue), 0.1);
+	background-color: rgba(var(--bg-light-blue), 1);
 	border: none;
 	border-radius: 5%;
 	text-align: center;
@@ -305,7 +331,7 @@ var {
 #numpad-container .numpad-digit {
 	width: 30%;
 	font-size: 10vw;
-	background-color: rgba(var(--main-blue), 0.1);
+	background-color: rgba(var(--bg-light-blue), 1);
 	border: none;
 	border-radius: 5%;
 	text-align: center;
@@ -320,16 +346,22 @@ var {
 }
 
 .faq-list p, .contact-list p {
-	color: rgba(var(--main-blue), 1);
+	color: rgba(var(--main-blue-white), 1);
 	padding: 2% 0 0 0;
+}
+
+.faq-list h3, .contact-list h3 {
+	color: rgba(var(--main-green-blue), 1);
 }
 
 .contact-link a {
 	font-size: 6vw;
+	color: rgba(var(--main-green-blue), 1);
+
 }
 
 .selected {
-	border: 0.8vw solid rgba(var(--main-blue), 1);
+	border: 0.8vw solid rgba(var(--border-blue), 1);
 }
 
 .form-section {
@@ -356,7 +388,7 @@ var {
 	padding: 3%;
 	border-radius: 4px;
 	flex-grow: 1;
-	background-color: rgba(var(--main-blue), 0.1);
+	background-color: rgba(var(--bg-light-blue), 1);
 	margin-left: 2%;
 	font-family:inherit
 }
@@ -373,8 +405,8 @@ ul#locations {
 }
 
 ul#locations li {
- border: 0.5vw solid rgba(var(--main-white), 1);
- background-color: rgba(var(--main-blue), 1);
+ border: 0.5vw solid rgba(var(--border-white), 1);
+ background-color: rgba(var(--bg-blue), 1);
  border-radius: 50%;
  height: 4%;
  width: 6%;
@@ -397,14 +429,14 @@ ul#locations a{
 }
 
 #Weipa label, #Wenlock label, #Coen label, #Lakefield label, #Cairns label, #Kowanyama label {
-	color: rgba(var(--main-blue), 1);
+	color: rgba(var(--main-blue-white), 1);
 	position: absolute;
 	white-space: nowrap;
 	top: -180%;
 	left: -30%;
 	border: none;
 	border-radius: 1vw;
-	background-color: rgba(var(--main-white), 1);
+	background-color: rgba(var(--bg-white-blue), 1);
 	font-size: 5vw;
 	margin: 1vw;
 	padding: 20%;
@@ -439,7 +471,22 @@ ul#locations a{
  left: 17%;
 }
 
-.dark-mode {
-	background-color: rgba(25,25,25, 1);
-	color: rgba(var(--main-white), 1);
+
+
+#dark_mode {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 5%;
+	font-size: 5vw;
+		
+}
+
+
+.theme-switch input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
 }

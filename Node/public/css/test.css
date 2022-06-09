@@ -1,0 +1,491 @@
+/* Colour palette */
+:root {
+  --main-green: 4, 71, 28;
+  --main-green-blue: 4, 71, 28;
+  --main-blue: 4, 71, 72;
+  --main-blue-white: 4, 71, 72;
+  --main-white: 255, 255, 255;
+  
+  --bg-white: 255, 255, 255;
+  --bg-white-blue: 255, 255, 255;
+  --bg-blue: 4, 71, 72;
+  --bg-med-blue: 204, 218, 219;
+  --bg-light-blue: 229, 236, 237;
+  --bg-lightest-blue: 242, 245, 246;
+ 
+  --border-white: 255, 255, 255;
+  --border-blue: 4,71,72;
+  --border-light-blue: 229, 236, 237;
+}
+
+[data-theme="dark"] {
+  --main-green: 255, 255, 255;
+  --main-green-blue: 4, 71, 72;
+  --main-blue: 4, 71, 72;
+  --main-blue-white: 255, 255, 255;
+  --main-white: 255, 255, 255;
+  
+  --bg-white: 25,25,25;
+  --bg-white-blue: 4, 71, 72;
+  --bg-blue: 4, 71, 72;
+  --bg-med-blue: 204, 218, 219;
+  --bg-light-blue: 229, 236, 237;
+  --bg-lightest-blue: 242, 245, 246;
+ 
+  --border-white: 255, 255, 255;
+  --border-blue: 4,71,72;
+  --border-light-blue: 229, 236, 237;
+}
+
+html {
+	font-family: 'Maven Pro', sans-serif;
+}
+
+body {
+	margin: 2% 2% 10% 2%;
+	background-color: rgba(var(--bg-white), 1);
+	color: rgba(var(--main-green), 1);
+}
+
+/* Header sizes */
+h1 {
+	font-size: 8vw;
+	font-weight: 500;
+	margin: 0;
+	width: 85%;
+}
+h2 {
+	color: rgba(var(--main-blue), 1);
+	font-size: 7vw;
+	font-weight: 500;
+	padding: 0 5% 5% 5%;
+	margin: 0;
+}
+h3 {
+	color: rgba(var(--main-green), 1);
+	font-size: 6vw;
+	text-align: left;
+	font-weight: normal;
+	margin: 0;
+}
+
+.topnav-container {
+	position: relative;
+	width: 100%;
+}
+
+.container{
+	position: relative;
+	padding-top: 30%;
+}
+
+/* Style the navigation menu */
+.topnav {
+  overflow: hidden;
+  background-color: rgba(var(--bg-white), 1);
+  position: absolute;
+  z-index: 2;
+  width: 100%;
+}
+
+/* Hide the links inside the navigation menu (except for logo/home) */
+.topnav #myLinks {
+  display: none;
+}
+
+/* Style navigation menu links */
+.view-nav a {
+  padding: 5% 5% 0 5%;
+}
+
+a {
+  /*color: rgba(var(--main-green), 1);*/
+  padding: 5%;
+  text-decoration: none;
+  font-size: 5vw;
+  display: block;
+  color: inherit;
+  z-index: 1;
+}
+
+
+.contact-item a {
+  padding: 0;
+}
+
+#myLinks a, .help-links a, .faq-item, .contact-item{
+  border-bottom: 0.5vw solid rgba(var(--border-blue), 1);
+  padding: 5%;
+  font-weight: normal;
+}
+
+#myLinks a:last-child, .help-links a:last-child, .faq-item:last-child, .contact-item:last-child{
+  border-bottom: none;
+}
+
+/* Style the hamburger menu */
+.topnav a.icon {
+  /*background: rgba(var(--main-white), 1);*/
+  color: rgba(var(--main-green), 1);
+  display: block;
+  position: absolute;
+  right: 0;
+  top: 0;
+  padding: 5% 5% 5% 0;
+}
+
+/* Add a grey background color on mouse-over */
+#numpad-container .numpad-digit:hover, .help-links a:hover, .contact-link a:hover, #myLinks a:hover {
+  background-color: rgba(var(--bg-blue), 1);
+  color: rgba(var(--main-white), 1);
+}
+
+/* Add a grey background color on mouse-over */
+.topnav span:hover {
+  background-color: rgba(var(--bg-blue), 1);
+  color: rgba(var(--main-white), 1);
+  padding: 5%;
+}
+
+#numpad-container .numpad-digit:active {
+background-color: rgba(var(--bg-med-blue), 1);
+/*background-color: rgba(var(--bg-blue), 0.2);*/
+}
+
+.numpad-update:active {
+	opacity: 0.2;
+}
+
+/* Style the active link (or home/logo) */
+.active {
+  background-color: rgba(var(--bg-blue), 1);
+  color: rgba(var(--main-white), 1);
+}
+
+/* Map image settings */
+.hero {
+	width: 100%;
+}
+
+footer {
+	display: flex;
+	justify-content: space-evenly;
+	align-items: center;
+	padding: 2% 0;
+	position: fixed;
+	bottom: 0;
+	width: 96%;
+	background-color: rgba(var(--bg-white), 1);
+}
+
+footer a {
+	padding: 0;
+	display: inline;
+	font-size: 2vw;
+}
+
+small {
+	font-size: 2vw;
+}
+
+p {
+ /*color: rgba(var(--main-green), 1);*/
+ margin: 0px 0px;
+ padding: 0px;
+ margin-block-start: 0;
+ margin-block-end: 0;
+}
+
+.material-symbols-outlined {
+	font-size: 5vw;
+}
+
+
+#days-container, #hours-container {
+    width:100%;
+    height:20%;
+    overflow: hidden;
+}
+
+#days-list, #hours-list {
+    height:15%; /* 40px - more place for scrollbar, is hidden under parent box */
+    padding:1%;
+    white-space:nowrap;
+    overflow-x: scroll;
+    overflow-y: hidden;
+}
+
+.day, .hour {
+    display:inline-block;
+    width:30%;
+    height:10%;
+    line-height:100%;
+	font-size: 4vw;
+    text-align:center;
+	background-color: rgba(var(--bg-lightest-blue), 1);
+	border: 2vw solid rgba(var(--border-light-blue), 1);
+    margin-right: 2%;
+}
+
+.day a, .hour a {
+	padding: 5%;
+	color: rgba(var(--main-blue), 1);
+}
+
+#solar-energy h3, #daily-usage h3, #surplus-deficit h3, #current-usage h3, #update-usage h3 {
+	width: 25%;
+	margin: 0;
+}
+
+.day a:hover, .hour:hover {
+  background-color: rgba(var(--bg-blue), 1);
+  color: rgba(var(--main-white), 1);
+}
+
+.day + .days-list, .hour + .hours-list {
+    margin-left:1%;
+}
+
+::-webkit-scrollbar{
+	display: none;
+}
+
+#energy-container div:last-child, #usage-container div:last-child, #direction, #angle{
+  border-top: 1vw solid rgba(var(--border-blue), 1);
+}
+
+#solar-energy, #daily-usage, #surplus-deficit, #current-usage, #update-usage {
+	display: flex;
+	justify-content: space-evenly;
+	align-items: center;
+	padding: 5% 0;
+}
+
+#power, #usage, #surplus, #current {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-evenly;
+	align-items: center;
+	padding: 0;
+	font-size: 10vw;
+	color: rgba(var(--main-green), 1);
+	width: 25%;
+}
+
+#update {
+	display: flex;
+	justify-content: space-evenly;
+	align-items: flex-start;
+	padding: 0;
+	font-size: 10vw;
+	color: rgba(var(--main-green), 1);
+	width: 25%;
+}
+
+#power p, #usage p, #surplus p, #current p, #update p{
+	display: flex;
+	align-items: flex-start;
+	padding: 0;
+	font-size: 5vw;
+	justify-content: center;
+}
+
+.largeIcon {
+	font-size: 20vw;
+	color: rgba(var(--main-green), 1);
+}
+
+.mediumIcon {
+	font-size: 10vw;
+}
+
+.weatherIcon {
+	font-size: 15vw;
+}
+
+var {
+	font-style: normal;
+}
+
+.update-input {
+	width: 90%;
+	height: 75%;
+	padding: 5%;
+	font-size: 10vw;
+	background-color: rgba(var(--bg-light-blue), 1);
+	border: none;
+	border-radius: 5%;
+	text-align: center;
+	color: rgba(var(--main-blue), 1);
+}
+
+#numpad-container {
+	display: flex;
+	justify-content: space-evenly;
+	align-items: center;
+	flex-wrap: wrap;
+	padding: 5% 0;
+}
+
+#numpad-container .numpad-digit {
+	width: 30%;
+	font-size: 10vw;
+	background-color: rgba(var(--bg-light-blue), 1);
+	border: none;
+	border-radius: 5%;
+	text-align: center;
+	color: rgba(var(--main-blue), 1);
+	margin: 1%;
+	padding: 2%;
+}
+
+.numpad-update, .send {
+	background-color: transparent;
+	border: none;
+}
+
+.faq-list p, .contact-list p {
+	color: rgba(var(--main-blue-white), 1);
+	padding: 2% 0 0 0;
+}
+
+.faq-list h3, .contact-list h3 {
+	color: rgba(var(--main-green-blue), 1);
+}
+
+.contact-link a {
+	font-size: 6vw;
+	color: rgba(var(--main-green-blue), 1);
+
+}
+
+.selected {
+	border: 0.8vw solid rgba(var(--border-blue), 1);
+}
+
+.form-section {
+	display: flex;
+	justify-content: space-evenly;
+	align-items: baseline;
+	flex-wrap: wrap;
+	font-size: 5vw;
+	color: rgba(var(--main-green), 1);
+	margin: 5% 2%;
+}
+
+.form-label {
+	width: 25%;
+	text-align: right;
+}
+
+.form-input {
+	color: rgba(var(--main-green), 1);
+	font-size: 5vw;
+	display: inline-block;
+	border: none;
+	/*width: 79%;*/
+	padding: 3%;
+	border-radius: 4px;
+	flex-grow: 1;
+	background-color: rgba(var(--bg-light-blue), 1);
+	margin-left: 2%;
+	font-family:inherit
+}
+
+#message {
+	resize: none;
+}
+
+ul#locations {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	
+}
+
+ul#locations li {
+ border: 0.5vw solid rgba(var(--border-white), 1);
+ background-color: rgba(var(--bg-blue), 1);
+ border-radius: 50%;
+ height: 4%;
+ width: 6%;
+ position: absolute;
+ color: rgba(var(--main-white), 1);
+}
+
+ul#locations a{
+	height: 100%;
+	width: 100%;
+}
+
+.map {
+	position: relative;
+}
+
+#Weipa {
+ top: 33%;
+ left: 17%;
+}
+
+#Weipa label, #Wenlock label, #Coen label, #Lakefield label, #Cairns label, #Kowanyama label {
+	color: rgba(var(--main-blue-white), 1);
+	position: absolute;
+	white-space: nowrap;
+	top: -180%;
+	left: -30%;
+	border: none;
+	border-radius: 1vw;
+	background-color: rgba(var(--bg-white-blue), 1);
+	font-size: 5vw;
+	margin: 1vw;
+	padding: 20%;
+}
+ 
+#Wenlock {
+ top: 41%;
+ left: 36%;
+}
+ 
+#Coen {
+ top: 52%;
+ left: 43%;
+}
+ 
+#Lakefield {
+ top: 64%;
+ left: 67%;
+}
+ 
+#Cairns {
+ top: 88%;
+ left: 88%;
+}
+
+#Cairns label {
+	left: -180%;
+}
+
+#Kowanyama {
+ top: 72%;
+ left: 17%;
+}
+
+
+
+#dark_mode {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 5%;
+	font-size: 5vw;
+		
+}
+
+
+.theme-switch input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}

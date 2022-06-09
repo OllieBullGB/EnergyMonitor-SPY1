@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+	<head>
+		<title>Energy Monitor</title>
+		
+		<!-- Google Font Maven Pro -->
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Maven+Pro:wght@400;500&display=swap" rel="stylesheet">
+		
+		
+		<!-- Burger Menu Icon -->
+		<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,700,0,0" />
+		<!-- Opens/Closes Burger Menu -->
+		<script src="test.js" defer></script>
+		<!-- Styling -->
+		<link rel="stylesheet" href="/css/style.css">
+		<meta name = "viewport" content = "width=device-width, initial-scale=1.0">
+	</head>
+
+	<body>
+		<!-- Top Navigation Menu -->
+		<div class="topnav-container">
+			<div class="topnav">
+				<a><h1>Contact</h1></a>
+				<!-- Navigation links (hidden by default) -->
+				<div id="myLinks">
+					<a href="home.html">Home</a>
+					<a href="usage.html">Usage</a>
+					<a href="panels.html">Panels</a>
+					<a href="today.html">Today</a>
+					<a href="hourly.html">Hourly</a>
+					<a class="active" href="help.html">Help</a>
+					
+					<!-- Dark mode switch -->
+					<div>
+						<label class="theme-switch" for="checkbox">
+							<div id="dark_mode">
+								Dark Mode
+								<span class="material-symbols-outlined mediumIcon">
+									dark_mode
+								</span>
+							</div>	
+							<input type="checkbox" id="checkbox">
+						</label>
+					</div>
+					
+				</div>
+					<!-- "Hamburger menu" / "Bar icon" to toggle the navigation links -->
+					<a href="javascript:void(0);" class="icon" onclick="myFunction()">
+						<span class="material-symbols-outlined mediumIcon">menu</span>
+					</a>
+				</div>
+			</div>
+
+
+		<main>
+			<!-- contact information -->
+			<div class="container">
+				<div class="main contact-list">
+					<div class="contact-item">
+						<h3>Email</h3>
+						<p>
+							help@energymonitor.au
+						</p>
+					</div>
+					<div class="contact-item">
+						<h3>Phone</h3>
+						<p>
+							+61 1234 567890
+						</p>
+					</div>
+					<div class="contact-link">
+						<a href = "support.html">Support</a>
+					</div>
+				</div>
+			</div>
+		</main>
+
+		<footer>
+			<!-- Footer information -->
+			<div>
+				<p><small>Copyright ©2022 Group 7</small></p>
+			</div>
+			<div>
+				<p><small>Contact <a href="mailto:scott.gurney@uea.ac.uk">Group 7</a></small></p>
+			</div>
+			<div>
+				<p><small>Terms of use</small></p>
+			</div>
+			<div>
+				<p><small>Privacy Policy</small></p>
+			</div>
+		</footer>
+	</body>
+</html>

@@ -15,50 +15,46 @@
 	<!-- Opens/Closes Burger Menu -->
 	<script src="test.js" defer></script>
 	<!-- Styling -->
-	<link rel="stylesheet" href="test.css">
+	<link rel="stylesheet" href="/css/style.css">
 	<meta name = "viewport" content = "width=device-width, initial-scale=1.0">
 </head>
 
-<body>
+
 <!-- Top Navigation Menu -->
-<div class="topnav-container">
-	<div class="topnav">
-		<a><h1>Contact</h1></a>
-		<!-- Navigation links (hidden by default) -->
-		<div id="myLinks">
-			<a href="home.html">Home</a>
-			<a href="usage.html">Usage</a>
-			<a href="panels.html">Panels</a>
-			<a href="today.html">Today</a>
-			<a href="hourly.html">Hourly</a>
-			<a class="active" href="help.html">Help</a>
-		</div>
-		<!-- "Hamburger menu" / "Bar icon" to toggle the navigation links -->
-		<a href="javascript:void(0);" class="icon" onclick="myFunction()">
-			<span class="material-symbols-outlined mediumIcon">menu</span>
-		</a>
-		</div>
-	</div>
+<div class="topnav">
+  <a href="#home"><h1>Select your location</h1></a>
+  <!-- Navigation links (hidden by default) -->
+  <div id="myLinks">
+    <a href="#home">Home</a>
+	<a href="#map">Map</a>
+	<a href="#usage">Usage</a>
+	<a href="#panels">Panels</a>
+	<a href="#today">Today</a>
+	<a href="#hourly">Hourly</a>
+    <a href="#help">Help</a>
 
-
-<main>
-<div class="main contact-list">
-	<div class="contact-item">
-	<h3>Email</h3>
-	<p>
-		help@energymonitor.au
-	</p>
-	</div>
-	<div class="contact-item">
-	<h3>Phone</h3>
-	<p>
-		+61 1234 567890
-	</p>
-	</div>
-	<div class="contact-link">
-	<a href = "support.html">Support</a>
+	<div>
+		<label class="theme-switch" for="checkbox">
+			<div id="dark_mode">
+				Dark Mode
+				<span class="material-symbols-outlined mediumIcon">
+					dark_mode
+				</span>
+			</div>	
+		<input type="checkbox" id="checkbox">
+		</label>
 	</div>
 	
+  </div>
+  <!-- "Hamburger menu" / "Bar icon" to toggle the navigation links -->
+  <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+	<span class="material-symbols-outlined mediumIcon">menu</span>
+  </a>
+</div>
+
+<main>
+<div class="main">
+	<img class="hero" src="map.jpg" alt="map">
 </div>
 </main>
 
@@ -76,5 +72,4 @@
 	<p><small>Privacy Policy</small></p>
 	</div>
 </footer>
-</body>
 </html>

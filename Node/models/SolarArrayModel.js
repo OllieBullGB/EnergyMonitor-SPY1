@@ -12,6 +12,16 @@ class SolarArrayModel
         this.temperature = temperature; // kelvin
     }
 
+    setCloudCover(cloudCover)
+    {
+        this.cloudCover = cloudCover;
+    }
+
+    setTemperature(temperature)
+    {
+        this.temperature = temperature;
+    }
+
     getTemperatureCoefficient()
     {
         if(this.temperature - 298 > 0)
@@ -26,7 +36,7 @@ class SolarArrayModel
 
     getCloudCoverCoefficient()
     {
-        return 1 - this.cloudCover;
+        return (100 - this.cloudCover) / 100;
     }
 
     getIncidentIntensity()
@@ -39,13 +49,14 @@ class SolarArrayModel
 
     getPower()
     {
-        let elevation = IntensityCalculator.degToRad(this.intensityCalculator.getElevation());
-        let azimuth = IntensityCalculator.degToRad(this.intensityCalculator.getAzimuth());
+        let rElevation = IntensityCalculator.degToRad(this.intensityCalculator.getElevation());
+        let rAzimuth = IntensityCalculator.degToRad(this.intensityCalculator.getAzimuth());
         let rAngle = IntensityCalculator.degToRad(this.angle);
         let rDirection = IntensityCalculator.degToRad(this.direction);
         let incidentIntensity = this.getIncidentIntensity();
 
-        let moduleRadiation = incidentIntensity * ( Math.cos(elevation) * Math.sin(rAngle) * Math.cos(rDirection - azimuth) + Math.sin(elevation) * Math.sin(rAngle));
+        let moduleRadiation = incidentIntensity * ( Math.cos(rElevation) * Math.sin(rAngle) * Math.cos(rDirection - rAzimuth) + Math.sin(rElevation) * Math.sin(rAngle));
+        moduleRadiation = moduleRadiation * this.area;
         return moduleRadiation;
     }
 
