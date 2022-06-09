@@ -1,117 +1,118 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
-	<title>Energy Monitor</title>
-	
-	<!-- Google Font Maven Pro -->
-	<link rel="preconnect" href="https://fonts.googleapis.com">
-	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-	<link href="https://fonts.googleapis.com/css2?family=Maven+Pro:wght@400;500&display=swap" rel="stylesheet">
-	
-	
-	<!-- Burger Menu Icon -->
-	<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,700,0,0" />
-	<!-- Opens/Closes Burger Menu -->
-	<script src="test.js" defer></script>
-	<!-- Styling -->
-	<link rel="stylesheet" href="/css/test.css">
-	<meta name = "viewport" content = "width=device-width, initial-scale=1.0">
-</head>
+	<head>
+		<title>Energy Monitor</title>
+		
+		<!-- Google Font Maven Pro -->
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Maven+Pro:wght@400;500&display=swap" rel="stylesheet">
+		
+		
+		<!-- Burger Menu Icon -->
+		<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,700,0,0" />
+		<!-- Opens/Closes Burger Menu -->
+		<script src="test.js" defer></script>
+		<!-- Styling -->
+		<link rel="stylesheet" href="/css/test.css">
+		<meta name = "viewport" content = "width=device-width, initial-scale=1.0">
+	</head>
 
-<body>
-<!-- Top Navigation Menu -->
-<div class="topnav">
-	<div class="topnav-container">
-		<a><h1>FAQ</h1></a>
-		<!-- Navigation links (hidden by default) -->
-		<div id="myLinks">
-			<a href="home.html">Home</a>
-			<a href="usage.html">Usage</a>
-			<a href="panels.html">Panels</a>
-			<a href="daily.html">Today</a>
-			<a href="hourly.html">Hourly</a>
-			<a class="active" href="help.html">Help</a>
-			
+	<body>
+		<!-- Top Navigation Menu -->
+		<div class="topnav">
+			<div class="topnav-container">
+				<a><h1>FAQ</h1></a>
+				<!-- Navigation links (hidden by default) -->
+				<div id="myLinks">
+					<a href="home.html">Home</a>
+					<a href="usage.html">Usage</a>
+					<a href="panels.html">Panels</a>
+					<a href="daily.html">Today</a>
+					<a href="hourly.html">Hourly</a>
+					<a class="active" href="help.html">Help</a>
+
+					<!-- Dark mode switch -->
+					<div>
+						<label class="theme-switch" for="checkbox">
+							<div id="dark_mode">
+								Dark Mode
+								<span class="material-symbols-outlined mediumIcon">
+									dark_mode
+								</span>
+							</div>	
+							<input type="checkbox" id="checkbox">
+						</label>
+					</div>
+				</div>
+				<!-- "Hamburger menu" / "Bar icon" to toggle the navigation links -->
+				<a href="javascript:void(0);" class="icon" onclick="myFunction()">
+					<span class="material-symbols-outlined mediumIcon">menu</span>
+				</a>
+				</div>
+			</div>
+
+		<main>
+			<div class="container">
+				<div class="main faq-list">
+					<!-- FAQ information -->
+					<div class="faq-item">
+						<h3>What is the daily usage?</h3>
+
+						<p>
+							Your daily usage is the amount of energy you have used in a day.
+						</p>
+					</div>
+					<div class="faq-item">
+						<h3>How do we calculate the daily usage?</h3>
+
+						<p>
+							This is calculated by analysing the wattage of each appliance and multiplying it by the number of hours you use it.<br>
+							For example, if you have a 150W TV that's on for 5 hours of the day, that would equate to 750 watt-hours per day.
+						</p>
+					</div>
+					<div class="faq-item">
+						<h3>How do you get your panel details?</h3>
+
+						<p>
+							To get the details about your solar panels you're advised to consult your guide if you are given one when they were installed, or you can contact Bushlight or the company who installed your solar panels.
+							We ask that you find out the surface area and angle of your panels plus how many there are.
+						</p>
+					</div>
+					<div class="faq-item">
+						<h3>What is a Surplus Deficit?</h3>
+
+						<p>
+							A Surplus Deficit is when you have more coming in than going out, so in this instance, it means that you have more energy than you are using.
+						</p>
+					</div>
+					<div class="faq-item">
+						<h3>I can't find my town, what should I do?</h3>
+
+						<p>
+							We recommend selecting around the area of your town, it is possible it hasn't been documented yet.<br>
+							Feel free to contact us for further help or ask about your town's documentation progress. 
+						</p>
+					</div>
+				</div>
+			</div>
+		</main>
+
+		<!-- Footer information -->
+		<footer>
 			<div>
-				<label class="theme-switch" for="checkbox">
-					<div id="dark_mode">
-						Dark Mode
-						<span class="material-symbols-outlined mediumIcon">
-							dark_mode
-						</span>
-					</div>	
-				<input type="checkbox" id="checkbox">
-				</label>
+				<p><small>Copyright ©2022 Group 7</small></p>
 			</div>
-			
-		</div>
-		<!-- "Hamburger menu" / "Bar icon" to toggle the navigation links -->
-		<a href="javascript:void(0);" class="icon" onclick="myFunction()">
-			<span class="material-symbols-outlined mediumIcon">menu</span>
-		</a>
-		</div>
-	</div>
-
-<main>
-	<div class="container">
-		<div class="main faq-list">
-			<!-- removed <br>s then added <div>s-->
-			<div class="faq-item">
-			<h3>What is the daily usage?</h3>
-
-			<p>
-				Your daily usage is the amount of energy you have used in a day.
-			</p>
+			<div>
+				<p><small>Contact <a href="mailto:scott.gurney@uea.ac.uk">Group 7</a></small></p>
 			</div>
-			<div class="faq-item">
-			<h3>How do we calculate the daily usage?</h3>
-
-			<p>
-				This is calculated by analysing the wattage of each appliance and multiplying it by the number of hours you use it.<br>
-				For example, if you have a 150W TV that's on for 5 hours of the day, that would equate to 750 watt-hours per day.
-			</p>
+			<div>
+				<p><small>Terms of use</small></p>
 			</div>
-			<div class="faq-item">
-			<h3>How do you get your panel details?</h3>
-
-			<p>
-				To get the details about your solar panels you're advised to consult your guide if you are given one when they were installed, or you can contact Bushlight or the company who installed your solar panels.
-				We ask that you find out the surface area and angle of your panels plus how many there are.
-			</p>
+			<div>
+				<p><small>Privacy Policy</small></p>
 			</div>
-			<div class="faq-item">
-			<h3>What is a Surplus Deficit?</h3>
-
-			<p>
-				A Surplus Deficit is when you have more coming in than going out, so in this instance, it means that you have more energy than you are using.
-			</p>
-			</div>
-			<div class="faq-item">
-			<h3>I can't find my town, what should I do?</h3>
-
-			<p>
-				We recommend selecting around the area of your town, it is possible it hasn't been documented yet.<br>
-				Feel free to contact us for further help or ask about your town's documentation progress. 
-			</p>
-			</div>
-		</div>
-	</div>
-</main>
-
-<footer>
-	<div>
-	<p><small>Copyright ©2022 Group 7</small></p>
-	</div>
-	<div>
-	<p><small>Contact <a href="mailto:scott.gurney@uea.ac.uk">Group 7</a></small></p>
-	</div>
-	<div>
-	<p><small>Terms of use</small></p>
-	</div>
-	<div>
-	<p><small>Privacy Policy</small></p>
-	</div>
-</footer>
-</body>
+		</footer>
+	</body>
 </html>

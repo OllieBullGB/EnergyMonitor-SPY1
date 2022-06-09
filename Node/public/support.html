@@ -1,113 +1,115 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
-	<title>Energy Monitor</title>
-	
-	<!-- Google Font Maven Pro -->
-	<link rel="preconnect" href="https://fonts.googleapis.com">
-	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-	<link href="https://fonts.googleapis.com/css2?family=Maven+Pro:wght@400;500&display=swap" rel="stylesheet">
-	
-	
-	<!-- Burger Menu Icon -->
-	<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,700,0,0" />
-	<!-- Opens/Closes Burger Menu -->
-	<script src="test.js" defer></script>
-	<!-- Styling -->
-	<link rel="stylesheet" href="/css/test.css">
-	<meta name = "viewport" content = "width=device-width, initial-scale=1.0">
-</head>
-
-<body>
-<!-- Top Navigation Menu -->
-<div class="topnav-container">
-	<div class="topnav">
-	<a><h1>Contact Support</h1></a>
-	<!-- Navigation links (hidden by default) -->
-	<div id="myLinks">
-		<a href="home.html">Home</a>
-		<a href="usage.html">Usage</a>
-		<a href="panels.html">Panels</a>
-		<a href="daily.html">Today</a>
-		<a href="hourly.html">Hourly</a>
-		<a class="active" href="help.html">Help</a>
+	<head>
+		<title>Energy Monitor</title>
 		
-			<div>
-				<label class="theme-switch" for="checkbox">
-					<div id="dark_mode">
-						Dark Mode
-						<span class="material-symbols-outlined mediumIcon">
-							dark_mode
-						</span>
-					</div>	
-				<input type="checkbox" id="checkbox">
-				</label>
+		<!-- Google Font Maven Pro -->
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Maven+Pro:wght@400;500&display=swap" rel="stylesheet">
+		
+		
+		<!-- Burger Menu Icon -->
+		<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,700,0,0" />
+		<!-- Opens/Closes Burger Menu -->
+		<script src="test.js" defer></script>
+		<!-- Styling -->
+		<link rel="stylesheet" href="/css/test.css">
+		<meta name = "viewport" content = "width=device-width, initial-scale=1.0">
+	</head>
+
+	<body>
+		<!-- Top Navigation Menu -->
+		<div class="topnav-container">
+			<div class="topnav">
+				<a><h1>Contact Support</h1></a>
+				<!-- Navigation links (hidden by default) -->
+				<div id="myLinks">
+					<a href="home.html">Home</a>
+					<a href="usage.html">Usage</a>
+					<a href="panels.html">Panels</a>
+					<a href="daily.html">Today</a>
+					<a href="hourly.html">Hourly</a>
+					<a class="active" href="help.html">Help</a>
+				
+					<!-- Dark mode switch -->
+					<div>
+						<label class="theme-switch" for="checkbox">
+							<div id="dark_mode">
+								Dark Mode
+								<span class="material-symbols-outlined mediumIcon">
+									dark_mode
+								</span>
+							</div>	
+							<input type="checkbox" id="checkbox">
+						</label>
+					</div>
+				</div>
+				<!-- "Hamburger menu" / "Bar icon" to toggle the navigation links -->
+				<a href="javascript:void(0);" class="icon" onclick="myFunction()">
+					<span class="material-symbols-outlined mediumIcon">menu</span>
+				</a>
 			</div>
-		
-	</div>
-	<!-- "Hamburger menu" / "Bar icon" to toggle the navigation links -->
-	<a href="javascript:void(0);" class="icon" onclick="myFunction()">
-		<span class="material-symbols-outlined mediumIcon">menu</span>
-	</a>
-	</div>
-</div>
+		</div>
 
-<main>
-<div class="main support-form">
-	<!-- Support message area -->
-	<!--form>
-		<p>First Name:</p>
-		<input type="text" id="fname" name="name">
-		<p>Last Name:</p>
-		<input type="text" id="lname" name="email">
-		<p>Topic:</p>
-		<input type="text" id="subject" name="subject">
-		<p>Message:</p>
-		<text box for message -->
-		<!--textarea id="fname" name="Message" rows="8" cols="30" maxlength="300"></textarea-->
-		<!-- Support message submit button -->
-		<!--input type="button" class="send material-symbols-outlined largeIcon" value=check_circle id="support-send" onClick=sendMessage()-->
-	<!--/form--> 
-	
-	<form action="/" method="post">
-		<div class="form-section">
-			<label class="form-label" for="name">Name</label>
-			<input class="form-input" type="text" id="name" name="name" placeholder="Enter your name" required>
-		</div>
-		<div class="form-section">
-			<label class="form-label" for="email">Email</label>
-			<input class="form-input" type="email" id="email" name="email" placeholder="email@email.com" required>
-		</div>
-		<div class="form-section">
-			<label class="form-label" for="subject">Subject</label>
-			<input class="form-input" type="text" id="subject" name="subject" placeholder="Enter a subject" required>
-		</div>
-		<div class="form-section">
-			<label class="form-label" for="message">Message</label>
-			<textarea class="form-input" id="message" name="message" rows="5" placeholder="Enter your message" required></textarea>
-		</div>
-		<div class="form-section">
-			<label></label>
-			<input type="button" class="send material-symbols-outlined largeIcon" value=check_circle id="support-send" onClick=sendMessage()>
-		</div>
-	</form>
-</div>
-</main>
+		<main>
+			<div class="main support-form">
+				<!-- Support message area -->
+				<!--form>
+					<p>First Name:</p>
+					<input type="text" id="fname" name="name">
+					<p>Last Name:</p>
+					<input type="text" id="lname" name="email">
+					<p>Topic:</p>
+					<input type="text" id="subject" name="subject">
+					<p>Message:</p>
+					<text box for message -->
+					<!--textarea id="fname" name="Message" rows="8" cols="30" maxlength="300"></textarea-->
+					<!-- Support message submit button -->
+					<!--input type="button" class="send material-symbols-outlined largeIcon" value=check_circle id="support-send" onClick=sendMessage()-->
+				<!--/form--> 
+				
+				<!-- Support message input boxes -->
+				<form action="/" method="post">
+					<div class="form-section">
+						<label class="form-label" for="name">Name</label>
+						<input class="form-input" type="text" id="name" name="name" placeholder="Enter your name" required>
+					</div>
+					<div class="form-section">
+						<label class="form-label" for="email">Email</label>
+						<input class="form-input" type="email" id="email" name="email" placeholder="email@email.com" required>
+					</div>
+					<div class="form-section">
+						<label class="form-label" for="subject">Subject</label>
+						<input class="form-input" type="text" id="subject" name="subject" placeholder="Enter a subject" required>
+					</div>
+					<div class="form-section">
+						<label class="form-label" for="message">Message</label>
+						<textarea class="form-input" id="message" name="message" rows="5" placeholder="Enter your message" required></textarea>
+					</div>
+					<div class="form-section">
+						<label></label>
+						<input type="button" class="send material-symbols-outlined largeIcon" value=check_circle id="support-send" onClick=sendMessage()>
+					</div>
+				</form>
+			</div>
+		</main>
 
-<footer>
-	<div>
-	<p><small>Copyright ©2022 Group 7</small></p>
-	</div>
-	<div>
-	<p><small>Contact <a href="mailto:scott.gurney@uea.ac.uk">Group 7</a></small></p>
-	</div>
-	<div>
-	<p><small>Terms of use</small></p>
-	</div>
-	<div>
-	<p><small>Privacy Policy</small></p>
-	</div>
-</footer>
-</body>
+		<footer>
+			<!-- Footer information -->
+			<div>
+				<p><small>Copyright ©2022 Group 7</small></p>
+			</div>
+			<div>
+				<p><small>Contact <a href="mailto:scott.gurney@uea.ac.uk">Group 7</a></small></p>
+			</div>
+			<div>
+				<p><small>Terms of use</small></p>
+			</div>
+			<div>
+				<p><small>Privacy Policy</small></p>
+			</div>
+		</footer>
+	</body>
 </html>
