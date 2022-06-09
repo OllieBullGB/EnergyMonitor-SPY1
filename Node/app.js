@@ -2,7 +2,7 @@
 const IntensityCalculator = require('./models/IntensityCalculator');
 const SolarArrayModel = require('./models/SolarArrayModel');
 
-//create an express web server
+//create an express web serverW
 const fetch = require('node-fetch');
 const express = require('express');
 const app = express();
