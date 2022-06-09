@@ -1,3 +1,12 @@
+window.onload = function() 
+{
+    if(!window.location.hash) 
+    {
+        window.location = window.location + '#loaded';
+        window.location.reload();
+    }
+}
+
 const slider = document.getElementById("days-list");
 const now = new Date();
 
@@ -16,6 +25,9 @@ const time = urlParams.get("time") || "00:00";
 const position = LocalDataManager.getLocation();
 const panelInfo = LocalDataManager.getPanelInfo();
 
+let dayTimeStr = day.replace(/['"]+/g, '') + " " + time.replace(/['"]+/g, '');
+console.log("DTS", dayTimeStr);
+
 hourlySolarData(day, slider, time);
 
 function hourlySolarData(day, container, selectedHour)
@@ -23,18 +35,21 @@ function hourlySolarData(day, container, selectedHour)
     let position = LocalDataManager.getLocation();
     let panelInfo = LocalDataManager.getPanelInfo();
     let usage = LocalDataManager.getUsage().usage;
-    console.log(day);
 
+    console.log(day, position.latitude, position.longitude, panelInfo.area, panelInfo.angle, panelInfo.direction);
     let data = fetchSolarData(day, position.latitude, position.longitude, panelInfo.area, panelInfo.angle, panelInfo.direction);
     console.table(data);
 
     let solarInput = 0;
     let surplus = 0;
 
+
+    let first = true;
     data.forEach(dataPoint =>
     {
         let date = new Date(dataPoint.dateTime * 1000);
-        let targetDate = new Date(dataPoint.dateTime * 1000);
+        let targetDate = new Date(dayTimeStr);
+        console.log(targetDate.toISOString());
         let icon = weatherIcons[dataPoint.weatherIcon];
         let dd = String(date.getDate()).padStart(2, '0');
         let mm = String(date.getMonth() + 1).padStart(2, '0');
@@ -43,19 +58,27 @@ function hourlySolarData(day, container, selectedHour)
         let min = String(date.getMinutes()).padStart(2, '0')
         let timeStr = hour + ":" + min;
         let dateStr = dd + "/" + mm ;
-        let link = `daily.html?day="${mm}/${dd}/${yy}?time="${timeStr}"`;
+        let link = `hourly.html?day="${mm}/${dd}/${yy}&time="${timeStr}"`;
+        let selected = false;
 
-        console.log("D", date.toISOString().slice(11, 16));
-        console.log("TD", targetDate.toISOString().slice(11, 16));
-        if(date.toISOString().slice(11, 16) == targetDate.toISOString().slice(11, 16))
+        if(date.toISOString().slice(11, 13) === targetDate.toISOString().slice(11, 13))
         {
             solarInput = Math.round((dataPoint.power + Number.EPSILON) * 100 * 24) / 100;
-            link = `daily.html"`;
+            link = `daily.html`;
+            selected = true;
         }
 
-        containerRenderer(timeStr, link, icon, container);
+        if(first && time == "00:00")
+        {
+            solarInput = Math.round((dataPoint.power + Number.EPSILON) * 100 * 24) / 100;
+            link = `daily.html`;
+            first = false;
+            selected = true;
+        }
+
+        containerRenderer(timeStr, link, icon, container, selected);
     })
 
-    surplus = solarInput - usage;
+    surplus = Math.round(((solarInput - usage) + Number.EPSILON) * 100) / 100;
     totalsRenderer(solarInput, usage, surplus);
 }

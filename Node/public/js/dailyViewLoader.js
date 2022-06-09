@@ -1,3 +1,13 @@
+window.onload = function() 
+{
+    if(!window.location.hash) 
+    {
+        window.location = window.location + '#loaded';
+        window.location.reload();
+    }
+}
+
+
 const slider = document.getElementById("days-list");
 const now = new Date();
 //Render for daily view
@@ -17,8 +27,10 @@ function dailySolarData(container, selectedDate)
     let position = LocalDataManager.getLocation();
     let panelInfo = LocalDataManager.getPanelInfo();
     let usage = LocalDataManager.getUsage().usage;
+    console.table(panelInfo);
 
     let data = fetchSolarData('', position.latitude, position.longitude, panelInfo.area, panelInfo.angle, panelInfo.direction);
+    console.table(data);
 
     let solarInput = 0;
     let surplus = 0;
@@ -34,21 +46,19 @@ function dailySolarData(container, selectedDate)
         let yy = String(date.getFullYear().toString().substring(2,4));
         let dateStr = dd + "/" + mm ;
         let link = `daily.html?day="${mm}/${dd}/${yy}"`;
+        let selected = false;
 
         if(date.toISOString().slice(0, 10) == targetDate.toISOString().slice(0, 10))
         {
             solarInput = Math.round((dataPoint.power + Number.EPSILON) * 100 * 24) / 100;
             link = `hourly.html?day="${mm}/${dd}/${yy}"`;
+            selected = true;
         }
 
-        containerRenderer(dateStr, link, icon, container);
-
-        console.log("D", date.toISOString().slice(0, 10));
-        console.log("TD", targetDate.toISOString().slice(0, 10));
-        
+        containerRenderer(dateStr, link, icon, container, selected);   
     })
 
-    surplus = solarInput - usage;
+    surplus = Math.round(((solarInput - usage) + Number.EPSILON) * 100) / 100;
     totalsRenderer(solarInput, usage, surplus)
 }
 

@@ -30,13 +30,19 @@ class DailyAverager
                 {
                     "dateTime": weatherPoint.dateTime,
                     "numPoints": 1,
-                    "weatherType": `few clouds`,
-                    "weatherIcon": `02d`,
+                    "weatherType": `${weatherPoint.weatherName}`,
+                    "weatherIcon": `${weatherPoint.weatherIcon}`,
                     "power": (power * 3) / 8
                 };
             }
             else if(currentDay == new Date(output[output.length-1].dateTime * 1000).toISOString().slice(0, 10))
             {
+                console.log(new Date(weatherPoint.dateTime * 1000).getHours());
+                if(new Date(weatherPoint.dateTime * 1000).getHours() == 13)
+                {
+                    output[output.length-1].weatherType = weatherPoint.weatherName;
+                    output[output.length-1].weatherIcon = weatherPoint.weatherIcon;
+                }
                 output[output.length-1].power = output[output.length-1].power + ((power * 3) / 8);
                 output[output.length-1].numPoints++;
             }
@@ -46,8 +52,8 @@ class DailyAverager
                 {
                     "dateTime": weatherPoint.dateTime,
                     "numPoints": 1,
-                    "weatherType": `few clouds`,
-                    "weatherIcon": `02d`,
+                    "weatherType": `${weatherPoint.weatherName}`,
+                    "weatherIcon": `${weatherPoint.weatherIcon}`,
                     "power": (power * 3) / 8
                 };
             }

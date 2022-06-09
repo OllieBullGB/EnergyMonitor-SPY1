@@ -27,10 +27,22 @@ class HourlyAverager
                 "power": power
             };
             output.push(weatherPointOutput);
-            weatherPointOutput.dateTime = parseInt(weatherPointOutput.dateTime) + 3600;
-            output.push(weatherPointOutput);
-            weatherPointOutput.dateTime = parseInt(weatherPointOutput.dateTime) + 3600;
-            output.push(weatherPointOutput);
+            let weatherPointOneHourAhead = 
+            {
+                "dateTime": parseInt(weatherPoint.dateTime) + 3600,
+                "weatherType": `${weatherPoint.weatherName}`,
+                "weatherIcon": `${weatherPoint.weatherIcon}`,
+                "power": power
+            }
+            output.push(weatherPointOneHourAhead);
+            let weatherPointTwoHoursAhead = 
+            {
+                "dateTime": parseInt(weatherPoint.dateTime) + 7200,
+                "weatherType": `${weatherPoint.weatherName}`,
+                "weatherIcon": `${weatherPoint.weatherIcon}`,
+                "power": power
+            }
+            output.push(weatherPointTwoHoursAhead);
         })
         return output;
     }

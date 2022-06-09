@@ -5,8 +5,8 @@ const weatherIcons =
     "01n": "sunny",
     "02d": "partly_cloudy_day",
     "02n": "partly_cloudy_day",
-    "03d": "cloudy",
-    "03n": "cloudy",
+    "03d": "partly_cloudy_day",
+    "03n": "partly_cloudy_day",
     "04d": "cloudy",
     "04n": "cloudy",
     "09d": "rainy",
@@ -26,6 +26,7 @@ function fetchSolarData(day, latitude, longitude, area, angle, direction)
     const res = fetch("http://localhost:25565/api/solar",
     {
         method: "post",
+        cache: "no-cache",
         headers: 
         {
             "Content-Type": "application/json",
