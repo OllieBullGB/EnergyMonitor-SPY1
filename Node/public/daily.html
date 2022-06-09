@@ -1,168 +1,169 @@
 <!DOCTYPE html>
 <html lang="en">
 
-	<head>
-		<title>Energy Monitor</title>
-		
-		<!-- Google Font Maven Pro -->
-		<link rel="preconnect" href="https://fonts.googleapis.com">
-		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-		<link href="https://fonts.googleapis.com/css2?family=Maven+Pro:wght@400;500&display=swap" rel="stylesheet">
-		
-		<!-- Google Icons -->
-		<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,700,0,0" />
+<head>
+	<title>Energy Monitor</title>
+	
+	<!-- Google Font Maven Pro -->
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Maven+Pro:wght@400;500&display=swap" rel="stylesheet">
+	
+	<!-- Google Icons -->
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,700,0,0" />
 
-		<script src="./js/LocalDataManager.js" defer></script>
-		<script src="./js/solarData.js" defer></script>
-		<script src="./js/dailyViewLoader.js" defer></script>
+	<script src="./js/LocalDataManager.js" defer></script>
+	<script src="./js/solarData.js" defer></script>
+	<script src="./js/dailyViewLoader.js" defer></script>
 
-		<!-- Opens/Closes Burger Menu -->
-		<script src="test.js" defer></script>
-		<!-- Styling -->
-		<link rel="stylesheet" href="/css/test.css">
-		<meta name = "viewport" content = "width=device-width, initial-scale=1.0">
-	</head>
+	<!-- Opens/Closes Burger Menu -->
+	
+	<script src="test.js" defer></script>
+	<!-- Styling -->
+	<link rel="stylesheet" href="/css/test.css">
+	<meta name = "viewport" content = "width=device-width, initial-scale=1.0">
 
-	<body>
-		<!-- Top Navigation Menu -->
-		<div class="topnav-container">
-			<div class="topnav view-nav">
-				<a><h1>Daily View</h1></a>
-				<h2 id="city-name"><var>Name of Selected Area</var></h2>
-				<!-- Navigation links (hidden by default) -->
-				<div id="myLinks">
-					<a href="home.html">Home</a>
-					<a href="usage.html">Usage</a>
-					<a href="panels.html">Panels</a>
-					<a class = "active" href="daily.html">Today</a>
-					<a href="hourly.html">Hourly</a>
-					<a href="help.html">Help</a>
-					
-					<!-- Dark mode switch -->
-					<div>
-						<label class="theme-switch" for="checkbox">
-							<div id="dark_mode">
-								Dark Mode
-								<span class="material-symbols-outlined mediumIcon">
-									dark_mode
-								</span>
-							</div>	
-						<input type="checkbox" id="checkbox">
-						</label>
-					</div>
-					
-				</div>
-					<!-- "Hamburger menu" / "Bar icon" to toggle the navigation links -->
-					<a href="javascript:void(0);" class="icon" onclick="myFunction()">
-						<span class="material-symbols-outlined mediumIcon">menu</span>
-					</a>
-				</div>
-			</div>
 
-		<main>
-		<div class="main">
-			<div class="container">
-				<!-- Scrollable menu of days -->
-				<div id="days-container">
-					<div id="days-list">
-						<!--
-						<div class="day"><a href="hourly.html" onclick="myFunction()"><var>day1</var></a></div>
-						<div class="day"><a href="hourly.html" onclick="myFunction()"><var>day2</var></a></div>
-						<div class="day"><a href="hourly.html" onclick="myFunction()"><var>day3</var></a></div>
-						<div class="day"><a href="hourly.html" onclick="myFunction()"><var>day4</var></a></div>
-						<div class="day"><a href="hourly.html" onclick="myFunction()"><var>day5</var></a></div>
-						<div class="day"><a href="hourly.html" onclick="myFunction()"><var>day6</var></a></div>
-						<div class="day"><a href="hourly.html" onclick="myFunction()"><var>day7</var></a></div>
-						<div class="day"><a href="hourly.html" onclick="myFunction()"><var>day8</var></a></div>
-						<div class="day"><a href="hourly.html" onclick="myFunction()"><var>day9</var></a></div>
-						<div class="day"><a href="hourly.html" onclick="myFunction()"><var>day10</var></a></div>
-						<div class="day"><a href="hourly.html" onclick="myFunction()"><var>day11</var></a></div>
-						<div class="day"><a href="hourly.html" onclick="myFunction()"><var>day12</var></a></div>
-						-->
-					</div>
-				</div>
-				<div id="energy-container">
-					<div id="solar-energy">
-						<h3>Solar Energy</h3>
-						<!-- Insert variable (or output) for solar energy here -->
-						<div id="power">
-							<var>20.7</var>
-							<p>
-							kWh
-							<span class="material-symbols-outlined">
-								bolt
-							</span>
-							</p>
-						</div>
-						<span class="material-symbols-outlined">
-							arrow_drop_up
-						</span>
-						<!--img id = "solar-energy-arrow" src = "arrow.jpg" alt = "energy indicator arrow"-->
-						<span class="material-symbols-outlined largeIcon">
-							solar_power
-						</span>
-						<!--img id = "solar-panel-icon" src = "solar-panel-icon.jpg" alt = "solar panel icon"-->
-					</div>
-					<div id="daily-usage">
-						<h3>Daily Usage</h3>
-						<!-- Insert variable for daily usage here -->
-						<div id="usage">
-							<var>21.5</var>
-							<p>
-							kWh
-							<span class="material-symbols-outlined">
-								bolt
-							</span>
-							</p>
-						</div>
-						<!--img id = "usage-energy-arrow" src = "arrow.jpg" alt = "energy indicator arrow"-->
-						<span class="material-symbols-outlined">
-							arrow_drop_up
-						</span>
-						<!--img id = "battery-icon" src = "battery-icon.jpg" alt = "battery icon"-->
-						<span class="material-symbols-outlined largeIcon">
-							battery_horiz_050
-						</span>
-					</div>
-					<div id="surplus-deficit">
-						<h3>Surplus Deficit</h3>
-						<!-- Insert variable for surplus energy here -->
-						<div id="surplus">
-							<var>0.8</var>
-							<p>
-							kWh
-							<span class="material-symbols-outlined">
-								bolt
-							</span>
-							</p>
-						</div>
-						<!--img id = "surplus-energy-arrow" src = "arrow.jpg" alt = "energy indicator arrow"-->
-						<span class="material-symbols-outlined">
-							arrow_drop_up
-						</span>
-						<!--img id = "energy-icon" src = "energy-icon.jpg" alt = "energy icon"-->
-						<span class="material-symbols-outlined largeIcon">
-							bolt
-						</span>
-					</div>
-				</div>
-			</div>
-		</main>
+</head>
 
-		<footer>
-			<!-- Footer information -->
+<body>
+<!-- Top Navigation Menu -->
+<div class="topnav-container">
+	<div class="topnav view-nav">
+		<a><h1>Daily View</h1></a>
+		<h2 id="city-name"><var>Name of Selected Area</var></h2>
+		<!-- Navigation links (hidden by default) -->
+		<div id="myLinks">
+			<a href="home.html">Home</a>
+			<a href="usage.html">Usage</a>
+			<a href="panels.html">Panels</a>
+			<a class = "active" href="daily.html">Today</a>
+			<a href="hourly.html">Hourly</a>
+			<a href="help.html">Help</a>
+			
 			<div>
-				<p><small>Copyright ©2022 Group 7</small></p>
+				<label class="theme-switch" for="checkbox">
+					<div id="dark_mode">
+						Dark Mode
+						<span class="material-symbols-outlined mediumIcon">
+							dark_mode
+						</span>
+					</div>	
+				<input type="checkbox" id="checkbox">
+				</label>
 			</div>
-			<div>
-				<p><small>Contact <a href="mailto:scott.gurney@uea.ac.uk"><small>Group 7</small></a></small></p>
+			
+		</div>
+		<!-- "Hamburger menu" / "Bar icon" to toggle the navigation links -->
+		<a href="javascript:void(0);" class="icon" onclick="myFunction()">
+			<span class="material-symbols-outlined mediumIcon">menu</span>
+		</a>
+		</div>
+	</div>
+
+<main>
+<div class="main">
+	<div class="container">
+		<!-- Scrollable menu of days -->
+		<div id="days-container">
+			<div id="days-list">
+				<!--
+				<div class="day"><a href="hourly.html" onclick="myFunction()"><var>day1</var></a></div>
+				<div class="day"><a href="hourly.html" onclick="myFunction()"><var>day2</var></a></div>
+				<div class="day"><a href="hourly.html" onclick="myFunction()"><var>day3</var></a></div>
+				<div class="day"><a href="hourly.html" onclick="myFunction()"><var>day4</var></a></div>
+				<div class="day"><a href="hourly.html" onclick="myFunction()"><var>day5</var></a></div>
+				<div class="day"><a href="hourly.html" onclick="myFunction()"><var>day6</var></a></div>
+				<div class="day"><a href="hourly.html" onclick="myFunction()"><var>day7</var></a></div>
+				<div class="day"><a href="hourly.html" onclick="myFunction()"><var>day8</var></a></div>
+				<div class="day"><a href="hourly.html" onclick="myFunction()"><var>day9</var></a></div>
+				<div class="day"><a href="hourly.html" onclick="myFunction()"><var>day10</var></a></div>
+				<div class="day"><a href="hourly.html" onclick="myFunction()"><var>day11</var></a></div>
+				<div class="day"><a href="hourly.html" onclick="myFunction()"><var>day12</var></a></div>
+				-->
 			</div>
-			<div>
-				<p><small>Terms of use</small></p>
+		</div>
+		<div id="energy-container">
+			<div id="solar-energy">
+				<h3>Solar Energy</h3>
+				<!-- Insert variable (or output) for solar energy here -->
+				<div id="power">
+					<var>20.7</var>
+					<p>
+					kWh
+					<span class="material-symbols-outlined">
+						bolt
+					</span>
+					</p>
+				</div>
+				<span class="material-symbols-outlined">
+					arrow_drop_up
+				</span>
+				<!--img id = "solar-energy-arrow" src = "arrow.jpg" alt = "energy indicator arrow"-->
+				<span class="material-symbols-outlined largeIcon">
+					solar_power
+				</span>
+				<!--img id = "solar-panel-icon" src = "solar-panel-icon.jpg" alt = "solar panel icon"-->
 			</div>
-			<div>
-				<p><small>Privacy Policy</small></p>
+			<div id="daily-usage">
+				<h3>Daily Usage</h3>
+				<!-- Insert variable for daily usage here -->
+				<div id="usage">
+					<var>21.5</var>
+					<p>
+					kWh
+					<span class="material-symbols-outlined">
+						bolt
+					</span>
+					</p>
+				</div>
+				<!--img id = "usage-energy-arrow" src = "arrow.jpg" alt = "energy indicator arrow"-->
+				<span class="material-symbols-outlined">
+					arrow_drop_up
+				</span>
+				<!--img id = "battery-icon" src = "battery-icon.jpg" alt = "battery icon"-->
+				<span class="material-symbols-outlined largeIcon">
+					battery_horiz_050
+				</span>
 			</div>
-		</footer>
-	</body>
+			<div id="surplus-deficit">
+				<h3>Surplus Deficit</h3>
+				<!-- Insert variable for surplus energy here -->
+				<div id="surplus">
+					<var>0.8</var>
+					<p>
+					kWh
+					<span class="material-symbols-outlined">
+						bolt
+					</span>
+					</p>
+				</div>
+				<!--img id = "surplus-energy-arrow" src = "arrow.jpg" alt = "energy indicator arrow"-->
+				<span class="material-symbols-outlined">
+					arrow_drop_up
+				</span>
+				<!--img id = "energy-icon" src = "energy-icon.jpg" alt = "energy icon"-->
+				<span class="material-symbols-outlined largeIcon">
+					bolt
+				</span>
+			</div>
+		</div>
+	</div>
+</main>
+
+<footer>
+	<div>
+	<p><small>Copyright ©2022 Group 7</small></p>
+	</div>
+	<div>
+	<p><small>Contact <a href="mailto:scott.gurney@uea.ac.uk"><small>Group 7</small></a></small></p>
+	</div>
+	<div>
+	<p><small>Terms of use</small></p>
+	</div>
+	<div>
+	<p><small>Privacy Policy</small></p>
+	</div>
+</footer>
+</body>
 </html>

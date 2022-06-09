@@ -1,119 +1,123 @@
 <!DOCTYPE html>
 <html lang="en">
 
-	<head>
-		<title>Energy Monitor</title>
-		
-		<!-- Google Font Maven Pro -->
-		<link rel="preconnect" href="https://fonts.googleapis.com">
-		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-		<link href="https://fonts.googleapis.com/css2?family=Maven+Pro:wght@400;500&display=swap" rel="stylesheet">
-		
-		
-		<!-- Burger Menu Icon -->
-		<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,700,0,0" />
-		<!-- Opens/Closes Burger Menu -->
-		<script src="test.js" defer></script>
-		
-		<script src="./js/LocalDataManager.js"></script>
-		<script src="./js/inputManager.js"></script>
-		<!-- Styling -->
-		<link rel="stylesheet" href="/css/test.css">
-		<meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: https://ssl.gstatic.com 'unsafe-eval' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; media-src *; img-src 'self' data: content:;">
-		<meta name = "viewport" content = "width=device-width, initial-scale=1.0">
-	</head>
+<head>
+	<title>Energy Monitor</title>
+	
+	<!-- Google Font Maven Pro -->
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Maven+Pro:wght@400;500&display=swap" rel="stylesheet">
+	
+	
+	<!-- Burger Menu Icon -->
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,700,0,0" />
+	<!-- Opens/Closes Burger Menu -->
+	<script src="test.js" defer></script>
+	
+	<script src="./js/LocalDataManager.js"></script>
+	<script src="./js/inputManager.js"></script>
+	<!-- Styling -->
+	<link rel="stylesheet" href="/css/test.css">
+	<meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: https://ssl.gstatic.com 'unsafe-eval' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; media-src *; img-src 'self' data: content:;">
+	<meta name = "viewport" content = "width=device-width, initial-scale=1.0">
+</head>
 
-	<body>
-		<div class="topnav-container">
-			<!-- Top Navigation Menu -->
-			<div class="topnav">
-				<a><h1>Select your location</h1></a>
-				<!-- Navigation links (hidden by default) -->
-				<div id="myLinks">
-					<a class="active" href="home.html">Home</a>
-					<a href="usage.html">Usage</a>
-					<a href="panels.html">Panels</a>
-					<a href="daily.html">Today</a>
-					<a href="hourly.html">Hourly</a>
-					<a href="help.html">Help</a>
-					
-					<!-- Dark mode switch -->
-					<div>
-						<label class="theme-switch" for="checkbox">
-							<div id="dark_mode">
-								Dark Mode
-								<span class="material-symbols-outlined mediumIcon">
-									dark_mode
-								</span>
-							</div>	
-							<input type="checkbox" id="checkbox">
-						</label>
-					</div>
-				</div>
-				<!-- "Hamburger menu" / "Bar icon" to toggle the navigation links -->
-				<a href="javascript:void(0);" class="icon" onclick="myFunction()">
-					<span class="material-symbols-outlined mediumIcon">menu</span>
-				</a>
+<body>
+	<div class="topnav-container">
+		<!-- Top Navigation Menu -->
+		<div class="topnav">
+		<a><h1>Select your location</h1></a>
+		<!-- Navigation links (hidden by default) -->
+		<div id="myLinks">
+			<a class="active" href="home.html">Home</a>
+			<a href="usage.html">Usage</a>
+			<a href="panels.html">Panels</a>
+			<a href="daily.html">Today</a>
+			<a href="hourly.html">Hourly</a>
+			<a href="help.html">Help</a>
+			
+			<div>
+				<label class="theme-switch" for="checkbox">
+					<div id="dark_mode">
+						Dark Mode
+						<span class="material-symbols-outlined mediumIcon">
+							dark_mode
+						</span>
+					</div>	
+				<input type="checkbox" id="checkbox">
+				</label>
 			</div>
+			
 		</div>
-
-
-		<main>
-			<!-- Clickable map locations -->
-			<div class="main map">
-				<img class="hero" src="/img/mapClear.jpg" alt="map">
-				<ul id="locations">
-					<li id="Weipa">		
-						<label>Weipa</label>
-						<a onclick="inputLocation(-12.239544192990605, 141.76575727708516, 'Weipa')"></a>
-					</li>
-					<li id="Wenlock">		
-						<label>Wenlock</label>
-						<a onclick="inputLocation(-13.094726954692797, 142.98822515904797, 'Wenlock')"></a>
-					</li>
-					<li id="Coen">		
-						<label>Coen</label>
-						<a onclick="inputLocation(-13.944659266250056, 143.19874893205477, 'Coen')"></a>
-					</li>
-					<li id="Lakefield">		
-						<label>Lakefield</label>
-						<a onclick="inputLocation(-14.911126916995045, 144.2170719168139, 'Lakefield')"></a>
-					</li>
-					<li id="Cairns">		
-						<label>Cairns</label>
-						<a onclick="inputLocation(-16.87525210522903, 145.75642621366043, 'Cairns')"></a>
-					</li>
-					<li id="Kowanyama">		
-						<label>Kowanyama</label>
-						<a onclick="inputLocation(-15.45016757550798, 141.74984882000314, 'Kowanyama')"></a>
-					</li>
-				</ul>
-			</div>
-		</main>
-
-		<div>
-			<!-- Homepage information -->
-			<p><small>
-				<br>
-				Bushlight has been in contact with communites around Cape York and provided them with access to solar energy.<br>
-				We have developed a web application to allow you to view your usage and how much extra energy you have available to use.
-			</small></p>
+		<!-- "Hamburger menu" / "Bar icon" to toggle the navigation links -->
+		<a href="javascript:void(0);" class="icon" onclick="myFunction()">
+			<span class="material-symbols-outlined mediumIcon">menu</span>
+		</a>
 		</div>
+	</div>
 
-		<footer>
-			<!-- Footer information -->
-			<div>
-				<p><small>Copyright ©2022 Group 7</small></p>
-			</div>
-			<div>
-				<p><small>Contact <a href="mailto:scott.gurney@uea.ac.uk">Group 7</a></small></p>
-			</div>
-			<div>
-				<p><small>Terms of use</small></p>
-			</div>
-			<div>
-				<p><small>Privacy Policy</small></p>
-			</div>
-		</footer>
-	</body>
+
+<main>
+<div class="main map">
+
+	<img class="hero" src="/img/mapClear.jpg" alt="map">
+	
+	<ul id="locations">
+		<li id="Weipa">		
+			<label>Weipa</label>
+			<a onclick="inputLocation(-12.239544192990605, 141.76575727708516, 'Weipa')"></a>
+		</li>
+		<li id="Wenlock">		
+			<label>Wenlock</label>
+			<a onclick="inputLocation(-13.094726954692797, 142.98822515904797, 'Wenlock')"></a>
+		</li>
+		<li id="Coen">		
+			<label>Coen</label>
+			<a onclick="inputLocation(-13.944659266250056, 143.19874893205477, 'Coen')"></a>
+		</li>
+		<li id="Lakefield">		
+			<label>Lakefield</label>
+			<a onclick="inputLocation(-14.911126916995045, 144.2170719168139, 'Lakefield')"></a>
+		</li>
+		<li id="Cairns">		
+			<label>Cairns</label>
+			<a onclick="inputLocation(-16.87525210522903, 145.75642621366043, 'Cairns')"></a>
+		</li>
+		<li id="Kowanyama">		
+			<label>Kowanyama</label>
+			<a onclick="inputLocation(-15.45016757550798, 141.74984882000314, 'Kowanyama')"></a>
+		</li>
+
+	</ul>
+	
+	
+	
+	
+</div>
+</main>
+
+<div>
+	<p><small>
+		<br>
+		Bushlight has been in contact with communites around Cape York and provided them with access to solar energy.<br>
+		We have developed a web application to allow you to view your usage and how much extra energy you have available to use.
+	</small></p>
+</div>
+
+<footer>
+	<div>
+	<p><small>Copyright ©2022 Group 7</small></p>
+	</div>
+	<div>
+	<p><small>Contact <a href="mailto:scott.gurney@uea.ac.uk">Group 7</a></small></p>
+	</div>
+	<div>
+	<p><small>Terms of use</small></p>
+	</div>
+	<div>
+	<p><small>Privacy Policy</small></p>
+	</div>
+</footer>
+</body>
 </html>
