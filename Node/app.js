@@ -1,14 +1,9 @@
 //Dependencies
 const IntensityCalculator = require('./models/IntensityCalculator');
 const SolarArrayModel = require('./models/SolarArrayModel');
-const WeatherAtTime = require('./models/WeatherAtTime');
-const OpenWeather = require('./models/OpenWeather');
-
 
 //create an express web server
 const fetch = require('node-fetch');
-const HandyStorage = require('handy-storage');
-const store = new HandyStorage('./store.json');
 const express = require('express');
 const app = express();
 app.set('view engine', 'html')
@@ -26,7 +21,7 @@ app.disable('x-powered-by');
 //Requests without extensions will be treated as ".html"
 app.use(express.static('public',{extensions:['html']}))
 
-// Use json to parse request bodies
+//Use json to parse request bodies
 app.use(express.json());
 
 //Add API routes

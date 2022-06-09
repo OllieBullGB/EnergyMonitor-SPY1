@@ -12,11 +12,11 @@ class OpenWeather
         this.apiKey = apiKey;
         this.APIResponse = this.init(store);
         this.weatherPoints = [];
-        this.APIResponse.list.forEach(item => 
+        for (var item in this.APIResponse)
         {
             let weatherAtTime = new WeatherAtTime(item);
             this.weatherPoints.push(weatherAtTime);
-        })
+        };
     }
 
     setWeatherPoints(weatherPoints)
