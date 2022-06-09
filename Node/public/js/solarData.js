@@ -86,7 +86,7 @@ function totalsRenderer(power, usage, surplus)
     `;
 }
 
-function containerRenderer(timeStr, link, weatherIconName, container)
+function containerRenderer(timeStr, link, weatherIconName, container, selected)
 {
     let hourContainer = document.createElement("div");
     hourContainer.onclick = () => 
@@ -105,6 +105,11 @@ function containerRenderer(timeStr, link, weatherIconName, container)
 		</span>
 	</a>
     `;
+
+    if(selected)
+    {
+        hourContainer.classList.add("selected");
+    }
 
     container.appendChild(hourContainer);
 }
