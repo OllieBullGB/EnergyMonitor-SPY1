@@ -27,6 +27,7 @@ class OpenWeather
         this.weatherPoints = weatherPoints;
     }
 
+    //call the OpenWeatherMapAPI for the 5 day forecast
     init(store)
     {
         let url = `https://api.openweathermap.org/data/2.5/forecast?lat=${this.latitude}&lon=${this.longitude}&appid=${this.apiKey}`;

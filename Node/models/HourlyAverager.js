@@ -11,14 +11,17 @@ class HourlyAverager
         let output = [];
         this.weatherPoints.forEach((weatherPoint) =>
         {
+            //configure the intensity calculator for this specific weatherPoint
             this.solarArrayModel.intensityCalculator.setDatetime(new Date(weatherPoint.dateTime * 1000).toLocaleString("en-US"))
             this.solarArrayModel.intensityCalculator.setAltitude(weatherPoint.altitude);
             this.solarArrayModel.setCloudCover(weatherPoint.getCloudCover());
             this.solarArrayModel.setTemperature(weatherPoint.getTemp());
 
+            //get the power output of the weatherPoint
             let power = this.solarArrayModel.getRealisticPower();
             if(power < 0) power = 0;
 
+            //create an object representing the weatherPoints solar output
             let weatherPointOutput = 
             {
                 "dateTime": weatherPoint.dateTime,
@@ -27,6 +30,7 @@ class HourlyAverager
                 "power": power
             };
             output.push(weatherPointOutput);
+            //pad the next two hours with the same output to create an array representing all 24 hours
             let weatherPointOneHourAhead = 
             {
                 "dateTime": parseInt(weatherPoint.dateTime) + 3600,

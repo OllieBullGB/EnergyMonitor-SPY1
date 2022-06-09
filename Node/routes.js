@@ -8,6 +8,7 @@ module.exports = function(app) {
     app.all('/api/solar', (req, res) => {
     	console.info("Request received");
         
+        //get request parameters
         let day = req.body.day;
         let latitude = req.body.lat;
         let longitude = req.body.long;
@@ -16,9 +17,11 @@ module.exports = function(app) {
         let angle = req.body.angle;
         let direction = req.body.direction;
 
+        //get the weather data for the latitude and longitude
         let weather = new OpenWeather(latitude, longitude, "c35428e96cf1836d8d2d58f7eaf046eb");
         let data;
         
+        //if the request is for a specific day
         if(day != undefined && day != '')
         {
             console.log("day");
@@ -30,6 +33,7 @@ module.exports = function(app) {
             let hourlyAverager = new HourlyAverager(weatherPoints, solarArrayModel);
             data = hourlyAverager.calculatePower();
         }
+        //if the request is for the 5 day forecast
         else
         {
             let weatherPoints = weather.getFiveDayWeather();
@@ -41,7 +45,6 @@ module.exports = function(app) {
             data = dailyAverager.calculatePower();
         }
 
-        console.table(data);
         res.status(200).json(data);
     });
 
