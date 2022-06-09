@@ -110,8 +110,10 @@ function containerRenderer(timeStr, link, weatherIconName, container, selected)
     if(selected)
     {
         hourContainer.classList.add("selected");
+
     }
 
     container.appendChild(hourContainer);
+    hourContainer.focus();
 }
 
