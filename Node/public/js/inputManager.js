@@ -1,3 +1,45 @@
+for(i=0; i<10; i++)
+{
+  let btn = document.getElementById(`numpad-${i}`);
+  btn.addEventListener("click", () => 
+  {
+    addNumber(btn);
+  })
+}
+
+let decimalInputBtn = document.getElementById("numpad-.");
+decimalInputBtn.addEventListener("click", () =>
+{
+  addNumber(decimalInputBtn);
+})
+
+
+let resetInputBtn = document.getElementById("numpad-clear");
+resetInputBtn.addEventListener("click", () =>
+{
+  resetInput();
+})
+
+let updateElement = document.getElementById("numpad-update");
+console.log(typeof(document.getElementById("current")))
+if(window.location.href.includes("usage"))
+{
+  updateElement.addEventListener("click", () =>
+  {
+    updateUsage();
+  })
+}
+else
+{
+  updateElement.addEventListener("click", () =>
+  {
+    switchSelection();
+  })
+}
+
+
+
+
 function addNumber(element) 
 {
   let selectedElement = document.getElementsByClassName("selected");
@@ -32,8 +74,9 @@ function loadSavedInputs()
     </p>
     `
     updateUsageElement.value = usage;
+
   }
-  else if(typeof(updateUsageElement) != 'undefined' && currentElement != null)
+  else if(typeof(updateUsageElement) != null && currentElement != null)
   {
     currentElement.innerHTML = 
     `
@@ -45,11 +88,13 @@ function loadSavedInputs()
       </span>
     </p>
     `
+
+    
   }
 
   let updateAreaElement = document.getElementById("update-area");
 
-  if(typeof(updateAreaElement) != 'undefined' && updateAreaElement != null)
+  if(window.location.href.includes("panels"))
   {
     if(!isNaN(panelInfo.area) && panelInfo.area > 0)
     {
@@ -119,9 +164,3 @@ function updateDirection()
   window.location.href="daily.html";
 }
 
-function inputLocation(latitude, longitude, cityName)
-{
-  LocalDataManager.setLocation(latitude, longitude);
-  LocalDataManager.setCity(cityName);
-  location.replace("usage.html");
-}
