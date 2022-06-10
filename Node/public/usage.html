@@ -38,12 +38,12 @@
 		
 		<div>
 			<label class="theme-switch" for="checkbox">
-				<div id="dark_mode">
+				<span id="dark_mode">
 					Dark Mode
 					<span class="material-symbols-outlined mediumIcon">
 						dark_mode
 					</span>
-				</div>	
+				</span>	
 			<input type="checkbox" id="checkbox">
 			</label>
 		</div>	
@@ -58,6 +58,7 @@
 
 <main>
 	<div class="container">
+	<form>
 		<div id="usage-container">
 			<div id="current-usage">
 				<h3>Current</h3>
@@ -75,10 +76,12 @@
 					battery_horiz_050
 				</span>
 			</div>
-			<div id="update-usage">
+			<!--div id="update-usage"-->
+			<div class="update-usage">
 				<h3>Update</h3>
-				<div id="update">
-					<form>
+				<!--div id="update"-->
+				<div class="update">
+					<!--form-->
 						<input class="update-input selected" id="usage-update" type="text" placeholder="00.0">
 					<p>
 						kWh
@@ -118,9 +121,13 @@
 				<input type="button" class="numpad-digit material-symbols-outlined" value=backspace id="numpad-clear" onClick=resetInput()>
 				<!--/div-->
 				<!--input type="button" class="numpad-digit" value="update" id="numpad-update" onClick=updateUsage()-->
-			</form>
+			<!--/form-->
 			</div>
-		</div>
+			
+		</form>
+			
+		<!--/div-->
+
 	</div>
 </main>
 
