@@ -116,9 +116,18 @@ loadSavedInputs();
 
 function updateUsage()
 {
-  let usage = parseFloat(document.getElementById("usage-update").value).defaultValue = "0";
+  if ((document.getElementById("usage-update").value) != '')
+  {
+  let usage = parseFloat(document.getElementById("usage-update").value);
   LocalDataManager.setUsage(usage);
   window.location.href="panels.html";
+  }
+  else
+  {
+    let usage = 0;
+    LocalDataManager.setUsage(usage);
+    window.location.href="panels.html";
+  }
 }
 
 // Whenever the submit button on the panels page is pressed check which input is active and trigger the appropriate update.
@@ -147,21 +156,47 @@ function switchSelection()
 
 function updateArea()
 {
-  let area = parseFloat(document.getElementById("update-area").value).defaultValue = "0";
+  if ((document.getElementById("update-area").value) != '')
+  {
+  let area = parseFloat(document.getElementById("update-area").value);
   LocalDataManager.setArea(area);
+  }
+  else
+  {
+    let area = 0;
+    LocalDataManager.setArea(area);
+  }
 }
 
 function updateAngle()
 {
-  let angle = parseFloat(document.getElementById("update-angle").value).defaultValue = "0";
-  LocalDataManager.setAngle(angle);
+  if ((document.getElementById("update-angle").value) != '')
+  {
+    let angle = parseFloat(document.getElementById("update-angle").value);
+    LocalDataManager.setAngle(angle);
+  }
+  else
+  {
+    let angle = 0;
+    LocalDataManager.setAngle(angle);
+  }
 }
 
 function updateDirection()
 {
-  let direction = parseFloat(document.getElementById("update-direction").value).defaultValue = "0";
-  LocalDataManager.setDirection(direction);
-  loadSavedInputs();
-  window.location.href="daily.html";
+  if ((document.getElementById("update-angle").value) != '')
+  {
+    let direction = parseFloat(document.getElementById("update-direction").value);
+    LocalDataManager.setDirection(direction);
+    loadSavedInputs();
+    window.location.href="daily.html";
+  }
+  else
+  {
+    let direction = 0;
+    LocalDataManager.setDirection(direction);
+    loadSavedInputs();
+    window.location.href="daily.html";
+  }
 }
 
