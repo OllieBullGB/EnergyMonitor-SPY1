@@ -1,3 +1,17 @@
+/**
+ * 
+ *  Filename: HourlyAverager.js
+ * 
+ *  Date: 9th June 2022
+ * 
+ *  Description: A class to return the average solar power per hour
+ *               and average weather conditions, given an input of 
+ *               WeatherAtTime instances representing a single day
+ * 
+ *  Version: v1.0 09/06/22, v1.1 10/06/22
+ * 
+ */
+
 class HourlyAverager
 {
     constructor(weatherPoints, solarArrayModel)

@@ -1,3 +1,15 @@
+/**
+ * 
+ *  Filename: app.js
+ * 
+ *  Date: 6th June 2022
+ * 
+ *  Description: An instance of the EnergyMonitor application
+ * 
+ *  Version: v1.0 06/06/22, v1.1 08/06/22, v1.2 09/06/22
+ * 
+ */
+
 //Dependencies
 const IntensityCalculator = require('./models/IntensityCalculator');
 const SolarArrayModel = require('./models/SolarArrayModel');
@@ -10,8 +22,8 @@ app.set('view engine', 'html')
 
 //Forcing the app to use a package which protects from well known
 //web vulnerabilities by setting appropriate HTTP headers
-//const helmet = require('helmet');
-//app.use(helmet());
+const helmet = require('helmet');
+app.use(helmet());
 
 //Forces the app to remove any express branding to help prevent
 //targeted attacks to the webserver
