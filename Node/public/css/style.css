@@ -432,6 +432,10 @@ var {
 }
 
 .selected {
+	border: 2vw solid rgba(var(--border-blue), 1);
+}
+
+.active {
 	border: 0.8vw solid rgba(var(--border-blue), 1);
 }
 

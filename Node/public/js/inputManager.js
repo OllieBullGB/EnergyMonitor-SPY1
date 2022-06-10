@@ -42,14 +42,14 @@ else
 
 function addNumber(element) 
 {
-  let selectedElement = document.getElementsByClassName("selected");
+  let selectedElement = document.getElementsByClassName("active");
   selectedElement = selectedElement[0];
   selectedElement.value = selectedElement.value+element.value;
 }
 
 function resetInput() 
 {
-  let elements = document.getElementsByClassName("selected");
+  let elements = document.getElementsByClassName("active");
   let selectedElement = elements[0];
   selectedElement.value = selectedElement.value.slice(0, -1);
 }
@@ -120,22 +120,22 @@ function updateUsage()
   window.location.href="panels.html";
 }
 
-// Whenever the submit button on the panels page is pressed check which input is selected and trigger the appropriate update.
+// Whenever the submit button on the panels page is pressed check which input is active and trigger the appropriate update.
 function switchSelection()
 {
-  let currentSelectedElement = document.getElementsByClassName("selected");
+  let currentSelectedElement = document.getElementsByClassName("active");
   if (currentSelectedElement[0] == document.getElementById("update-area"))
   {
-    currentSelectedElement[0].classList.remove("selected");
+    currentSelectedElement[0].classList.remove("active");
     let newElement = document.getElementById("update-angle");
-    newElement.classList.add("selected");
+    newElement.classList.add("active");
     updateArea();
   }
   else if (currentSelectedElement[0] == document.getElementById("update-angle"))
   {
-    currentSelectedElement[0].classList.remove("selected");
+    currentSelectedElement[0].classList.remove("active");
     let newElement = document.getElementById("update-direction");
-    newElement.classList.add("selected");
+    newElement.classList.add("active");
     updateAngle();
   }
   else
