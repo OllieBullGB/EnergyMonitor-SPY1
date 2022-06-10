@@ -142,11 +142,11 @@ a {
 }
 
 /* Add a grey background color on mouse-over */
-.topnav span:hover {
+/*.topnav span:hover {
   background-color: rgba(var(--bg-blue), 1);
   color: rgba(var(--main-white), 1);
   padding: 5%;
-}
+}*/
 
 #numpad-container .numpad-digit:active {
 background-color: rgba(var(--bg-med-blue), 1);
@@ -233,7 +233,7 @@ p {
 	color: rgba(var(--main-blue), 1);
 }
 
-#solar-energy h3, #daily-usage h3, #surplus-deficit h3, #current-usage h3, #update-usage h3 {
+#solar-energy h3, #daily-usage h3, #surplus-deficit h3, #current-usage h3, .update-usage h3 {
 	width: 25%;
 	margin: 0;
 }
@@ -255,7 +255,7 @@ p {
   border-top: 1vw solid rgba(var(--border-blue), 1);
 }
 
-#solar-energy, #daily-usage, #surplus-deficit, #current-usage, #update-usage {
+#solar-energy, #daily-usage, #surplus-deficit, #current-usage, .update-usage {
 	display: flex;
 	justify-content: space-evenly;
 	align-items: center;
@@ -273,7 +273,7 @@ p {
 	width: 25%;
 }
 
-#update {
+.update {
 	display: flex;
 	justify-content: space-evenly;
 	align-items: flex-start;
@@ -283,7 +283,7 @@ p {
 	width: 25%;
 }
 
-#power p, #usage p, #surplus p, #current p, #update p{
+#power p, #usage p, #surplus p, #current p, .update p{
 	display: flex;
 	align-items: flex-start;
 	padding: 0;

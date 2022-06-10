@@ -37,12 +37,12 @@
 			
 			<div>
 				<label class="theme-switch" for="checkbox">
-					<div id="dark_mode">
+					<span id="dark_mode">
 						Dark Mode
 						<span class="material-symbols-outlined mediumIcon">
 							dark_mode
 						</span>
-					</div>	
+					</span>	
 				<input type="checkbox" id="checkbox">
 				</label>
 			</div>
@@ -58,12 +58,15 @@
 
 <main>
 	<div class="main">
+	<form>
 		<div class="container">
 			<div id="area">
-				<div id="update-usage">
+				<!--div id="update-usage"-->
+				<div class="update-usage">
 					<h3>Area</h3>
-					<div id="update">
-						<form>
+					<!--div id="update"-->
+					<div class="update">
+						<!--form-->
 							<input class="update-input selected" id="update-area" type="text" placeholder="00.0">
 						<p>
 							&#13217;
@@ -76,10 +79,12 @@
 				</div>
 			</div>
 			<div id="angle">
-				<div id="update-usage">
+				<!--div id="update-usage"-->
+				<div class="update-usage">
 					<h3>Angle</h3>
-					<div id="update">
-						<form>
+					<!--div id="update"-->
+					<div class="update">
+						<!--form-->
 							<input class="update-input" id="update-angle" type="text" placeholder="00.0">
 						<p>
 							&#176;
@@ -92,10 +97,12 @@
 					</div>
 			</div>
 			<div id="direction">
-				<div id="update-usage">
+				<!--div id="update-usage"-->
+				<div class="update-usage">
 				<h3>Direction</h3>
-					<div id="update">
-						<form>
+					<!--div id="update"-->
+					<div class="update">
+						<!--form-->
 							<input class="update-input" id="update-direction" type="text" placeholder="00.0">
 						<p>
 							&#176;
@@ -128,9 +135,10 @@
 					<input type="button" class="numpad-digit material-symbols-outlined" value=backspace id="numpad-clear" onClick=resetInput()>
 					<!--/div-->
 					<!--input type="button" class="numpad-digit" value="update" id="numpad-update" onClick=updateUsage()-->
-				</form>
+				<!--/form-->
 				</div>
 			</div>
+			</form>
 		</div>
 	</main>
 
