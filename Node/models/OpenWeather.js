@@ -1,3 +1,19 @@
+/**
+ * 
+ *  Filename: OpenWeather.js
+ * 
+ *  Date: 6th June 2022
+ * 
+ *  Description: A class to call the OpenWeatherAPI
+ *               and get a 5 day forecast to provide
+ *               data for IntensityCalculator and 
+ *               SolarArrayModel
+ * 
+ *  Version: v1.0 06/06/22, v1.1 09/06/22
+ * 
+ */
+
+
 const WeatherAtTime = require('./WeatherAtTime');
 const fetch = require('node-fetch');
 const HandyStorage = require('handy-storage');

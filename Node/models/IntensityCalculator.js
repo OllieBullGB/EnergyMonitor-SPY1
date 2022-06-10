@@ -1,3 +1,17 @@
+/**
+ * 
+ *  Filename: IntensityCalculator.js
+ * 
+ *  Date: 4th June 2022
+ * 
+ *  Description: A class to calculate the incident and global
+ *               radiation given simple locational and time 
+ *               variables, based on the SPA algorithm
+ * 
+ *  Version: v1.0 04/06/22, v1.1 07/06/22, v1.1 09/06/22
+ * 
+ */
+
 class IntensityCalculator 
 {
     constructor(dateTimeStr, latitude, longitude, altitude)

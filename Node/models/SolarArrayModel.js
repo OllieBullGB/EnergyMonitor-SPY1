@@ -1,3 +1,18 @@
+/**
+ * 
+ *  Filename: SolarArrayModel.js
+ * 
+ *  Date: 4th June 2022
+ * 
+ *  Description: A class to predict the output of a solar 
+ *               array given information about the array 
+ *               and the global intensity at that time
+ * 
+ *  Version: v1.0 04/06/22, v1.1 07/06/22, v1.1 09/06/22
+ * 
+ */
+
+
 const IntensityCalculator = require('./IntensityCalculator');
 
 class SolarArrayModel

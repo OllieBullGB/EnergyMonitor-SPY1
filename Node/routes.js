@@ -1,3 +1,16 @@
+/**
+ * 
+ *  Filename: routes.js
+ * 
+ *  Date: 8th June 2022
+ * 
+ *  Description: A set of routes to allow users to query
+ *               the solar output API
+ * 
+ *  Version: v1.0 08/06/22, v1.1 09/06/22
+ * 
+ */
+
 const OpenWeather = require('./models/OpenWeather');
 const IntensityCalculator = require('./models/IntensityCalculator');
 const SolarArrayModel = require('./models/SolarArrayModel');

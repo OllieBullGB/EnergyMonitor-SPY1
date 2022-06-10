@@ -1,3 +1,17 @@
+/**
+ * 
+ *  Filename: DailyAverager.js
+ * 
+ *  Date: 9th June 2022
+ * 
+ *  Description: A class to return the average solar power per day
+ *               and average weather conditions, given an input of 
+ *               WeatherAtTime instances
+ * 
+ *  Version: v1.0 09/06/22, v1.1 10/06/22
+ * 
+ */
+
 class DailyAverager
 {
     constructor(weatherPoints, solarArrayModel)

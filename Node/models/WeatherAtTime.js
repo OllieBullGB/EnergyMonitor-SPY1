@@ -1,3 +1,17 @@
+/**
+ * 
+ *  Filename: WeatherAtTime.js
+ * 
+ *  Date: 6th June 2022
+ * 
+ *  Description: A class used to store relevant weather data
+ *               at a timeperiod. used in composition of 
+ *               OpenWeather
+ * 
+ *  Version: v1.0 06/06/22
+ * 
+ */
+
 class WeatherAtTime
 {
     constructor(weatherInstance) 
