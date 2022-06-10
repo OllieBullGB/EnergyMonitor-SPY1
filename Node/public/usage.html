@@ -59,10 +59,13 @@
 <main>
 	<div class="container">
 	<form>
-		<div id="usage-container">
-			<div id="current-usage">
+		<!--div id="usage-container"-->
+		<article class="data">
+			<!--div id="current-usage"-->
+			<article class="data-row">
 				<h3>Current</h3>
-				<div id="current">
+				<!--div id="current"-->
+				<div class="data-input" id="current">
 					<var>21.5</var>
 					<p>
 						kWh
@@ -75,12 +78,14 @@
 				<span class="material-symbols-outlined largeIcon">
 					battery_horiz_050
 				</span>
-			</div>
+			</article>
 			<!--div id="update-usage"-->
-			<div class="update-usage">
+			<!--div class="update-usage"-->
+			<article class="data-row" id="update-usage">
 				<h3>Update</h3>
 				<!--div id="update"-->
-				<div class="update">
+				<!--div class="update"-->
+				<div class="data-input">
 					<!--form-->
 						<input class="update-input selected" id="usage-update" type="text" placeholder="00.0">
 					<p>
@@ -95,8 +100,8 @@
 				<!--span class="material-symbols-outlined largeIcon">
 					check_circle
 				</span-->
-			</div>
-		</div>
+			</article>
+		</article>
 		<!-- Keypad to enter daily energy usage -->
 		<div id="numpad-container">
 				<!--input id="usage" type="text" value=""-->
