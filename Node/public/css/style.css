@@ -297,9 +297,32 @@ p {
 	padding: 0;
 	font-size: 10vw;
 	color: rgba(var(--main-green), 1);
-	width: 25%;
+	width: 35%;
 }
 
+.data-input-area {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-evenly;
+	align-items: flex-end;
+	padding: 0;
+	font-size: 10vw;
+	color: rgba(var(--main-green), 1);
+	width: 35%;
+}
+
+.data-input-degrees {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-evenly;
+	align-items: flex-start;
+	padding: 0;
+	font-size: 10vw;
+	color: rgba(var(--main-green), 1);
+	width: 35%;
+}
+
+/*
 .update {
 	display: flex;
 	justify-content: space-evenly;
@@ -309,7 +332,8 @@ p {
 	color: rgba(var(--main-green), 1);
 	width: 25%;
 }
-
+*/
+/*
 #power p, #usage p, #surplus p, #current p, .update p{
 	display: flex;
 	align-items: flex-start;
@@ -317,13 +341,24 @@ p {
 	font-size: 5vw;
 	justify-content: center;
 }
-
-.data-input p{
+*/
+.data-input p {
 	display: flex;
 	align-items: flex-start;
 	padding: 0;
 	font-size: 5vw;
 	justify-content: center;
+}
+
+.data-input-area p{
+	padding-left: 0%;
+	font-size: 5vw;
+	justify-content: center;
+}
+
+.data-input-degrees p {
+	padding-left: 0%;
+	font-size: 5vw;
 }
 
 .largeIcon {
@@ -345,7 +380,7 @@ var {
 }
 
 .update-input {
-	width: 90%;
+	width: 60%;
 	height: 75%;
 	padding: 5%;
 	font-size: 10vw;

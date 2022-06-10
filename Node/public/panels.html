@@ -57,15 +57,18 @@
 
 
 <main>
-	<div class="main">
-	<form>
+	<!--div class="main"-->
 		<div class="container">
-			<div id="area">
+		<form>
+			<!--div id="area"-->
+			<div class="data">
 				<!--div id="update-usage"-->
-				<div class="update-usage">
+				<!--div class="update-usage"-->
+				<article class="data-row" id="update-usage">
 					<h3>Area</h3>
 					<!--div id="update"-->
-					<div class="update">
+					<!--div class="update"-->
+					<div class="data-input-area">
 						<!--form-->
 							<input class="update-input selected" id="update-area" type="text" placeholder="00.0">
 						<p>
@@ -77,13 +80,17 @@
 					</span>
 
 				</div>
-			</div>
-			<div id="angle">
+			<!--/div-->
+			</article>
+			<!--div id="angle"-->
+			<div class="data">
 				<!--div id="update-usage"-->
-				<div class="update-usage">
+				<!--div class="update-usage"-->
+				<article class="data-row" id="update-usage">
 					<h3>Angle</h3>
 					<!--div id="update"-->
-					<div class="update">
+					<!--div class="update"-->
+					<div class="data-input-degrees">
 						<!--form-->
 							<input class="update-input" id="update-angle" type="text" placeholder="00.0">
 						<p>
@@ -94,14 +101,18 @@
 							square_foot
 						</span>			
 						
-					</div>
+				<!--/div-->
+				</article>
 			</div>
-			<div id="direction">
+			<!--div id="direction"-->
+			<div class="data">
 				<!--div id="update-usage"-->
-				<div class="update-usage">
+				<!--div class="update-usage"-->
+				<article class="data-row" id="update-usage">
 				<h3>Direction</h3>
 					<!--div id="update"-->
-					<div class="update">
+					<!--div class="update"-->
+					<div class="data-input-degrees">
 						<!--form-->
 							<input class="update-input" id="update-direction" type="text" placeholder="00.0">
 						<p>
@@ -109,7 +120,8 @@
 						</p>
 					</div>
 					<input type="button" class="numpad-update material-symbols-outlined largeIcon" value=check_circle id="numpad-update" onClick=switchSelection()>
-				</div>
+				<!--/div-->
+				</article>
 			</div>
 			<!-- Keypad to enter daily energy usage -->
 			<div id="numpad-container">
@@ -137,9 +149,12 @@
 					<!--input type="button" class="numpad-digit" value="update" id="numpad-update" onClick=updateUsage()-->
 				<!--/form-->
 				</div>
+				</div>
+				</form>
+				
 			</div>
-			</form>
-		</div>
+
+		<!--/div-->
 	</main>
 
 <footer>
