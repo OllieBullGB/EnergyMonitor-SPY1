@@ -43,14 +43,15 @@ else
 function addNumber(element) 
 {
   let selectedElement = document.getElementsByClassName("active");
-  selectedElement = selectedElement[0];
+  console.table(selectedElement);
+  selectedElement = selectedElement[1];
   selectedElement.value = selectedElement.value+element.value;
 }
 
 function resetInput() 
 {
   let elements = document.getElementsByClassName("active");
-  let selectedElement = elements[0];
+  let selectedElement = elements[1];
   selectedElement.value = selectedElement.value.slice(0, -1);
 }
 
@@ -124,16 +125,16 @@ function updateUsage()
 function switchSelection()
 {
   let currentSelectedElement = document.getElementsByClassName("active");
-  if (currentSelectedElement[0] == document.getElementById("update-area"))
+  if (currentSelectedElement[1] == document.getElementById("update-area"))
   {
-    currentSelectedElement[0].classList.remove("active");
+    currentSelectedElement[1].classList.remove("active");
     let newElement = document.getElementById("update-angle");
     newElement.classList.add("active");
     updateArea();
   }
-  else if (currentSelectedElement[0] == document.getElementById("update-angle"))
+  else if (currentSelectedElement[1] == document.getElementById("update-angle"))
   {
-    currentSelectedElement[0].classList.remove("active");
+    currentSelectedElement[1].classList.remove("active");
     let newElement = document.getElementById("update-direction");
     newElement.classList.add("active");
     updateAngle();
