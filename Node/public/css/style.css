@@ -260,7 +260,7 @@ p {
   border-top: 1vw solid rgba(var(--border-blue), 1);
 }
 
-.data div:last-child{
+.data article:last-child{
   border-top: 1vw solid rgba(var(--border-blue), 1);
 }
 
