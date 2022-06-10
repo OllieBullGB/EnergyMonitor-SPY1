@@ -17,9 +17,11 @@ function loadSavedInputs()
   let usage = LocalDataManager.getUsage().usage;
   let panelInfo = LocalDataManager.getPanelInfo();
 
-  if(typeof(document.getElementById("current")) != 'undefined' && document.getElementById("current") != null && !isNaN(usage))
+  let currentElement = document.getElementById("current");
+  let updateUsageElement = document.getElementById("update-usage");
+  if(typeof(currentElement) != 'undefined' && currentElement != null && !isNaN(usage))
   {
-    document.getElementById("current").innerHTML = 
+    currentElement.innerHTML = 
     `
     <var> ${usage} </var>
     <p>
@@ -29,11 +31,11 @@ function loadSavedInputs()
       </span>
     </p>
     `
-    document.getElementById("usage-update").value = usage;
+    updateUsageElement.value = usage;
   }
-  else if(typeof(document.getElementById("update-usage")) != 'undefined' && document.getElementById("current") != null)
+  else if(typeof(updateUsageElement) != 'undefined' && currentElement != null)
   {
-    document.getElementById("current").innerHTML = 
+    currentElement.innerHTML = 
     `
     <var> 0 </var>
     <p>
@@ -45,11 +47,13 @@ function loadSavedInputs()
     `
   }
 
-  if(typeof(document.getElementById("update-area")) != 'undefined' && document.getElementById("update-area") != null)
+  let updateAreaElement = document.getElementById("update-area");
+
+  if(typeof(updateAreaElement) != 'undefined' && updateAreaElement != null)
   {
     if(!isNaN(panelInfo.area) && panelInfo.area > 0)
     {
-      document.getElementById("update-area").value = panelInfo.area;
+      updateAreaElement.value = panelInfo.area;
     }
     if(!isNaN(panelInfo.angle) && panelInfo.angle > 0)
     {
