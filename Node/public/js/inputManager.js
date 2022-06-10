@@ -116,7 +116,7 @@ loadSavedInputs();
 
 function updateUsage()
 {
-  let usage = parseFloat(document.getElementById("usage-update").value);
+  let usage = parseFloat(document.getElementById("usage-update").value).defaultValue = "0";
   LocalDataManager.setUsage(usage);
   window.location.href="panels.html";
 }
@@ -147,19 +147,19 @@ function switchSelection()
 
 function updateArea()
 {
-  let area = parseFloat(document.getElementById("update-area").value);
+  let area = parseFloat(document.getElementById("update-area").value).defaultValue = "0";
   LocalDataManager.setArea(area);
 }
 
 function updateAngle()
 {
-  let angle = parseFloat(document.getElementById("update-angle").value);
+  let angle = parseFloat(document.getElementById("update-angle").value).defaultValue = "0";
   LocalDataManager.setAngle(angle);
 }
 
 function updateDirection()
 {
-  let direction = parseFloat(document.getElementById("update-direction").value);
+  let direction = parseFloat(document.getElementById("update-direction").value).defaultValue = "0";
   LocalDataManager.setDirection(direction);
   loadSavedInputs();
   window.location.href="daily.html";
