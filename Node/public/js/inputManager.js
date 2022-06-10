@@ -116,15 +116,15 @@ loadSavedInputs();
 
 function updateUsage()
 {
-  if ((document.getElementById("usage-update").value) != '')
+  if ((document.getElementById("usage-update").value) == '' || '.')
   {
-  let usage = parseFloat(document.getElementById("usage-update").value);
-  LocalDataManager.setUsage(usage);
-  window.location.href="panels.html";
+    let usage = 0;
+    LocalDataManager.setUsage(usage);
+    window.location.href="panels.html";
   }
   else
   {
-    let usage = 0;
+    let usage = parseFloat(document.getElementById("usage-update").value);
     LocalDataManager.setUsage(usage);
     window.location.href="panels.html";
   }
@@ -156,44 +156,44 @@ function switchSelection()
 
 function updateArea()
 {
-  if ((document.getElementById("update-area").value) != '')
+  if ((document.getElementById("update-area").value) == '' || '.')
   {
-  let area = parseFloat(document.getElementById("update-area").value);
-  LocalDataManager.setArea(area);
+    let area = 0;
+    LocalDataManager.setArea(area);
   }
   else
   {
-    let area = 0;
+    let area = parseFloat(document.getElementById("update-area").value);
     LocalDataManager.setArea(area);
   }
 }
 
 function updateAngle()
 {
-  if ((document.getElementById("update-angle").value) != '')
+  if ((document.getElementById("update-angle").value) == '' || '.')
   {
-    let angle = parseFloat(document.getElementById("update-angle").value);
+    let angle = 0;
     LocalDataManager.setAngle(angle);
   }
   else
   {
-    let angle = 0;
+    let angle = parseFloat(document.getElementById("update-angle").value);
     LocalDataManager.setAngle(angle);
   }
 }
 
 function updateDirection()
 {
-  if ((document.getElementById("update-angle").value) != '')
+  if ((document.getElementById("update-angle").value) == '' || '.')
   {
-    let direction = parseFloat(document.getElementById("update-direction").value);
+    let direction = 0;
     LocalDataManager.setDirection(direction);
     loadSavedInputs();
     window.location.href="daily.html";
   }
   else
   {
-    let direction = 0;
+    let direction = parseFloat(document.getElementById("update-direction").value);
     LocalDataManager.setDirection(direction);
     loadSavedInputs();
     window.location.href="daily.html";
