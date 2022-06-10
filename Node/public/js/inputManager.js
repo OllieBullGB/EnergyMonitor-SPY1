@@ -114,20 +114,23 @@ function loadSavedInputs()
 
 loadSavedInputs();
 
-function updateUsage()
+function sanitiseInput(input)
 {
-  if ((document.getElementById("usage-update").value) == '' || '.')
+  if(input == '' || input == '.')
   {
-    let usage = 0;
-    LocalDataManager.setUsage(usage);
-    window.location.href="panels.html";
+    return 0;
   }
   else
   {
-    let usage = parseFloat(document.getElementById("usage-update").value);
-    LocalDataManager.setUsage(usage);
-    window.location.href="panels.html";
+    return input;
   }
+}
+
+function updateUsage()
+{
+  let usage = sanitiseInput(document.getElementById("usage-update").value)
+  LocalDataManager.setUsage(usage);
+  window.location.href="panels.html";
 }
 
 // Whenever the submit button on the panels page is pressed check which input is active and trigger the appropriate update.
@@ -156,47 +159,22 @@ function switchSelection()
 
 function updateArea()
 {
-  if ((document.getElementById("update-area").value) == '' || '.')
-  {
-    let area = 0;
-    LocalDataManager.setArea(area);
-  }
-  else
-  {
-    let area = parseFloat(document.getElementById("update-area").value);
-    LocalDataManager.setArea(area);
-  }
+
+  let area = sanitiseInput(document.getElementById("update-area").value);
+  LocalDataManager.setArea(area);
 }
 
 function updateAngle()
 {
-  if ((document.getElementById("update-angle").value) == '' || '.')
-  {
-    let angle = 0;
-    LocalDataManager.setAngle(angle);
-  }
-  else
-  {
-    let angle = parseFloat(document.getElementById("update-angle").value);
-    LocalDataManager.setAngle(angle);
-  }
+  let angle = sanitiseInput(document.getElementById("update-angle").value);
+  LocalDataManager.setAngle(angle);
 }
 
 function updateDirection()
 {
-  if ((document.getElementById("update-angle").value) == '' || '.')
-  {
-    let direction = 0;
-    LocalDataManager.setDirection(direction);
-    loadSavedInputs();
-    window.location.href="daily.html";
-  }
-  else
-  {
-    let direction = parseFloat(document.getElementById("update-direction").value);
-    LocalDataManager.setDirection(direction);
-    loadSavedInputs();
-    window.location.href="daily.html";
-  }
+  let direction = sanitiseInput(document.getElementById("update-direction").value);
+  LocalDataManager.setDirection(direction);
+  loadSavedInputs();
+  window.location.href="daily.html";
 }
 
