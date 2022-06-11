@@ -52,9 +52,22 @@ function fetchSolarData(day, latitude, longitude, area, angle, direction)
 }
 
 function totalsRenderer(power, usage, surplus)
-{
+{	
+
+	let arrow = "";
+
+	if (usage > power)
+	{
+		arrow = "arrow_drop_down";
+	}
+	else
+	{
+		arrow = "arrow_drop_up";
+	}
+	
     document.getElementById("power").innerHTML = 
     `
+	<div class="data-input-field">
     <var>${power}</var>
     <p>
         kWh
@@ -62,21 +75,30 @@ function totalsRenderer(power, usage, surplus)
             bolt
         </span>
     </p>
+	</div>
     `;
 
     document.getElementById("usage").innerHTML =
     `
+	<div class="data-input-field">
     <var>${usage}</var>
     <p>
         kWh
-        <span class="material-symbols-outlined">
+        <span class="material-symbols-outlined ">
             bolt
         </span>
     </p>
+	</div>
+	
+	<span class="material-symbols-outlined ${arrow}">
+		${arrow}
+	</span>
+	
     `;
 
     document.getElementById("surplus").innerHTML =
     `
+	<div class="data-input-field">
     <var>${surplus}</var>
     <p>
         kWh
@@ -84,6 +106,11 @@ function totalsRenderer(power, usage, surplus)
             bolt
         </span>
     </p>
+	</div>
+	
+	<span class="material-symbols-outlined ${arrow}">
+		${arrow}
+	</span>
     `;
 }
 
