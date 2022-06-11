@@ -12,6 +12,7 @@
   --bg-med-blue: 204, 218, 219;
   --bg-light-blue: 229, 236, 237;
   --bg-lightest-blue: 242, 245, 246;
+  --bg-green: 4, 71, 28;
  
   --border-white: 255, 255, 255;
   --border-blue: 4,71,72;
@@ -32,7 +33,8 @@
   --bg-med-blue: 204, 218, 219;
   --bg-light-blue: 229, 236, 237;
   --bg-lightest-blue: 242, 245, 246;
- 
+  --bg-green: 4, 71, 72;
+
   --border-white: 255, 255, 255;
   --border-blue: 4,71,72;
   --border-light-blue: 229, 236, 237;
@@ -166,6 +168,7 @@ background-color: rgba(var(--bg-med-blue), 1);
 /* Map image settings */
 .hero {
 	width: 100%;
+	padding: 0;
 }
 
 footer {
@@ -440,6 +443,11 @@ var {
 	border: none;
 }
 
+.form-section .send {
+	background-color: rgba(var(--main-green), 1);
+	width: 75%;
+}
+
 .faq-list p, .contact-list p {
 	color: rgba(var(--main-blue-white), 1);
 	padding: 2% 0 0 0;
@@ -465,7 +473,7 @@ var {
 
 .form-section {
 	display: flex;
-	justify-content: space-evenly;
+	justify-content: flex-end;
 	align-items: baseline;
 	flex-wrap: wrap;
 	font-size: 5vw;
@@ -488,6 +496,19 @@ var {
 	border-radius: 4px;
 	flex-grow: 1;
 	background-color: rgba(var(--bg-light-blue), 1);
+	margin-left: 2%;
+	font-family:inherit
+}
+
+.form-send {
+	color: rgba(var(--main-white), 1);
+	font-size: 5vw;
+	display: inline-block;
+	border: none;
+	padding: 3%;
+	flex-grow: 1;
+	border-radius: 4px;
+	background-color: rgba(var(--bg-green), 1);
 	margin-left: 2%;
 	font-family:inherit
 }
