@@ -79,7 +79,7 @@ h3 {
 
 .container{
 	position: relative;
-	padding-top: 30%;
+	padding-top: 15%;
 }
 
 /* Style the navigation menu */
@@ -97,7 +97,7 @@ h3 {
 }
 
 /* Style navigation menu links */
-.view-nav a {
+.days-view {
   padding: 5% 5% 0 5%;
 }
 
@@ -129,12 +129,12 @@ a {
 /* Style the hamburger menu */
 .topnav a.icon {
   /*background: rgba(var(--main-white), 1);*/
-  color: rgba(var(--main-green), 1);
+  color: rgba(var(--main-blue), 1);
   display: block;
   position: absolute;
   right: 0;
   top: 0;
-  padding: 5% 5% 5% 0;
+  padding: 3% 4% 3% 4%;
 }
 
 /* Add a grey background color on mouse-over */
@@ -168,6 +168,12 @@ background-color: rgba(var(--bg-med-blue), 1);
 /* Map image settings */
 .hero {
 	width: 100%;
+	padding: 0;
+}
+
+/* Logo image settings */
+.logo {
+	width: 90%;
 	padding: 0;
 }
 
@@ -423,7 +429,6 @@ var {
 	justify-content: space-evenly;
 	align-items: center;
 	flex-wrap: wrap;
-	padding: 5% 0;
 }
 
 #numpad-container .numpad-digit {
