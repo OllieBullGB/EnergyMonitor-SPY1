@@ -1,43 +1,43 @@
 /* || Default colour palette */
 :root {
-  --main-green: 4, 71, 28;
-  --main-green-blue: 4, 71, 28;
-  --main-blue: 4, 71, 72;
-  --main-blue-white: 4, 71, 72;
-  --main-white: 255, 255, 255;
-  
-  --bg-white: 255, 255, 255;
-  --bg-white-blue: 255, 255, 255;
-  --bg-blue: 4, 71, 72;
-  --bg-med-blue: 204, 218, 219;
-  --bg-light-blue: 229, 236, 237;
-  --bg-lightest-blue: 242, 245, 246;
-  --bg-green: 4, 71, 28;
- 
-  --border-white: 255, 255, 255;
-  --border-blue: 4,71,72;
-  --border-light-blue: 229, 236, 237;
+	--main-green: 4, 71, 28;
+	--main-green-blue: 4, 71, 28;
+	--main-blue: 4, 71, 72;
+	--main-blue-white: 4, 71, 72;
+	--main-white: 255, 255, 255;
+
+	--bg-white: 255, 255, 255;
+	--bg-white-blue: 255, 255, 255;
+	--bg-blue: 4, 71, 72;
+	--bg-med-blue: 204, 218, 219;
+	--bg-light-blue: 229, 236, 237;
+	--bg-lightest-blue: 242, 245, 246;
+	--bg-green: 4, 71, 28;
+
+	--border-white: 255, 255, 255;
+	--border-blue: 4,71,72;
+	--border-light-blue: 229, 236, 237;
 }
 
 /* || Dark theme colour palette */
 [data-theme="dark"] {
-  --main-green: 255, 255, 255;
-  --main-green-blue: 4, 71, 72;
-  --main-blue: 4, 71, 72;
-  --main-blue-white: 255, 255, 255;
-  --main-white: 255, 255, 255;
-  
-  --bg-white: 25,25,25;
-  --bg-white-blue: 4, 71, 72;
-  --bg-blue: 4, 71, 72;
-  --bg-med-blue: 204, 218, 219;
-  --bg-light-blue: 229, 236, 237;
-  --bg-lightest-blue: 242, 245, 246;
-  --bg-green: 4, 71, 72;
+	--main-green: 255, 255, 255;
+	--main-green-blue: 4, 71, 72;
+	--main-blue: 4, 71, 72;
+	--main-blue-white: 255, 255, 255;
+	--main-white: 255, 255, 255;
 
-  --border-white: 255, 255, 255;
-  --border-blue: 4,71,72;
-  --border-light-blue: 229, 236, 237;
+	--bg-white: 25,25,25;
+	--bg-white-blue: 4, 71, 72;
+	--bg-blue: 4, 71, 72;
+	--bg-med-blue: 204, 218, 219;
+	--bg-light-blue: 229, 236, 237;
+	--bg-lightest-blue: 242, 245, 246;
+	--bg-green: 4, 71, 72;
+
+	--border-white: 255, 255, 255;
+	--border-blue: 4,71,72;
+	--border-light-blue: 229, 236, 237;
 }
 
 html {
@@ -56,7 +56,7 @@ h1 {
 	font-weight: 500;
 	margin: 0;
 	width: 85%;
-}
+	}
 h2 {
 	color: rgba(var(--main-blue), 1);
 	font-size: 7vw;
@@ -84,75 +84,54 @@ h3 {
 
 /* Style the navigation menu */
 .topnav {
-  overflow: hidden;
-  background-color: rgba(var(--bg-white), 1);
-  position: absolute;
-  z-index: 2;
-  width: 100%;
+	overflow: hidden;
+	background-color: rgba(var(--bg-white), 1);
+	position: absolute;
+	z-index: 2;
+	width: 100%;
 }
 
 /* Hide the links inside the navigation menu (except for logo/home) */
 .topnav #myLinks {
-  display: none;
+	display: none;
 }
 
 /* Style navigation menu links */
 .days-view {
-  padding: 5% 5% 0 5%;
+	padding: 5% 5% 0 5%;
 }
 
 a {
-  /*color: rgba(var(--main-green), 1);*/
-  padding: 5%;
-  text-decoration: none;
-  font-size: 5vw;
-  display: block;
-  color: inherit;
-  z-index: 1;
-}
-
-
-.contact-item a {
-  padding: 0;
+	padding: 5%;
+	text-decoration: none;
+	font-size: 5vw;
+	display: block;
+	color: inherit;
+	z-index: 1;
 }
 
 #myLinks a, .help-links a, .faq-item, .contact-item{
-  border-bottom: 0.5vw solid rgba(var(--border-blue), 1);
-  padding: 5%;
-  font-weight: normal;
+	border-bottom: 0.5vw solid rgba(var(--border-blue), 1);
+	padding: 5%;
+	font-weight: normal;
 }
 
 #myLinks a:last-child, .help-links a:last-child, .faq-item:last-child, .contact-item:last-child{
-  border-bottom: none;
+	border-bottom: none;
 }
 
 /* Style the hamburger menu */
 .topnav a.icon {
-  /*background: rgba(var(--main-white), 1);*/
-  color: rgba(var(--main-blue), 1);
-  display: block;
-  position: absolute;
-  right: 0;
-  top: 0;
-  padding: 3% 4% 3% 4%;
+	color: rgba(var(--main-blue), 1);
+	display: block;
+	position: absolute;
+	right: 0;
+	top: 0;
+	padding: 3% 4% 3% 4%;
 }
-
-/* Add a grey background color on mouse-over */
-#numpad-container .numpad-digit:hover, .help-links a:hover, .contact-link a:hover, #myLinks a:hover {
-  background-color: rgba(var(--bg-blue), 1);
-  color: rgba(var(--main-white), 1);
-}
-
-/* Add a grey background color on mouse-over */
-/*.topnav span:hover {
-  background-color: rgba(var(--bg-blue), 1);
-  color: rgba(var(--main-white), 1);
-  padding: 5%;
-}*/
 
 #numpad-container .numpad-digit:active {
-background-color: rgba(var(--bg-med-blue), 1);
-/*background-color: rgba(var(--bg-blue), 0.2);*/
+	background-color: rgba(var(--bg-med-blue), 1);
 }
 
 .numpad-update:active {
@@ -161,8 +140,8 @@ background-color: rgba(var(--bg-med-blue), 1);
 
 /* Style the active link (or home/logo) */
 .active {
-  background-color: rgba(var(--bg-blue), 1);
-  color: rgba(var(--main-white), 1);
+	background-color: rgba(var(--bg-blue), 1);
+	color: rgba(var(--main-white), 1);
 }
 
 /* Map image settings */
@@ -199,11 +178,10 @@ small {
 }
 
 p {
- /*color: rgba(var(--main-green), 1);*/
- margin: 0px 0px;
- padding: 0px;
- margin-block-start: 0;
- margin-block-end: 0;
+	margin: 0px 0px;
+	padding: 0px;
+	margin-block-start: 0;
+	margin-block-end: 0;
 }
 
 .material-symbols-outlined {
@@ -212,29 +190,27 @@ p {
 
 
 #days-container, #hours-container {
-    width:100%;
-    height:20%;
-    overflow: hidden;
+	width:100%;
+	height:20%;
+	overflow: hidden;
 }
 
 #days-list, #hours-list {
-    height:15%; /* 40px - more place for scrollbar, is hidden under parent box */
-    padding:1%;
-    white-space:nowrap;
-    overflow-x: scroll;
-    overflow-y: hidden;
+	white-space:nowrap;
+	overflow-x: scroll;
+	overflow-y: hidden;
 }
 
 .day, .hour {
-    display:inline-block;
-    width:30%;
-    height:10%;
-    line-height:100%;
+	display:inline-block;
+	width:30%;
+	height:10%;
+	line-height:100%;
 	font-size: 4vw;
-    text-align:center;
+	text-align:center;
 	background-color: rgba(var(--bg-lightest-blue), 1);
 	border: 2vw solid rgba(var(--border-light-blue), 1);
-    margin-right: 2%;
+	margin-right: 2%;
 }
 
 .day a, .hour a {
@@ -242,42 +218,17 @@ p {
 	color: rgba(var(--main-blue), 1);
 }
 
-#solar-energy h3, #daily-usage h3, #surplus-deficit h3, #current-usage h3, .update-usage h3 {
-	width: 25%;
-	margin: 0;
-}
-
 .data-row h3 {
 	width: 25%;
 	margin: 0;
-}
-
-.day a:hover, .hour:hover {
-  background-color: rgba(var(--bg-blue), 1);
-  color: rgba(var(--main-white), 1);
-}
-
-.day + .days-list, .hour + .hours-list {
-    margin-left:1%;
 }
 
 ::-webkit-scrollbar{
 	display: none;
 }
 
-#energy-container div:last-child, #usage-container div:last-child, #direction, #angle{
-  border-top: 1vw solid rgba(var(--border-blue), 1);
-}
-
 .data article:last-child{
-  border-top: 1vw solid rgba(var(--border-blue), 1);
-}
-
-#solar-energy, #daily-usage, #surplus-deficit, #current-usage, .update-usage {
-	display: flex;
-	justify-content: space-evenly;
-	align-items: center;
-	padding: 5% 0;
+	border-top: 1vw solid rgba(var(--border-blue), 1);
 }
 
 .data-row {
@@ -286,19 +237,6 @@ p {
 	align-items: center;
 	padding: 5% 0;
 }
-
-/*
-#power, #usage, #surplus, #current {
-	display: flex;
-	flex-direction: column;
-	justify-content: space-evenly;
-	align-items: center;
-	padding: 0;
-	font-size: 10vw;
-	color: rgba(var(--main-green), 1);
-	width: 25%;
-}
-*/
 
 .data-input {
 	display: flex;
@@ -344,26 +282,6 @@ p {
 	width: 100%;
 }
 
-/*
-.update {
-	display: flex;
-	justify-content: space-evenly;
-	align-items: flex-start;
-	padding: 0;
-	font-size: 10vw;
-	color: rgba(var(--main-green), 1);
-	width: 25%;
-}
-*/
-/*
-#power p, #usage p, #surplus p, #current p, .update p{
-	display: flex;
-	align-items: flex-start;
-	padding: 0;
-	font-size: 5vw;
-	justify-content: center;
-}
-*/
 .data-input-field p {
 	display: flex;
 	align-items: flex-start;
@@ -448,11 +366,6 @@ var {
 	border: none;
 }
 
-.form-section .send {
-	background-color: rgba(var(--main-green), 1);
-	width: 75%;
-}
-
 .faq-list p, .contact-list p {
 	color: rgba(var(--main-blue-white), 1);
 	padding: 2% 0 0 0;
@@ -502,7 +415,7 @@ var {
 	flex-grow: 1;
 	background-color: rgba(var(--bg-light-blue), 1);
 	margin-left: 2%;
-	font-family:inherit
+	font-family:inherit;
 }
 
 .form-send {
@@ -515,7 +428,7 @@ var {
 	border-radius: 4px;
 	background-color: rgba(var(--bg-green), 1);
 	margin-left: 2%;
-	font-family:inherit
+	font-family:inherit;
 }
 
 #message {
@@ -526,17 +439,16 @@ ul#locations {
 	list-style: none;
 	margin: 0;
 	padding: 0;
-	
 }
 
 ul#locations li {
- border: 0.5vw solid rgba(var(--border-white), 1);
- background-color: rgba(var(--bg-blue), 1);
- border-radius: 50%;
- height: 4%;
- width: 6%;
- position: absolute;
- color: rgba(var(--main-white), 1);
+	border: 0.5vw solid rgba(var(--border-white), 1);
+	background-color: rgba(var(--bg-blue), 1);
+	border-radius: 50%;
+	height: 4%;
+	width: 6%;
+	position: absolute;
+	color: rgba(var(--main-white), 1);
 }
 
 ul#locations a{
@@ -549,8 +461,8 @@ ul#locations a{
 }
 
 #Weipa {
- top: 33%;
- left: 17%;
+	top: 33%;
+	left: 17%;
 }
 
 #Weipa label, #Wenlock label, #Coen label, #Lakefield label, #Cairns label, #Kowanyama label {
@@ -568,23 +480,23 @@ ul#locations a{
 }
  
 #Wenlock {
- top: 41%;
- left: 36%;
+	top: 41%;
+	left: 36%;
 }
  
 #Coen {
- top: 52%;
- left: 43%;
+	top: 52%;
+	left: 43%;
 }
  
 #Lakefield {
- top: 64%;
- left: 67%;
+	top: 64%;
+	left: 67%;
 }
  
 #Cairns {
- top: 88%;
- left: 88%;
+	top: 88%;
+	left: 88%;
 }
 
 #Cairns label {
@@ -592,11 +504,9 @@ ul#locations a{
 }
 
 #Kowanyama {
- top: 72%;
- left: 17%;
+	top: 72%;
+	left: 17%;
 }
-
-
 
 #dark_mode {
 	display: flex;
@@ -604,14 +514,12 @@ ul#locations a{
 	align-items: center;
 	padding: 5%;
 	font-size: 5vw;
-		
 }
 
-
 .theme-switch input {
-  position: absolute;
-  opacity: 0;
-  cursor: pointer;
-  height: 0;
-  width: 0;
+	position: absolute;
+	opacity: 0;
+	cursor: pointer;
+	height: 0;
+	width: 0;
 }
