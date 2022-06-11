@@ -57,13 +57,7 @@ h1 {
 	margin: 0;
 	width: 85%;
 	}
-h2 {
-	color: rgba(var(--main-blue), 1);
-	font-size: 7vw;
-	font-weight: 500;
-	padding: 0 5% 5% 5%;
-	margin: 0;
-}
+
 h3 {
 	color: rgba(var(--main-green), 1);
 	font-size: 6vw;
@@ -96,11 +90,6 @@ h3 {
 	display: none;
 }
 
-/* Style navigation menu links */
-.days-view {
-	padding: 5% 5% 0 5%;
-}
-
 a {
 	padding: 5%;
 	text-decoration: none;
@@ -130,24 +119,10 @@ a {
 	padding: 3% 4% 3% 4%;
 }
 
-#numpad-container .numpad-digit:active {
-	background-color: rgba(var(--bg-med-blue), 1);
-}
-
-.numpad-update:active {
-	opacity: 0.2;
-}
-
 /* Style the active link (or home/logo) */
 .active {
 	background-color: rgba(var(--bg-blue), 1);
 	color: rgba(var(--main-white), 1);
-}
-
-/* Map image settings */
-.hero {
-	width: 100%;
-	padding: 0;
 }
 
 /* Logo image settings */
@@ -188,43 +163,9 @@ p {
 	font-size: 5vw;
 }
 
-
-#days-container, #hours-container {
-	width:100%;
-	height:20%;
-	overflow: hidden;
-}
-
-#days-list, #hours-list {
-	white-space:nowrap;
-	overflow-x: scroll;
-	overflow-y: hidden;
-}
-
-.day, .hour {
-	display:inline-block;
-	width:30%;
-	height:10%;
-	line-height:100%;
-	font-size: 4vw;
-	text-align:center;
-	background-color: rgba(var(--bg-lightest-blue), 1);
-	border: 2vw solid rgba(var(--border-light-blue), 1);
-	margin-right: 2%;
-}
-
-.day a, .hour a {
-	padding: 5%;
-	color: rgba(var(--main-blue), 1);
-}
-
 .data-row h3 {
 	width: 25%;
 	margin: 0;
-}
-
-::-webkit-scrollbar{
-	display: none;
 }
 
 .data article:last-child{
@@ -238,69 +179,6 @@ p {
 	padding: 5% 0;
 }
 
-.data-input {
-	display: flex;
-	flex-direction: row;
-	justify-content: space-evenly;
-	align-items: center;
-	padding: 0;
-	font-size: 10vw;
-	color: rgba(var(--main-green), 1);
-	width: 35%;
-}
-
-.data-input-area {
-	display: flex;
-	flex-direction: row;
-	justify-content: space-evenly;
-	align-items: flex-end;
-	padding: 0;
-	font-size: 10vw;
-	color: rgba(var(--main-green), 1);
-	width: 35%;
-}
-
-.data-input-degrees {
-	display: flex;
-	flex-direction: row;
-	justify-content: space-evenly;
-	align-items: flex-start;
-	padding: 0;
-	font-size: 10vw;
-	color: rgba(var(--main-green), 1);
-	width: 35%;
-}
-
-.data-input-field {
-	display: flex;
-	flex-direction: column;
-	justify-content: space-evenly;
-	align-items: center;
-	padding: 0;
-	font-size: 10vw;
-	color: rgba(var(--main-green), 1);
-	width: 100%;
-}
-
-.data-input-field p {
-	display: flex;
-	align-items: flex-start;
-	padding: 0;
-	font-size: 5vw;
-	justify-content: center;
-}
-
-.data-input-area p{
-	padding-left: 0%;
-	font-size: 5vw;
-	justify-content: center;
-}
-
-.data-input-degrees p {
-	padding-left: 0%;
-	font-size: 5vw;
-}
-
 .largeIcon {
 	font-size: 20vw;
 	color: rgba(var(--main-green), 1);
@@ -311,59 +189,8 @@ p {
 	font-size: 10vw;
 }
 
-.weatherIcon {
-	font-size: 15vw;
-}
-
-.arrow_drop_down {
-	color: red;
-	font-size: 8vw;
-}
-
-.arrow_drop_up {
-	color: green;
-	font-size: 8vw;
-}
-
-
 var {
 	font-style: normal;
-}
-
-.update-input {
-	width: 60%;
-	height: 75%;
-	padding: 5%;
-	font-size: 10vw;
-	background-color: rgba(var(--bg-light-blue), 1);
-	border: none;
-	border-radius: 5%;
-	text-align: center;
-	color: rgba(var(--main-blue), 1);
-}
-
-#numpad-container {
-	display: flex;
-	justify-content: space-evenly;
-	align-items: center;
-	flex-wrap: wrap;
-}
-
-#numpad-container .numpad-digit {
-	width: 30%;
-	font-size: 10vw;
-	background-color: rgba(var(--bg-light-blue), 1);
-	border: none;
-	border-radius: 5%;
-	text-align: center;
-	color: rgba(var(--main-blue), 1);
-	margin: 1%;
-	padding: 2%;
-}
-
-.numpad-update, .send {
-	background-color: transparent;
-	border: none;
 }
 
 .faq-list p, .contact-list p {
@@ -385,129 +212,6 @@ var {
 	border: 2vw solid rgba(var(--border-blue), 1);
 }
 
-.active {
-	border: 0.8vw solid rgba(var(--border-blue), 1);
-}
-
-.form-section {
-	display: flex;
-	justify-content: flex-end;
-	align-items: baseline;
-	flex-wrap: wrap;
-	font-size: 5vw;
-	color: rgba(var(--main-green), 1);
-	margin: 5% 2%;
-}
-
-.form-label {
-	width: 25%;
-	text-align: right;
-}
-
-.form-input {
-	color: rgba(var(--main-green), 1);
-	font-size: 5vw;
-	display: inline-block;
-	border: none;
-	/*width: 79%;*/
-	padding: 3%;
-	border-radius: 4px;
-	flex-grow: 1;
-	background-color: rgba(var(--bg-light-blue), 1);
-	margin-left: 2%;
-	font-family:inherit;
-}
-
-.form-send {
-	color: rgba(var(--main-white), 1);
-	font-size: 5vw;
-	display: inline-block;
-	border: none;
-	padding: 3%;
-	flex-grow: 1;
-	border-radius: 4px;
-	background-color: rgba(var(--bg-green), 1);
-	margin-left: 2%;
-	font-family:inherit;
-}
-
-#message {
-	resize: none;
-}
-
-ul#locations {
-	list-style: none;
-	margin: 0;
-	padding: 0;
-}
-
-ul#locations li {
-	border: 0.5vw solid rgba(var(--border-white), 1);
-	background-color: rgba(var(--bg-blue), 1);
-	border-radius: 50%;
-	height: 4%;
-	width: 6%;
-	position: absolute;
-	color: rgba(var(--main-white), 1);
-}
-
-ul#locations a{
-	height: 100%;
-	width: 100%;
-}
-
-.map {
-	position: relative;
-}
-
-#Weipa {
-	top: 33%;
-	left: 17%;
-}
-
-#Weipa label, #Wenlock label, #Coen label, #Lakefield label, #Cairns label, #Kowanyama label {
-	color: rgba(var(--main-blue-white), 1);
-	position: absolute;
-	white-space: nowrap;
-	top: -180%;
-	left: -30%;
-	border: none;
-	border-radius: 1vw;
-	background-color: rgba(var(--bg-white-blue), 1);
-	font-size: 5vw;
-	margin: 1vw;
-	padding: 20%;
-}
- 
-#Wenlock {
-	top: 41%;
-	left: 36%;
-}
- 
-#Coen {
-	top: 52%;
-	left: 43%;
-}
- 
-#Lakefield {
-	top: 64%;
-	left: 67%;
-}
- 
-#Cairns {
-	top: 88%;
-	left: 88%;
-}
-
-#Cairns label {
-	left: -180%;
-}
-
-#Kowanyama {
-	top: 72%;
-	left: 17%;
-}
-
 #dark_mode {
 	display: flex;
 	justify-content: space-between;
@@ -522,4 +226,34 @@ ul#locations a{
 	cursor: pointer;
 	height: 0;
 	width: 0;
+}
+
+.data-input-field {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-evenly;
+	align-items: center;
+	padding: 0;
+	font-size: 10vw;
+	color: rgba(var(--main-green), 1);
+	width: 100%;
+}
+
+.data-input-field p {
+	display: flex;
+	align-items: flex-start;
+	padding: 0;
+	font-size: 5vw;
+	justify-content: center;
+}
+
+.data-input {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-evenly;
+	align-items: center;
+	padding: 0;
+	font-size: 10vw;
+	color: rgba(var(--main-green), 1);
+	width: 35%;
 }

@@ -1,0 +1,63 @@
+h2 {
+	color: rgba(var(--main-blue), 1);
+	font-size: 7vw;
+	font-weight: 500;
+	padding: 0 5% 5% 5%;
+	margin: 0;
+}
+
+/* Style navigation menu links */
+.days-view {
+	padding: 5% 5% 0 5%;
+}
+
+#days-container, #hours-container {
+	width:100%;
+	height:20%;
+	overflow: hidden;
+}
+
+#days-list, #hours-list {
+	white-space:nowrap;
+	overflow-x: scroll;
+	overflow-y: hidden;
+}
+
+.day, .hour {
+	display:inline-block;
+	width:30%;
+	height:10%;
+	line-height:100%;
+	font-size: 4vw;
+	text-align:center;
+	background-color: rgba(var(--bg-lightest-blue), 1);
+	border: 2vw solid rgba(var(--border-light-blue), 1);
+	margin-right: 2%;
+}
+
+.day a, .hour a {
+	padding: 5%;
+	color: rgba(var(--main-blue), 1);
+}
+
+::-webkit-scrollbar{
+	display: none;
+}
+
+.weatherIcon {
+	font-size: 15vw;
+}
+
+.arrow_drop_down {
+	color: red;
+	font-size: 8vw;
+}
+
+.arrow_drop_up {
+	color: green;
+	font-size: 8vw;
+}
+
+.selected {
+	border: 2vw solid rgba(var(--border-blue), 1);
+}

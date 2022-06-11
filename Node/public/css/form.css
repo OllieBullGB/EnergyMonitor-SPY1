@@ -1,0 +1,45 @@
+.form-section {
+	display: flex;
+	justify-content: flex-end;
+	align-items: baseline;
+	flex-wrap: wrap;
+	font-size: 5vw;
+	color: rgba(var(--main-green), 1);
+	margin: 5% 2%;
+}
+
+.form-label {
+	width: 25%;
+	text-align: right;
+}
+
+.form-input {
+	color: rgba(var(--main-green), 1);
+	font-size: 5vw;
+	display: inline-block;
+	border: none;
+	/*width: 79%;*/
+	padding: 3%;
+	border-radius: 4px;
+	flex-grow: 1;
+	background-color: rgba(var(--bg-light-blue), 1);
+	margin-left: 2%;
+	font-family:inherit;
+}
+
+.form-send {
+	color: rgba(var(--main-white), 1);
+	font-size: 5vw;
+	display: inline-block;
+	border: none;
+	padding: 3%;
+	flex-grow: 1;
+	border-radius: 4px;
+	background-color: rgba(var(--bg-green), 1);
+	margin-left: 2%;
+	font-family:inherit;
+}
+
+#message {
+	resize: none;
+}

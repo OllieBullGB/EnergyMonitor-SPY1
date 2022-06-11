@@ -1,0 +1,80 @@
+#numpad-container .numpad-digit:active {
+	background-color: rgba(var(--bg-med-blue), 1);
+}
+
+.numpad-update:active {
+	opacity: 0.2;
+}
+
+.data-input-area {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-evenly;
+	align-items: flex-end;
+	padding: 0;
+	font-size: 10vw;
+	color: rgba(var(--main-green), 1);
+	width: 35%;
+}
+
+.data-input-degrees {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-evenly;
+	align-items: flex-start;
+	padding: 0;
+	font-size: 10vw;
+	color: rgba(var(--main-green), 1);
+	width: 35%;
+}
+
+.data-input-area p{
+	padding-left: 0%;
+	font-size: 5vw;
+	justify-content: center;
+}
+
+.data-input-degrees p {
+	padding-left: 0%;
+	font-size: 5vw;
+}
+
+.update-input {
+	width: 60%;
+	height: 75%;
+	padding: 5%;
+	font-size: 10vw;
+	background-color: rgba(var(--bg-light-blue), 1);
+	border: none;
+	border-radius: 5%;
+	text-align: center;
+	color: rgba(var(--main-blue), 1);
+}
+
+#numpad-container {
+	display: flex;
+	justify-content: space-evenly;
+	align-items: center;
+	flex-wrap: wrap;
+}
+
+#numpad-container .numpad-digit {
+	width: 30%;
+	font-size: 10vw;
+	background-color: rgba(var(--bg-light-blue), 1);
+	border: none;
+	border-radius: 5%;
+	text-align: center;
+	color: rgba(var(--main-blue), 1);
+	margin: 1%;
+	padding: 2%;
+}
+
+.numpad-update, .send {
+	background-color: transparent;
+	border: none;
+}
+
+.active {
+	border: 0.8vw solid rgba(var(--border-blue), 1);
+}

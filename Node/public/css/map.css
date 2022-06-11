@@ -1,0 +1,77 @@
+/* Map image settings */
+.hero {
+	width: 100%;
+}
+
+ul#locations {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+ul#locations li {
+	border: 0.5vw solid rgba(var(--border-white), 1);
+	background-color: rgba(var(--bg-blue), 1);
+	border-radius: 50%;
+	height: 3%;
+	width: 6%;
+	position: absolute;
+	color: rgba(var(--main-white), 1);
+}
+
+ul#locations a{
+	height: 100%;
+	width: 100%;
+}
+
+.map {
+	position: relative;
+}
+
+#Weipa {
+	top: 40%;
+	left: 17%;
+}
+
+#Weipa label, #Wenlock label, #Coen label, #Lakefield label, #Cairns label, #Kowanyama label {
+	color: rgba(var(--main-blue-white), 1);
+	position: absolute;
+	white-space: nowrap;
+	top: -210%;
+	left: -30%;
+	border: none;
+	border-radius: 1vw;
+	background-color: rgba(var(--bg-white-blue), 1);
+	font-size: 5vw;
+	margin: 1vw;
+	padding: 20%;
+}
+ 
+#Wenlock {
+	top: 47%;
+	left: 36%;
+}
+ 
+#Coen {
+	top: 58%;
+	left: 43%;
+}
+ 
+#Lakefield {
+	top: 68%;
+	left: 67%;
+}
+ 
+#Cairns {
+	top: 90%;
+	left: 88%;
+}
+
+#Cairns label {
+	left: -180%;
+}
+
+#Kowanyama {
+	top: 76%;
+	left: 17%;
+}
