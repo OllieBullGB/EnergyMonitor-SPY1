@@ -25,11 +25,25 @@ function switchTheme(e)
   {
     document.documentElement.setAttribute('data-theme', 'dark');
     localStorage.setItem('theme', 'dark');
+	document.getElementById("dark_mode").innerHTML = 
+		`
+			Light Mode
+			<span class="material-symbols-outlined mediumIcon">
+				light_mode
+			</span>
+		`;
   }
   else 
   {
     document.documentElement.setAttribute('data-theme', 'light');
     localStorage.setItem('theme', 'light');
+	document.getElementById("dark_mode").innerHTML = 
+		`
+			Dark Mode
+			<span class="material-symbols-outlined mediumIcon">
+				dark_mode
+			</span>
+		`;
   }    
 }
 
