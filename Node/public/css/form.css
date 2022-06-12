@@ -1,3 +1,5 @@
+/* Support contact form styling */
+
 .form-section {
 	display: flex;
 	justify-content: flex-end;
@@ -18,7 +20,6 @@
 	font-size: 5vw;
 	display: inline-block;
 	border: none;
-	/*width: 79%;*/
 	padding: 3%;
 	border-radius: 4px;
 	flex-grow: 1;
@@ -40,6 +41,7 @@
 	font-family:inherit;
 }
 
+/* Do not allow message box to be resized */
 #message {
 	resize: none;
 }

@@ -118,6 +118,7 @@ small {
 	font-size: 2vw;
 }
 
+/* Removes italics */
 var {
 	font-style: normal;
 }
@@ -183,7 +184,7 @@ h3 {
 
 /* Style the hamburger menu icon */
 .topnav a.icon {
-	color: rgba(var(--main-blue), 1);
+	color: rgba(var(--main-blue-white), 1);
 	display: block;
 	position: absolute;
 	right: 0;

@@ -1,77 +1,31 @@
-#numpad-container .numpad-digit:active {
-	background-color: rgba(var(--bg-med-blue), 1);
-}
+/* Styling for input fields on Panels and Usage pages */
 
-.numpad-update:active {
-	opacity: 0.2;
-}
-
+/* || Data Row Inout styling */
+/* data-row center column for area as has special unit */
 .data-input-area {
 	display: flex;
-	flex-direction: row;
 	justify-content: space-evenly;
 	align-items: flex-end;
-	padding: 0;
-	font-size: 10vw;
-	color: rgba(var(--main-green), 1);
 	width: 35%;
-}
-
-.data-input-degrees {
-	display: flex;
-	flex-direction: row;
-	justify-content: space-evenly;
-	align-items: flex-start;
-	padding: 0;
-	font-size: 10vw;
-	color: rgba(var(--main-green), 1);
-	width: 35%;
-}
-
-.data-input-field {
-	display: flex;
-	flex-direction: column;
-	justify-content: space-evenly;
-	align-items: center;
-	padding: 0;
-	font-size: 10vw;
-	color: rgba(var(--main-green), 1);
-	width: 100%;
-}
-
-.data-input-field p {
-	display: flex;
-	align-items: flex-start;
-	padding: 0;
-	font-size: 5vw;
-	justify-content: center;
 }
 
 .data-input-area p{
-	padding-left: 0%;
-	margin: 0;
 	font-size: 5vw;
-	justify-content: center;
+}
+
+/* data-row center column for degrees as has special unit */
+.data-input-degrees {
+	display: flex;
+	justify-content: space-evenly;
+	align-items: flex-start;
+	width: 35%;
 }
 
 .data-input-degrees p {
-	padding-left: 0%;
 	font-size: 5vw;
-	margin: 0;
 }
 
-.update-input {
-	width: 60%;
-	height: 75%;
-	padding: 5%;
-	font-size: 10vw;
-	background-color: rgba(var(--bg-light-blue), 1);
-	border: none;
-	border-radius: 5%;
-	text-align: center;
-	color: rgba(var(--main-blue), 1);
-}
-
+/* || Number Pad styling */
 #numpad-container {
 	display: flex;
 	justify-content: space-evenly;
@@ -91,11 +45,32 @@
 	padding: 2%;
 }
 
+#numpad-container .numpad-digit:active {
+	background-color: rgba(var(--bg-med-blue), 1);
+}
+
+.numpad-update:active {
+	opacity: 0.2;
+}
+
 .numpad-update, .send {
 	background-color: transparent;
 	border: none;
 }
 
+/* || Input box styling */
+.update-input {
+	width: 60%;
+	padding: 5%;
+	font-size: 10vw;
+	background-color: rgba(var(--bg-light-blue), 1);
+	border: none;
+	border-radius: 5%;
+	text-align: center;
+	color: rgba(var(--main-blue), 1);
+}
+
+/* Last to ensure applied */
 .active {
 	border: 0.8vw solid rgba(var(--border-blue), 1);
 }
