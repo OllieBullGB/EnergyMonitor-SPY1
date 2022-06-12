@@ -45,7 +45,7 @@ describe('Testing IntensityCalculator', () =>
             nearEstimatedHRA = true;
         }
         
-        expect(true).toBe(true);
+        expect(nearEstimatedHRA).toBe(true);
     });
 
     it('Calculated elevation is near 90.00 at midday (+-10)', () => 
@@ -59,7 +59,7 @@ describe('Testing IntensityCalculator', () =>
             nearTrueElevation = true;
         }
         
-        expect(true).toBe(true);
+        expect(nearTrueElevation).toBe(true);
     });
 
     it('Calculated air mass is near 1 at midday (+-0.05)', () => 
@@ -73,7 +73,7 @@ describe('Testing IntensityCalculator', () =>
             nearTrueAirMass = true;
         }
         
-        expect(true).toBe(true);
+        expect(nearTrueAirMass).toBe(true);
     });
 });
 
