@@ -21,7 +21,6 @@ resetInputBtn.addEventListener("click", () =>
 })
 
 let updateElement = document.getElementById("numpad-update");
-console.log(typeof(document.getElementById("current")))
 if(window.location.href.includes("usage"))
 {
   updateElement.addEventListener("click", () =>
@@ -43,7 +42,6 @@ else
 function addNumber(element) 
 {
   let selectedElement = document.getElementsByClassName("active");
-  console.table(selectedElement);
   selectedElement = selectedElement[1];
   selectedElement.value = selectedElement.value+element.value;
 }

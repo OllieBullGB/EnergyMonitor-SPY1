@@ -26,7 +26,6 @@ const position = LocalDataManager.getLocation();
 const panelInfo = LocalDataManager.getPanelInfo();
 
 let dayTimeStr = day.replace(/['"]+/g, '') + " " + time.replace(/['"]+/g, '');
-console.log("DTS", dayTimeStr);
 
 hourlySolarData(day, slider, time);
 
@@ -36,9 +35,8 @@ function hourlySolarData(day, container, selectedHour)
     let panelInfo = LocalDataManager.getPanelInfo();
     let usage = Math.round(((LocalDataManager.getUsage().usage / 24) + Number.EPSILON) * 100) / 100;;
 
-    console.log(day, position.latitude, position.longitude, panelInfo.area, panelInfo.angle, panelInfo.direction);
+    
     let data = fetchSolarData(day, position.latitude, position.longitude, panelInfo.area, panelInfo.angle, panelInfo.direction);
-    console.table(data);
 
     let solarInput = 0;
     let surplus = 0;
@@ -49,7 +47,6 @@ function hourlySolarData(day, container, selectedHour)
     {
         let date = new Date(dataPoint.dateTime * 1000);
         let targetDate = new Date(dayTimeStr);
-        console.log(targetDate.toISOString());
         let icon = weatherIcons[dataPoint.weatherIcon];
         let dd = String(date.getDate()).padStart(2, '0');
         let mm = String(date.getMonth() + 1).padStart(2, '0');
