@@ -124,6 +124,7 @@ var {
 }
 
 /* || Header sizes */
+/* No bootom padding to group with subtitle */
 h1 {
 	font-size: 8vw;
 	font-weight: 500;
@@ -131,7 +132,7 @@ h1 {
 	padding: 5% 5% 0 5%;
 }
 
-/* No top padding to group with name */
+/* No top padding to group with title */
 h2 {
 	color: rgba(var(--main-blue-white), 1);
 	font-size: 7vw;
@@ -143,6 +144,14 @@ h2 {
 h3 {
 	color: rgba(var(--main-green), 1);
 	font-size: 6vw;
+	text-align: left;
+	font-weight: normal;
+	margin: 0;
+}
+
+h4 {
+	color: rgba(var(--main-blue-white), 1);
+	font-size: 5vw;
 	text-align: left;
 	font-weight: normal;
 	margin: 0;
