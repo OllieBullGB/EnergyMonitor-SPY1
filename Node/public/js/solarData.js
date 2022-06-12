@@ -103,11 +103,13 @@ function totalsRenderer(power, usage, surplus)
         </span>
     </p>
 	</div>
-	
-	<span class="material-symbols-outlined ${arrow}">
+    `;
+	document.getElementById("surplusIcon").innerHTML =
+	`
+	<span class="material-symbols-outlined largeIcon ${arrow}">
 		${arrow}
 	</span>
-    `;
+	`;
 }
 
 function containerRenderer(timeStr, link, weatherIconName, container, selected)
