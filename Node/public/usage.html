@@ -1,144 +1,145 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
-	<title>Energy Monitor</title>
-	
-	<!-- Google Font Maven Pro -->
-	<link rel="preconnect" href="https://fonts.googleapis.com">
-	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-	<link href="https://fonts.googleapis.com/css2?family=Maven+Pro:wght@400;500&display=swap" rel="stylesheet">
-	
-	
-	<!-- Burger Menu Icon -->
-	<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,700,0,0" />
-	<!-- Opens/Closes Burger Menu -->
-	<script src="./js/LocalDataManager.js" defer></script>
-	<script src="./js/inputManager.js" defer></script>
-	<script src="test.js" defer></script>
-	<script src="./js/switchTheme.js" defer></script>
-
-	<!-- Styling -->
-	<link rel="stylesheet" href="/css/style.css">
-	<link rel="stylesheet" href="/css/input.css">
-	
-	<meta name = "viewport" content = "width=device-width, initial-scale=1.0">
-</head>
-
-<body>
-<!-- Top Navigation Menu -->
-<div class="topnav-container">
-	<div class="topnav">
-	<a href="home.html" class="logo"><img src="/img/logo.jpg" class="logo" alt="energy monitor logo"></a>
-
-	<!-- Navigation links (hidden by default) -->
-	<div id="myLinks">
-		<a href="home.html">Home</a>
-		<a class="active" href="usage.html">Usage</a>
-		<a href="panels.html">Panels</a>
-		<a href="daily.html">Today</a>
-		<a href="hourly.html" id="hourly-link">Hourly</a>
-		<a href="help.html">Help</a>
+	<head>
+		<title>Energy Monitor</title>
 		
-		<div>
-			<label class="theme-switch" for="checkbox">
-				<span id="dark_mode">
-					Dark Mode
-					<span class="material-symbols-outlined mediumIcon">
-						dark_mode
-					</span>
-				</span>	
-			<input type="checkbox" id="checkbox">
-			</label>
-		</div>	
+		<!-- Google Font Maven Pro -->
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Maven+Pro:wght@400;500&display=swap" rel="stylesheet">
+		
+		
+		<!-- Burger Menu Icon -->
+		<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,700,0,0" />
+		<!-- Opens/Closes Burger Menu -->
+		<script src="./js/LocalDataManager.js" defer></script>
+		<script src="./js/inputManager.js" defer></script>
+		<script src="test.js" defer></script>
+		<script src="./js/switchTheme.js" defer></script>
+
+		<!-- Styling -->
+		<link rel="stylesheet" href="/css/style.css">
+		<link rel="stylesheet" href="/css/input.css">
+		
+		<meta name = "viewport" content = "width=device-width, initial-scale=1.0">
+	</head>
+
+	<body>
+		<!-- Top Navigation Menu -->
+		<div class="topnav-container">
+			<div class="topnav">
+				<a href="home.html" class="logo"><img src="/img/logo.jpg" class="logo" alt="energy monitor logo"></a>
+
+				<!-- Navigation links (hidden by default) -->
+				<div id="myLinks">
+					<a href="home.html">Home</a>
+					<a class="active" href="usage.html">Usage</a>
+					<a href="panels.html">Panels</a>
+					<a href="daily.html">Today</a>
+					<a href="hourly.html" id="hourly-link">Hourly</a>
+					<a href="help.html">Help</a>
+					
+					<div>
+						<label class="theme-switch" for="checkbox">
+							<span id="dark_mode">
+								Dark Mode
+								<span class="material-symbols-outlined mediumIcon">
+									dark_mode
+								</span>
+							</span>	
+							<input type="checkbox" id="checkbox">
+						</label>
+					</div>	
+				
+				</div>
+				<!-- "Hamburger menu" / "Bar icon" to toggle the navigation links -->
+				<a class="icon">
+					<span class="material-symbols-outlined mediumIcon"> menu</span>
+				</a>
+			</div>
+		</div>
+
+		<main>
+			<div class="container">
+				<form>
+					<h1>Usage</h1>
+					<h2>Input your daily usage</h2>
+
+					<div class="data">
+						<div class="data-row">
+							<h3>Current</h3>
+							<div class="data-input">
+								<div class="data-input-field" id="current">
+									<var>21.5</var>
+									<p>
+										kWh
+										<span class="material-symbols-outlined">
+											bolt
+										</span>
+									</p>
+								</div>
+							</div>
+							<span class="material-symbols-outlined largeIcon">
+								battery_horiz_050
+							</span>
+						</div>
+
+						<div class="data-row" id="update-usage">
+							<h3>Update</h3>
+
+							<div class="data-input">
+								<div class="data-input-field">
+									<input class="update-input active" id="usage-update" type="text" placeholder="00.0" aria-label="enter your daily energy usage here">
+									<p>
+										kWh
+										<span class="material-symbols-outlined">
+											bolt
+										</span>
+									</p>
+								</div>
+							</div>
+
+							<input type="button" class="numpad-update material-symbols-outlined largeIcon" value=check_circle id="numpad-update">
+
+						</div>
+					</div>
+					
+					<!-- Keypad to enter daily energy usage -->
+					<div id="numpad-container">
+						<input type="button" class="numpad-digit" value="1" id="numpad-1" aria-label="number one">
+						<input type="button" class="numpad-digit" value="2" id="numpad-2" aria-label="number two">
+						<input type="button" class="numpad-digit" value="3" id="numpad-3" aria-label="number three">
+						<input type="button" class="numpad-digit" value="4" id="numpad-4" aria-label="number four">
+						<input type="button" class="numpad-digit" value="5" id="numpad-5" aria-label="number five">    
+						<input type="button" class="numpad-digit" value="6" id="numpad-6" aria-label="number six">
+						<input type="button" class="numpad-digit" value="7" id="numpad-7" aria-label="number seven">
+						<input type="button" class="numpad-digit" value="8" id="numpad-8" aria-label="number eight">
+						<input type="button" class="numpad-digit" value="9" id="numpad-9" aria-label="number nine">
+						<input type="button" class="numpad-digit" value="." id="numpad-." aria-label="decimal place">
+						<input type="button" class="numpad-digit" value="0" id="numpad-0" aria-label="number zero">
+						<input type="button" class="numpad-digit material-symbols-outlined" value=backspace id="numpad-clear" aria-label="backspace">
+					</div>
+					
+				</form>
+			</div>
+		</main>
+
+		<footer>
+			<div>
+				<p><small>Copyright ©2022 Group 7</small></p>
+			</div>
+			<div>
+				<p><small>Contact <a href="mailto:scott.gurney@uea.ac.uk">Group 7</a></small></p>
+			</div>
+			<div>
+				<p><small>Terms of use</small></p>
+			</div>
+			<div>
+				<p><small>Privacy Policy</small></p>
+			</div>
+		</footer>
+		
+	</body>
 	
-	</div>
-	<!-- "Hamburger menu" / "Bar icon" to toggle the navigation links -->
-	<a class="icon">
-		<span class="material-symbols-outlined mediumIcon"> menu</span>
-	</a>
-	</div>
-</div>
-
-<main>
-	<div class="container">
-	<form>
-		<h1>Usage</h1>
-		<h2>Input your daily usage</h2>
-
-		<div class="data">
-			<div class="data-row">
-				<h3>Current</h3>
-				<div class="data-input">
-				<div class="data-input-field" id="current">
-					<var>21.5</var>
-					<p>
-						kWh
-					<span class="material-symbols-outlined">
-						bolt
-					</span>
-					</p>
-				</div>
-				</div>
-				<span class="material-symbols-outlined largeIcon">
-					battery_horiz_050
-				</span>
-			</div>
-
-			<div class="data-row" id="update-usage">
-				<h3>Update</h3>
-
-				<div class="data-input">
-				<div class="data-input-field">
-
-						<input class="update-input active" id="usage-update" type="text" placeholder="00.0" aria-label="enter your daily energy usage here">
-					<p>
-						kWh
-					<span class="material-symbols-outlined">
-						bolt
-					</span>
-					</p>
-				</div>
-				</div>
-
-				<input type="button" class="numpad-update material-symbols-outlined largeIcon" value=check_circle id="numpad-update">
-
-			</div>
-		</div>
-		<!-- Keypad to enter daily energy usage -->
-		<div id="numpad-container">
-			<input type="button" class="numpad-digit" value="1" id="numpad-1" aria-label="number one">
-			<input type="button" class="numpad-digit" value="2" id="numpad-2" aria-label="number two">
-			<input type="button" class="numpad-digit" value="3" id="numpad-3" aria-label="number three">
-			<input type="button" class="numpad-digit" value="4" id="numpad-4" aria-label="number four">
-			<input type="button" class="numpad-digit" value="5" id="numpad-5" aria-label="number five">    
-			<input type="button" class="numpad-digit" value="6" id="numpad-6" aria-label="number six">
-			<input type="button" class="numpad-digit" value="7" id="numpad-7" aria-label="number seven">
-			<input type="button" class="numpad-digit" value="8" id="numpad-8" aria-label="number eight">
-			<input type="button" class="numpad-digit" value="9" id="numpad-9" aria-label="number nine">
-			<input type="button" class="numpad-digit" value="." id="numpad-." aria-label="decimal place">
-			<input type="button" class="numpad-digit" value="0" id="numpad-0" aria-label="number zero">
-			<input type="button" class="numpad-digit material-symbols-outlined" value=backspace id="numpad-clear" aria-label="backspace">
-		</div>
-			
-		</form>
-
-	</div>
-</main>
-
-<footer>
-	<div>
-	<p><small>Copyright ©2022 Group 7</small></p>
-	</div>
-	<div>
-	<p><small>Contact <a href="mailto:scott.gurney@uea.ac.uk">Group 7</a></small></p>
-	</div>
-	<div>
-	<p><small>Terms of use</small></p>
-	</div>
-	<div>
-	<p><small>Privacy Policy</small></p>
-	</div>
-</footer>
-</body>
 </html>

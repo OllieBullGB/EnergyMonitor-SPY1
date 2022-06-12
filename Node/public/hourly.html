@@ -1,187 +1,161 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
-	<title>Energy Monitor</title>
-	
-	<!-- Google Font Maven Pro -->
-	<link rel="preconnect" href="https://fonts.googleapis.com">
-	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-	<link href="https://fonts.googleapis.com/css2?family=Maven+Pro:wght@400;500&display=swap" rel="stylesheet">
-	
-	
-	<!-- Burger Menu Icon -->
-	<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,700,0,0" />
-	
-	<script src="./js/LocalDataManager.js" defer></script>
-	<script src="./js/solarData.js" defer></script>
-	<script src="./js/hourlyViewLoader.js" defer></script>
+	<head>
+		<title>Energy Monitor</title>
+		
+		<!-- Google Font Maven Pro -->
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Maven+Pro:wght@400;500&display=swap" rel="stylesheet">
+		
+		
+		<!-- Burger Menu Icon -->
+		<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,700,0,0" />
+		
+		<script src="./js/LocalDataManager.js" defer></script>
+		<script src="./js/solarData.js" defer></script>
+		<script src="./js/hourlyViewLoader.js" defer></script>
 
-	<!-- Opens/Closes Burger Menu -->
-	<script src="test.js" defer></script>
-	<script src="./js/switchTheme.js" defer></script>
+		<!-- Opens/Closes Burger Menu -->
+		<script src="test.js" defer></script>
+		<script src="./js/switchTheme.js" defer></script>
 
-	<!-- Styling -->
-	<link rel="stylesheet" href="/css/style.css">
-	<link rel="stylesheet" href="/css/views.css">
-	<meta name = "viewport" content = "width=device-width, initial-scale=1.0">
-</head>
+		<!-- Styling -->
+		<link rel="stylesheet" href="/css/style.css">
+		<link rel="stylesheet" href="/css/views.css">
+		<meta name = "viewport" content = "width=device-width, initial-scale=1.0">
+	</head>
 
-<body>
-	<div class="topnav-container">
-		<!-- Top Navigation Menu -->
-		<div class="topnav">
-		<a href="home.html" class="logo"><img src="/img/logo.jpg" class="logo" alt="energy monitor logo"></a>
+	<body>
+		<div class="topnav-container">
+			<!-- Top Navigation Menu -->
+			<div class="topnav">
+				<a href="home.html" class="logo"><img src="/img/logo.jpg" class="logo" alt="energy monitor logo"></a>
 
-		<!-- Navigation links (hidden by default) -->
-		<div id="myLinks">
-			<a href="home.html">Home</a>
-			<a href="usage.html">Usage</a>
-			<a href="panels.html">Panels</a>
-			<a href="daily.html">Today</a>
-			<a class = "active" href="hourly.html" id="hourly-link">Hourly</a>
-			<a href="help.html">Help</a>
-			
-			<div>
-				<label class="theme-switch" for="checkbox">
-					<span id="dark_mode">
-						Dark Mode
-						<span class="material-symbols-outlined mediumIcon">
-							dark_mode
-						</span>
-					</span>	
-				<input type="checkbox" id="checkbox">
-				</label>
+				<!-- Navigation links (hidden by default) -->
+				<div id="myLinks">
+					<a href="home.html">Home</a>
+					<a href="usage.html">Usage</a>
+					<a href="panels.html">Panels</a>
+					<a href="daily.html">Today</a>
+					<a class = "active" href="hourly.html" id="hourly-link">Hourly</a>
+					<a href="help.html">Help</a>
+					
+					<div>
+						<label class="theme-switch" for="checkbox">
+							<span id="dark_mode">
+								Dark Mode
+								<span class="material-symbols-outlined mediumIcon">
+									dark_mode
+								</span>
+							</span>	
+							<input type="checkbox" id="checkbox">
+						</label>
+					</div>
+					
+				</div>
+				<!-- "Hamburger menu" / "Bar icon" to toggle the navigation links -->
+				<a class="icon">
+					<span class="material-symbols-outlined mediumIcon">menu</span>
+				</a>
 			</div>
-			
 		</div>
-		<!-- "Hamburger menu" / "Bar icon" to toggle the navigation links -->
-		<a class="icon">
-			<span class="material-symbols-outlined mediumIcon">menu</span>
-		</a>
-		</div>
-	</div>
 
-<main>
-	<div class="container">
-		<!-- Scrollable menu of hours -->
-		<div id="days-container">
-				<h1 class="days-view">Hourly View</h1>
-		<h2 id="city-name"><var>Name of Selected Area</var></h2>
-			<div id="days-list">
+		<main>
+			<div class="container">
+				<!-- Scrollable menu of hours -->
+				<div id="days-container">
+					<h1 class="days-view">Hourly View</h1>
+					<h2 id="city-name"><var>Name of Selected Area</var></h2>
+					<div id="days-list">
+						
+					</div>
+				</div>
+				<div class="data">
+					<div class="data-row">
+						<h3>Solar Energy</h3>
+
+						<div class="data-input" id="power">
+							<var>2.7</var>
+							<p>
+								kWh
+								<span class="material-symbols-outlined">
+									bolt
+								</span>
+							</p>
+						</div>
+						<span class="material-symbols-outlined largeIcon">
+							solar_power
+						</span>
+
+					</div>
+
+					<div class="data-row">
+						<h3>Hourly Usage</h3>
+
+						<div class="data-input" id="usage">
+							<var>2.5</var>
+							<p>
+								kWh
+								<span class="material-symbols-outlined">
+									bolt
+								</span>
+							</p>
+						</div>
+						<span class="material-symbols-outlined largeIcon">
+							battery_horiz_050
+						</span>
+					</div>
+					<div class="data-row">
+						<h3>Surplus Deficit</h3>
+						<div class="data-input" id="surplus">	
+							<var>0.05</var>
+							<p>
+								kWh
+								<span class="material-symbols-outlined">
+									bolt
+								</span>
+							</p>
+						</div>
+						<span class="material-symbols-outlined largeIcon" id="surplusIcon">
+							bolt
+						</span>
+					</div>
+				</div>		
+				
+				<div class ="data-row weather-alert">
+					<span class="material-symbols-outlined largeIcon">
+						warning
+					</span>
+					<div class="data-input-field">
+						<h3> Weather Alert!</h3>
+						<h4> Temperature: 43c</h4>
+					</div>
+					<span class="material-symbols-outlined largeIcon">
+						sunny
+					</span>
+				</div>
 				
 			</div>
-		</div>
-		<!--div id="energy-container"-->
-		<div class="data">
-			<!--div id="solar-energy"-->
-			<div class="data-row">
-				<h3>Solar Energy</h3>
-				<!-- Insert variable (or output) for solar energy here -->
-				<!--div id="power"-->
-				<div class="data-input" id="power">
-					<var>2.7</var>
-					<p>
-					kWh
-					<span class="material-symbols-outlined">
-						bolt
-					</span>
-					</p>
-				</div>
-				<!--span class="material-symbols-outlined">
-					help_center
-				</span-->
-				<!--img id = "solar-energy-arrow" src = "arrow.jpg" alt = "energy indicator arrow"-->
-				<span class="material-symbols-outlined largeIcon">
-					solar_power
-				</span>
-				<!--img id = "solar-panel-icon" src = "solar-panel-icon.jpg" alt = "solar panel icon"-->
-			<!--/div-->
-			</div>
-			<!--div id="daily-usage"-->
-			<div class="data-row">
-				<h3>Hourly Usage</h3>
-				<!-- Insert variable for daily usage here -->
-				<!--div id="usage"-->
-				<div class="data-input" id="usage">
-					<var>2.5</var>
-					<p>
-					kWh
-					<span class="material-symbols-outlined">
-						bolt
-					</span>
-					</p>
-				</div>
-				<!--img id = "usage-energy-arrow" src = "arrow.jpg" alt = "energy indicator arrow"-->
-				<!--
-				<span class="material-symbols-outlined">
-					arrow_drop_up
-				</span>
-				-->
-				<!--img id = "battery-icon" src = "battery-icon.jpg" alt = "battery icon"-->
-				<span class="material-symbols-outlined largeIcon">
-					battery_horiz_050
-				</span>
-			<!--/div-->
-			</div>
-			<!--div id="surplus-deficit"-->
-			<div class="data-row">
-				<h3>Surplus Deficit</h3>
-				<!-- Insert variable for surplus energy here -->
-				<!--div id="surplus"-->
-				<div class="data-input" id="surplus">	
-					<var>0.05</var>
-					<p>
-					kWh
-					<span class="material-symbols-outlined">
-						bolt
-					</span>
-					</p>
-				</div>
-				<!--img id = "surplus-energy-arrow" src = "arrow.jpg" alt = "energy indicator arrow"-->
-				<!--
-				<span class="material-symbols-outlined">
-					arrow_drop_up
-				</span>
-				-->
-				<!--img id = "energy-icon" src = "energy-icon.jpg" alt = "energy icon"-->
-				<span class="material-symbols-outlined largeIcon" id="surplusIcon">
-					bolt
-				</span>
-			<!--/div-->
-			</div>
-		</div>		
-		
-				<div class ="data-row weather-alert">
-		<span class="material-symbols-outlined largeIcon">
-			warning
-		</span>
-		<div class="data-input-field">
-		<h3> Weather Alert!</h3>
-		<h4> Temperature: 43c</h4>
-		</div>
-		<span class="material-symbols-outlined largeIcon">
-			sunny
-		</span>
-		</div>
-		
-	</div>
 
-</main>
+		</main>
 
-<footer>
-	<div>
-	<p><small>Copyright ©2022 Group 7</small></p>
-	</div>
-	<div>
-	<p><small>Contact <a href="mailto:scott.gurney@uea.ac.uk">Group 7</a></small></p>
-	</div>
-	<div>
-	<p><small>Terms of use</small></p>
-	</div>
-	<div>
-	<p><small>Privacy Policy</small></p>
-	</div>
-</footer>
-</body>
+		<footer>
+			<div>
+				<p><small>Copyright ©2022 Group 7</small></p>
+			</div>
+			<div>
+				<p><small>Contact <a href="mailto:scott.gurney@uea.ac.uk">Group 7</a></small></p>
+			</div>
+			<div>
+				<p><small>Terms of use</small></p>
+			</div>
+			<div>
+				<p><small>Privacy Policy</small></p>
+			</div>
+		</footer>
+		
+	</body>
+	
 </html>

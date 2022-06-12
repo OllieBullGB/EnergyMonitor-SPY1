@@ -3,19 +3,18 @@
 
 	<head>
 		<title>Energy Monitor</title>
-		
+
 		<!-- Google Font Maven Pro -->
 		<link rel="preconnect" href="https://fonts.googleapis.com">
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 		<link href="https://fonts.googleapis.com/css2?family=Maven+Pro:wght@400;500&display=swap" rel="stylesheet">
-		
-		
+
 		<!-- Burger Menu Icon -->
 		<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,700,0,0" />
 		<!-- Opens/Closes Burger Menu -->
 		<script src="test.js" defer></script>
 		<script src="./js/switchTheme.js" defer></script>
-		
+
 		<script src="./js/mapLocator.js" defer></script>
 		<script src="./js/LocalDataManager.js"></script>
 		<!-- Styling -->
@@ -25,98 +24,91 @@
 		<meta name = "viewport" content = "width=device-width, initial-scale=1.0">
 	</head>
 
-<body>
-	<div class="topnav-container">
-
-		<!-- Top Navigation Menu -->
-		<div class="topnav">
-		<a href="home.html" class="logo"><img src="/img/logo.jpg" class="logo" alt="energy monitor logo"></a>
-		<!-- Navigation links (hidden by default) -->
-		<div id="myLinks">
-			<a class="active" href="home.html">Home</a>
-			<a href="usage.html">Usage</a>
-			<a href="panels.html">Panels</a>
-			<a href="daily.html">Today</a>
-			<a href="hourly.html" id="hourly-link">Hourly</a>
-			<a href="help.html">Help</a>
-			
-			<div>
-				<label class="theme-switch" for="checkbox">
-					<span id="dark_mode">
-						Dark Mode
-						<span class="material-symbols-outlined mediumIcon">
-							dark_mode
-						</span>
-					</span>	
-				<input type="checkbox" id="checkbox">
-				</label>
+	<body>
+		<div class="topnav-container">
+			<!-- Top Navigation Menu -->
+			<div class="topnav">
+				<a href="home.html" class="logo"><img src="/img/logo.jpg" class="logo" alt="energy monitor logo"></a>
+				<!-- Navigation links (hidden by default) -->
+				<div id="myLinks">
+					<a class="active" href="home.html">Home</a>
+					<a href="usage.html">Usage</a>
+					<a href="panels.html">Panels</a>
+					<a href="daily.html">Today</a>
+					<a href="hourly.html" id="hourly-link">Hourly</a>
+					<a href="help.html">Help</a>
+					<div>
+						<label class="theme-switch" for="checkbox">
+							<span id="dark_mode">
+								Dark Mode
+								<span class="material-symbols-outlined mediumIcon">
+									dark_mode
+								</span>
+							</span>	
+							<input type="checkbox" id="checkbox">
+						</label>
+					</div>
+				</div>
+				<!-- "Hamburger menu" / "Bar icon" to toggle the navigation links -->
+				<a class="icon">
+				<span class="material-symbols-outlined mediumIcon">
+					menu
+				</span>
+				</a>
 			</div>
-			
-		</div>
-		<!-- "Hamburger menu" / "Bar icon" to toggle the navigation links -->
-		<a class="icon">
-			<span class="material-symbols-outlined mediumIcon">menu</span>
-		</a>
 		</div>
 
+		<main>
+			<div class="container">
+				<div class="main map">
+					<h1>Map</h1>
+					<h2>Select your location</h2>
+					<img class="hero" src="/img/map.jpg" alt="map">
+					<ul id="locations">
+						<li id="Weipa">		
+							<label>Weipa</label>
+							<a></a>
+						</li>
+						<li id="Wenlock">		
+							<label>Wenlock</label>
+							<a></a>
+						</li>
+						<li id="Coen">		
+							<label>Coen</label>
+							<a></a>
+						</li>
+						<li id="Lakefield">		
+							<label>Lakefield</label>
+							<a></a>
+						</li>
+						<li id="Cairns">		
+							<label>Cairns</label>
+							<a></a>
+						</li>
+						<li id="Kowanyama">		
+							<label>Kowanyama</label>
+							<a></a>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</main>
 
-	</div>
-
-
-<main>
-<div class="container">
-<div class="main map">
-	<h1>Map</h1>
-				<h2>Select your location</h2>
-	<img class="hero" src="/img/map.jpg" alt="map">
+		<footer>
+			<div>
+				<p><small>Copyright ©2022 Group 7</small></p>
+			</div>
+			<div>
+				<p><small>Contact <a href="mailto:scott.gurney@uea.ac.uk">Group 7</a></small></p>
+			</div>
+			<div>
+				<p><small>Terms of use</small></p>
+			</div>
+			<div>
+				<p><small>Privacy Policy</small></p>
+			</div>
+		</footer>
+		
+	</body>
 	
-	<ul id="locations">
-		<li id="Weipa">		
-			<label>Weipa</label>
-			<a></a>
-		</li>
-		<li id="Wenlock">		
-			<label>Wenlock</label>
-			<a></a>
-		</li>
-		<li id="Coen">		
-			<label>Coen</label>
-			<a></a>
-		</li>
-		<li id="Lakefield">		
-			<label>Lakefield</label>
-			<a></a>
-		</li>
-		<li id="Cairns">		
-			<label>Cairns</label>
-			<a></a>
-		</li>
-		<li id="Kowanyama">		
-			<label>Kowanyama</label>
-			<a></a>
-		</li>
-
-	</ul>
-	
-	
-	
-</div>
-</div>
-</main>
-
-<footer>
-	<div>
-	<p><small>Copyright ©2022 Group 7</small></p>
-	</div>
-	<div>
-	<p><small>Contact <a href="mailto:scott.gurney@uea.ac.uk">Group 7</a></small></p>
-	</div>
-	<div>
-	<p><small>Terms of use</small></p>
-	</div>
-	<div>
-	<p><small>Privacy Policy</small></p>
-	</div>
-</footer>
-</body>
 </html>

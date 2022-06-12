@@ -1,106 +1,108 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
-	<title>Energy Monitor</title>
-	
-	<!-- Google Font Maven Pro -->
-	<link rel="preconnect" href="https://fonts.googleapis.com">
-	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-	<link href="https://fonts.googleapis.com/css2?family=Maven+Pro:wght@400;500&display=swap" rel="stylesheet">
-	
-	
-	<!-- Burger Menu Icon -->
-	<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,700,0,0" />
-	<!-- Opens/Closes Burger Menu -->
-	<script src="test.js" defer></script>
-	<script src="./js/switchTheme.js" defer></script>
-
-	<!-- Styling -->
-	<link rel="stylesheet" href="/css/style.css">
-	<link rel="stylesheet" href="/css/form.css">
-	<meta name = "viewport" content = "width=device-width, initial-scale=1.0">
-</head>
-
-<body>
-<!-- Top Navigation Menu -->
-<div class="topnav-container">
-	<div class="topnav">
-	<a href="home.html" class="logo"><img src="/img/logo.jpg" class="logo" alt="energy monitor logo"></a>
-	<!-- Navigation links (hidden by default) -->
-	<div id="myLinks">
-		<a href="home.html">Home</a>
-		<a href="usage.html">Usage</a>
-		<a href="panels.html">Panels</a>
-		<a href="daily.html">Today</a>
-		<a href="hourly.html" id="hourly-link">Hourly</a>
-		<a class="active" href="help.html">Help</a>
+	<head>
+		<title>Energy Monitor</title>
 		
-			<div>
-				<label class="theme-switch" for="checkbox">
-					<span id="dark_mode">
-						Dark Mode
-						<span class="material-symbols-outlined mediumIcon">
-							dark_mode
-						</span>
-					</span>	
-				<input type="checkbox" id="checkbox">
-				</label>
+		<!-- Google Font Maven Pro -->
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Maven+Pro:wght@400;500&display=swap" rel="stylesheet">
+		
+		
+		<!-- Burger Menu Icon -->
+		<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,700,0,0" />
+		<!-- Opens/Closes Burger Menu -->
+		<script src="test.js" defer></script>
+		<script src="./js/switchTheme.js" defer></script>
+
+		<!-- Styling -->
+		<link rel="stylesheet" href="/css/style.css">
+		<link rel="stylesheet" href="/css/form.css">
+		<meta name = "viewport" content = "width=device-width, initial-scale=1.0">
+	</head>
+
+	<body>
+		<!-- Top Navigation Menu -->
+		<div class="topnav-container">
+			<div class="topnav">
+				<a href="home.html" class="logo"><img src="/img/logo.jpg" class="logo" alt="energy monitor logo"></a>
+				<!-- Navigation links (hidden by default) -->
+				<div id="myLinks">
+					<a href="home.html">Home</a>
+					<a href="usage.html">Usage</a>
+					<a href="panels.html">Panels</a>
+					<a href="daily.html">Today</a>
+					<a href="hourly.html" id="hourly-link">Hourly</a>
+					<a class="active" href="help.html">Help</a>
+					
+					<div>
+						<label class="theme-switch" for="checkbox">
+							<span id="dark_mode">
+								Dark Mode
+								<span class="material-symbols-outlined mediumIcon">
+									dark_mode
+								</span>
+							</span>	
+						<input type="checkbox" id="checkbox">
+						</label>
+					</div>
+					
+				</div>
+				<!-- "Hamburger menu" / "Bar icon" to toggle the navigation links -->
+				<a class="icon">
+					<span class="material-symbols-outlined mediumIcon">menu</span>
+				</a>
 			</div>
+		</div>
+
+		<main>
+			<div class="container">
+				<div class="main support-form">
+					<h1>Contact</h1>
+					<h2>Fill out your details below</h2>
+					
+					<form action="/" method="post">
+						<div class="form-section">
+							<label class="form-label" for="name">Name</label>
+							<input class="form-input" type="text" id="name" name="name" placeholder="Enter your name" required>
+						</div>
+						<div class="form-section">
+							<label class="form-label" for="email">Email</label>
+							<input class="form-input" type="email" id="email" name="email" placeholder="email@email.com" required>
+						</div>
+						<div class="form-section">
+							<label class="form-label" for="subject">Subject</label>
+							<input class="form-input" type="text" id="subject" name="subject" placeholder="Enter a subject" required>
+						</div>
+						<div class="form-section">
+							<label class="form-label" for="message">Message</label>
+							<textarea class="form-input" id="message" name="message" rows="5" placeholder="Enter your message" required></textarea>
+						</div>
+						<div class="form-section">
+							<label class="form-label"></label>
+							<input type="button" class="form-send" value="Submit" id="support-send" onClick=sendMessage()>
+						</div>
+					</form>
+				</div>
+			</div>
+		</main>
+
+		<footer>
+			<div>
+				<p><small>Copyright ©2022 Group 7</small></p>
+			</div>
+			<div>
+				<p><small>Contact <a href="mailto:scott.gurney@uea.ac.uk">Group 7</a></small></p>
+			</div>
+			<div>
+				<p><small>Terms of use</small></p>
+			</div>
+			<div>
+				<p><small>Privacy Policy</small></p>
+			</div>
+		</footer>
 		
-	</div>
-	<!-- "Hamburger menu" / "Bar icon" to toggle the navigation links -->
-	<a class="icon">
-		<span class="material-symbols-outlined mediumIcon">menu</span>
-	</a>
-	</div>
-</div>
-
-<main>
-	<div class="container">
-<div class="main support-form">
-	<h1>Contact</h1>
-	<h2>Fill out your details below</h2>
+	</body>
 	
-	<form action="/" method="post">
-		<div class="form-section">
-			<label class="form-label" for="name">Name</label>
-			<input class="form-input" type="text" id="name" name="name" placeholder="Enter your name" required>
-		</div>
-		<div class="form-section">
-			<label class="form-label" for="email">Email</label>
-			<input class="form-input" type="email" id="email" name="email" placeholder="email@email.com" required>
-		</div>
-		<div class="form-section">
-			<label class="form-label" for="subject">Subject</label>
-			<input class="form-input" type="text" id="subject" name="subject" placeholder="Enter a subject" required>
-		</div>
-		<div class="form-section">
-			<label class="form-label" for="message">Message</label>
-			<textarea class="form-input" id="message" name="message" rows="5" placeholder="Enter your message" required></textarea>
-		</div>
-		<div class="form-section">
-			<label class="form-label"></label>
-			<input type="button" class="form-send" value="Submit" id="support-send" onClick=sendMessage()>
-		</div>
-	</form>
-</div>
-</div>
-</main>
-
-<footer>
-	<div>
-	<p><small>Copyright ©2022 Group 7</small></p>
-	</div>
-	<div>
-	<p><small>Contact <a href="mailto:scott.gurney@uea.ac.uk">Group 7</a></small></p>
-	</div>
-	<div>
-	<p><small>Terms of use</small></p>
-	</div>
-	<div>
-	<p><small>Privacy Policy</small></p>
-	</div>
-</footer>
-</body>
 </html>
