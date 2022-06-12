@@ -28,6 +28,11 @@ ul#locations a{
 	position: relative;
 }
 
+#Weipa {
+	top: 43%;
+	left: 17%;
+}
+
 #Weipa label, #Wenlock label, #Coen label, #Lakefield label, #Cairns label, #Kowanyama label {
 	color: rgba(var(--main-blue-white), 1);
 	position: absolute;
@@ -58,7 +63,7 @@ ul#locations a{
 }
  
 #Lakefield {
-	top: 69%;
+	top: 69.5%;
 	left: 67%;
 }
  
@@ -72,6 +77,6 @@ ul#locations a{
 }
 
 #Kowanyama {
-	top: 76%;
+	top: 76.5%;
 	left: 17%;
 }
