@@ -90,10 +90,6 @@ function totalsRenderer(power, usage, surplus)
     </p>
 	</div>
 	
-	<span class="material-symbols-outlined ${arrow}">
-		${arrow}
-	</span>
-	
     `;
 
     document.getElementById("surplus").innerHTML =
