@@ -33,6 +33,15 @@ module.exports = function(app) {
         //get the weather data for the latitude and longitude
         let weather = new OpenWeather(latitude, longitude, "c35428e96cf1836d8d2d58f7eaf046eb");
         let data;
+
+        if(latitude === undefined || latitude == '' ||  longitude === undefined || longitude == '')
+        {
+            res.status(400).json({message: "latitude and longitude must be provided"});
+        }
+        else if(area === undefined || area == '' || angle === undefined || angle == ''|| direction === undefined || direction == '')
+        {
+            res.status(400).json({message: "panel area, angle and direction must be provided"});
+        }
         
         //if the request is for a specific day
         if(day != undefined && day != '')
