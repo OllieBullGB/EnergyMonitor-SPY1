@@ -40,96 +40,53 @@
 	--border-light-blue: 229, 236, 237;
 }
 
-/* || Standard element formating */
-html {
-	font-family: 'Maven Pro', sans-serif;
+/* || Dark mode switch settings */
+#dark_mode {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 5%;
+	font-size: 5vw;
 }
 
-body {
-	margin: 2% 2% 10% 2%;
-	background-color: rgba(var(--bg-white), 1);
-	color: rgba(var(--main-green), 1);
-}
-
-/* Header sizes */
-h1 {
-	font-size: 8vw;
-	font-weight: 500;
-	margin: 0;
-	width: 85%;
-	}
-
-h3 {
-	color: rgba(var(--main-green), 1);
-	font-size: 6vw;
-	text-align: left;
-	font-weight: normal;
-	margin: 0;
-}
-
-.topnav-container {
-	position: relative;
-	width: 100%;
-}
-
-.container{
-	position: relative;
-	padding-top: 15%;
-}
-
-/* Style the navigation menu */
-.topnav {
-	overflow: hidden;
-	background-color: rgba(var(--bg-white), 1);
+/* Hides default checkbox */
+.theme-switch input {
 	position: absolute;
-	z-index: 2;
-	width: 100%;
+	opacity: 0;
+	cursor: pointer;
+	height: 0;
+	width: 0;
 }
 
-/* Hide the links inside the navigation menu (except for logo/home) */
-.topnav #myLinks {
-	display: none;
+/* || Google Icon settings */
+.material-symbols-outlined {
+	font-size: 5vw;
 }
 
+.mediumIcon {
+	font-size: 10vw;
+}
+
+.largeIcon {
+	font-size: 20vw;
+	color: rgba(var(--main-green), 1);
+	padding: 0;
+}
+
+/* || Standard element formating */
 a {
 	padding: 5%;
 	text-decoration: none;
 	font-size: 5vw;
 	display: block;
 	color: inherit;
-	z-index: 1;
 }
 
-#myLinks a, .help-links a, .faq-item, .contact-item{
-	border-bottom: 0.5vw solid rgba(var(--border-blue), 1);
-	padding: 5%;
-	font-weight: normal;
-}
-
-#myLinks a:last-child, .help-links a:last-child, .faq-item:last-child, .contact-item:last-child{
-	border-bottom: none;
-}
-
-/* Style the hamburger menu */
-.topnav a.icon {
-	color: rgba(var(--main-blue), 1);
-	display: block;
-	position: absolute;
-	right: 0;
-	top: 0;
-	padding: 3% 4% 3% 4%;
-}
-
-/* Style the active link (or home/logo) */
-.active {
-	background-color: rgba(var(--bg-blue), 1);
-	color: rgba(var(--main-white), 1);
-}
-
-/* Logo image settings */
-.logo {
-	width: 90%;
-	padding: 0;
+/* Larger padding at bootom for footer */
+body {
+	margin: 2% 2% 10% 2%;
+	background-color: rgba(var(--bg-white), 1);
+	color: rgba(var(--main-green), 1);
 }
 
 footer {
@@ -139,7 +96,7 @@ footer {
 	padding: 2% 0;
 	position: fixed;
 	bottom: 0;
-	width: 96%;
+	width: 95%;
 	background-color: rgba(var(--bg-white), 1);
 }
 
@@ -149,105 +106,109 @@ footer a {
 	font-size: 2vw;
 }
 
-small {
-	font-size: 2vw;
+html {
+	font-family: 'Maven Pro', sans-serif;
 }
 
 p {
-	margin: 0px 0px;
-	padding: 0px;
-	margin-block-start: 0;
-	margin-block-end: 0;
-}
-
-.material-symbols-outlined {
-	font-size: 5vw;
-}
-
-.data-row h3 {
-	width: 25%;
 	margin: 0;
 }
 
-.data article:last-child{
-	border-top: 1vw solid rgba(var(--border-blue), 1);
-}
-
-.data-row {
-	display: flex;
-	justify-content: space-evenly;
-	align-items: center;
-	padding: 5% 0;
-}
-
-.largeIcon {
-	font-size: 20vw;
-	color: rgba(var(--main-green), 1);
-	padding: 0;
-}
-
-.mediumIcon {
-	font-size: 10vw;
+small {
+	font-size: 2vw;
 }
 
 var {
 	font-style: normal;
 }
 
-.faq-list p, .contact-list p {
-	color: rgba(var(--main-blue-white), 1);
-	padding: 2% 0 0 0;
+/* || Header sizes */
+h1 {
+	font-size: 8vw;
+	font-weight: 500;
+	margin: 0;
 }
 
-.faq-list h3, .contact-list h3 {
-	color: rgba(var(--main-green-blue), 1);
-}
-
-.contact-link a {
+h3 {
+	color: rgba(var(--main-green), 1);
 	font-size: 6vw;
-	color: rgba(var(--main-green-blue), 1);
+	text-align: left;
+	font-weight: normal;
+	margin: 0;
+}
 
+/* || Navigation */
+/* Style the active link (or home/logo) */
+.active {
+	background-color: rgba(var(--bg-blue), 1);
+	color: rgba(var(--main-white), 1);
+}
+
+/* Moves content to a fixed posistion so it does not move when nav is open/closed*/
+.container{
+	position: relative;
+	padding-top: 15%;
+}
+
+/* Logo image settings */
+.logo {
+	width: 90%;
+	padding: 0;
+}
+
+/* Adds bottom border to all child elements*/
+#myLinks a, .help-links a, .faq-item, .contact-item{
+	border-bottom: 0.5vw solid rgba(var(--border-blue), 1);
+	padding: 5%;
+	font-weight: normal;
+}
+
+/* Removes bottom border from last child element */
+#myLinks a:last-child, .help-links a:last-child, .faq-item:last-child, .contact-item:last-child{
+	border-bottom: none;
 }
 
 .selected {
 	border: 2vw solid rgba(var(--border-blue), 1);
 }
 
-#dark_mode {
-	display: flex;
-	justify-content: space-between;
-	align-items: center;
-	padding: 5%;
-	font-size: 5vw;
-}
-
-.theme-switch input {
+/* Hides nav menu whilst not in use */
+.topnav {
+	overflow: hidden;
+	background-color: rgba(var(--bg-white), 1);
 	position: absolute;
-	opacity: 0;
-	cursor: pointer;
-	height: 0;
-	width: 0;
-}
-
-.data-input-field {
-	display: flex;
-	flex-direction: column;
-	justify-content: space-evenly;
-	align-items: center;
-	padding: 0;
-	font-size: 10vw;
-	color: rgba(var(--main-green), 1);
+	z-index: 2;
 	width: 100%;
 }
 
-.data-input-field p {
-	display: flex;
-	align-items: flex-start;
-	padding: 0;
-	font-size: 5vw;
-	justify-content: center;
+/* Style the hamburger menu icon */
+.topnav a.icon {
+	color: rgba(var(--main-blue), 1);
+	display: block;
+	position: absolute;
+	right: 0;
+	top: 0;
+	padding: 3% 4% 3% 4%;
 }
 
+/* Hide the links inside the navigation menu (except for logo/home) */
+.topnav #myLinks {
+	display: none;
+}
+
+/* Container for logo and nav menu */
+.topnav-container {
+	position: relative;
+	width: 100%;
+}
+
+/* || Article data boxes */
+/* Adds border to last child of element */
+.data article:last-child{
+	border-top: 1vw solid rgba(var(--border-blue), 1);
+}
+
+/* Flew-row for center column */
 .data-input {
 	display: flex;
 	flex-direction: row;
@@ -257,4 +218,52 @@ var {
 	font-size: 10vw;
 	color: rgba(var(--main-green), 1);
 	width: 35%;
+}
+
+/* Flex-column styling for inside data-input, width to ensure alignment */
+.data-input-field {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	width: 100%;
+}
+
+/* Styling to text at bottom of data-input */
+.data-input-field p {
+	display: flex;
+	align-items: flex-start;
+	padding: 0;
+	font-size: 5vw;
+	justify-content: center;
+}
+
+/* Styling for 3 column data-row */
+.data-row {
+	display: flex;
+	justify-content: space-evenly;
+	align-items: center;
+	padding: 5% 0;
+	margin: 0;
+}
+
+/* Title for data-row, width to ensure alignment */
+.data-row h3 {
+	width: 25%;
+	margin: 0;
+}
+
+/* || Contact and FAQ styling */
+.contact-link a {
+	font-size: 6vw;
+	color: rgba(var(--main-green-blue), 1);
+}
+
+.faq-list h3, .contact-list h3 {
+	color: rgba(var(--main-green-blue), 1);
+}
+
+/* Only padding to top to space answer from question */
+.faq-list p, .contact-list p {
+	color: rgba(var(--main-blue-white), 1);
+	padding: 2% 0 0 0;
 }
