@@ -18,7 +18,7 @@ class LocalDataManager
         let output = 
         {
             "usage": usage,
-            "hourlyUsage": Math.round((usage + Number.EPSILON) * 100) / 100 //Round to 2 decimal places 
+            "hourlyUsage": Math.round(((usage / 24) + Number.EPSILON) * 100) / 100 //Round to 2 decimal places 
         }
 
         return output;

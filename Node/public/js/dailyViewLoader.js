@@ -27,10 +27,8 @@ function dailySolarData(container, selectedDate)
     let position = LocalDataManager.getLocation();
     let panelInfo = LocalDataManager.getPanelInfo();
     let usage = LocalDataManager.getUsage().usage;
-    console.table(panelInfo);
 
     let data = fetchSolarData('', position.latitude, position.longitude, panelInfo.area, panelInfo.angle, panelInfo.direction);
-    console.table(data);
 
     let solarInput = 0;
     let surplus = 0;
