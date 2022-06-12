@@ -9,21 +9,6 @@
 	color: green;
 }
 
-/* || Header styling */
-/* No bottom padding to group with name */
-.days-view {
-	padding: 5% 5% 0 5%;
-}
-
-/* No top padding to group with name */
-h2 {
-	color: rgba(var(--main-blue), 1);
-	font-size: 7vw;
-	font-weight: 500;
-	padding: 0 5% 5% 5%;
-	margin: 0;
-}
-
 /* || Horizonal weather scroll */
 .day, .hour {
 	display:inline-block;

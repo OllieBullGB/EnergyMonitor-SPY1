@@ -128,6 +128,16 @@ h1 {
 	font-size: 8vw;
 	font-weight: 500;
 	margin: 0;
+	padding: 5% 5% 0 5%;
+}
+
+/* No top padding to group with name */
+h2 {
+	color: rgba(var(--main-blue-white), 1);
+	font-size: 7vw;
+	font-weight: 500;
+	padding: 0 5% 5% 5%;
+	margin: 0;
 }
 
 h3 {
@@ -203,9 +213,9 @@ h3 {
 	width: 100%;
 }
 
-/* || Article data boxes */
+/* || div data boxes */
 /* Adds border to last child of element */
-.data article:last-child{
+.data .data-row:last-child{
 	border-top: 1vw solid rgba(var(--border-blue), 1);
 }
 
@@ -256,11 +266,12 @@ h3 {
 /* || Contact and FAQ styling */
 .contact-link a {
 	font-size: 6vw;
-	color: rgba(var(--main-green-blue), 1);
+	color: rgba(var(--main-green), 1);
 }
 
 .faq-list h3, .contact-list h3 {
-	color: rgba(var(--main-green-blue), 1);
+	color: rgba(var(--main-green-blue-white), 1);
+	
 }
 
 /* Only padding to top to space answer from question */

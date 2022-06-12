@@ -63,12 +63,13 @@
 <main>
 	<div class="container">
 	<form>
-		<a><h1>Input your <br> daily usage</h1></a>
+		<h1>Usage</h1>
+		<h2>Input your daily usage</h2>
 
 		<!--div id="usage-container"-->
 		<div class="data">
 			<!--div id="current-usage"-->
-			<article class="data-row">
+			<div class="data-row">
 				<h3>Current</h3>
 				<!--div id="current"-->
 				<div class="data-input">
@@ -86,17 +87,17 @@
 				<span class="material-symbols-outlined largeIcon">
 					battery_horiz_050
 				</span>
-			</article>
+			</div>
 			<!--div id="update-usage"-->
 			<!--div class="update-usage"-->
-			<article class="data-row" id="update-usage">
+			<div class="data-row" id="update-usage">
 				<h3>Update</h3>
 				<!--div id="update"-->
 				<!--div class="update"-->
 				<div class="data-input">
 				<div class="data-input-field">
 					<!--form-->
-						<input class="update-input active" id="usage-update" type="text" placeholder="00.0">
+						<input class="update-input active" id="usage-update" type="text" placeholder="00.0" aria-label="enter your daily energy usage here">
 					<p>
 						kWh
 					<span class="material-symbols-outlined">
@@ -110,38 +111,25 @@
 				<!--span class="material-symbols-outlined largeIcon">
 					check_circle
 				</span-->
-			</article>
+			</div>
 		</div>
 		<!-- Keypad to enter daily energy usage -->
 		<div id="numpad-container">
-				<!--input id="usage" type="text" value=""-->
-				<!--div id="numpad-row1"-->
-				<input type="button" class="numpad-digit" value="1" id="numpad-1">
-				<input type="button" class="numpad-digit" value="2" id="numpad-2">
-				<input type="button" class="numpad-digit" value="3" id="numpad-3">
-				<!--/div-->
-				<!--div id="numpad-row2"-->
-				<input type="button" class="numpad-digit" value="4" id="numpad-4">
-				<input type="button" class="numpad-digit" value="5" id="numpad-5">    
-				<input type="button" class="numpad-digit" value="6" id="numpad-6">
-				<!--/div-->
-				<!--div id="numpad-row3-->
-				<input type="button" class="numpad-digit" value="7" id="numpad-7">
-				<input type="button" class="numpad-digit" value="8" id="numpad-8">
-				<input type="button" class="numpad-digit" value="9" id="numpad-9">
-				<!--/div-->
-				<!--div id="numpad-row4"-->
-				<input type="button" class="numpad-digit" value="." id="numpad-.">
-				<input type="button" class="numpad-digit" value="0" id="numpad-0">
-				<input type="button" class="numpad-digit material-symbols-outlined" value=backspace id="numpad-clear">
-				<!--/div-->
-				<!--input type="button" class="numpad-digit" value="update" id="numpad-update" onClick=updateUsage()-->
-			<!--/form-->
-			</div>
+			<input type="button" class="numpad-digit" value="1" id="numpad-1" aria-label="number one">
+			<input type="button" class="numpad-digit" value="2" id="numpad-2" aria-label="number two">
+			<input type="button" class="numpad-digit" value="3" id="numpad-3" aria-label="number three">
+			<input type="button" class="numpad-digit" value="4" id="numpad-4" aria-label="number four">
+			<input type="button" class="numpad-digit" value="5" id="numpad-5" aria-label="number five">    
+			<input type="button" class="numpad-digit" value="6" id="numpad-6" aria-label="number six">
+			<input type="button" class="numpad-digit" value="7" id="numpad-7" aria-label="number seven">
+			<input type="button" class="numpad-digit" value="8" id="numpad-8" aria-label="number eight">
+			<input type="button" class="numpad-digit" value="9" id="numpad-9" aria-label="number nine">
+			<input type="button" class="numpad-digit" value="." id="numpad-." aria-label="decimal place">
+			<input type="button" class="numpad-digit" value="0" id="numpad-0" aria-label="number zero">
+			<input type="button" class="numpad-digit material-symbols-outlined" value=backspace id="numpad-clear" aria-label="backspace">
+		</div>
 			
 		</form>
-			
-		<!--/div-->
 
 	</div>
 </main>
