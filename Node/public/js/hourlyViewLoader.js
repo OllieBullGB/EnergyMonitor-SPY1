@@ -1,9 +1,10 @@
 window.onload = function() 
 {
-    if(!window.location.hash || window.location.hash == '#selected') 
+    if(localStorage.getItem("lastReset") != location.pathname)
     {
-        window.location = window.location + '#loaded';
-        window.location.reload();
+        localStorage.setItem("lastReset", location.pathname);
+        console.log(localStorage.getItem("lastReset"));
+        window.location.reload()
     }
 }
 
