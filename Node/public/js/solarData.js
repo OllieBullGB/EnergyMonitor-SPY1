@@ -135,7 +135,7 @@ function containerRenderer(timeStr, link, weatherIconName, container, selected)
     if(selected)
     {
         hourContainer.classList.add("selected");
-
+		hourContainer.setAttribute("id","selected");
     }
 
     container.appendChild(hourContainer);

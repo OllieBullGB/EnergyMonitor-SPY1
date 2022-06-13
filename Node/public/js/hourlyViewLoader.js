@@ -55,7 +55,7 @@ function hourlySolarData(day, container, selectedHour)
         let min = String(date.getMinutes()).padStart(2, '0')
         let timeStr = hour + ":" + min;
         let dateStr = dd + "/" + mm ;
-        let link = `hourly.html?day="${mm}/${dd}/${yy}&time="${timeStr}"`;
+        let link = `hourly.html?day="${mm}/${dd}/${yy}&time="${timeStr}"#selected`;
         let selected = false;
 
         if(date.toISOString().slice(11, 13) === targetDate.toISOString().slice(11, 13))
