@@ -16,7 +16,7 @@
 }
 
 .form-input {
-	color: rgba(var(--main-green), 1);
+	color: rgba(var(--main-green-blue), 1);
 	font-size: 5vw;
 	display: inline-block;
 	border: none;
