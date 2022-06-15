@@ -41,7 +41,3 @@ const routes = require('./routes');
 routes(app);
 
 module.exports = app;
-
-i = new IntensityCalculator("06/12/22, 12:00:00", 0, 0, 0);
-s = new SolarArrayModel(i, 1, 0, 0, 0, 273);
-console.log(s.getPower());
